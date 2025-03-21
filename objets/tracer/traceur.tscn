@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpo8yl3jun1wh"]
+
+[ext_resource type="Script" uid="uid://duhnt7tlmv6s4" path="res://objets/tracer/traceur.gd" id="1_2onav"]
+[ext_resource type="Texture2D" uid="uid://cgkxr0ic3vr33" path="res://icon.svg" id="2_awect"]
+
+[node name="Traceur" type="Node2D"]
+script = ExtResource("1_2onav")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_awect")

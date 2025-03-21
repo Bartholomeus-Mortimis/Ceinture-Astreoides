@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://ds1vkno72tmvl"]
+
+[ext_resource type="Script" uid="uid://btyjerv7uwk4t" path="res://objets/test_scene/test_scene.gd" id="1_5inm1"]
+[ext_resource type="PackedScene" uid="uid://cpo8yl3jun1wh" path="res://objets/tracer/traceur.tscn" id="1_oribb"]
+
+[node name="TestScene" type="Node2D"]
+script = ExtResource("1_5inm1")
+
+[node name="Traceur" parent="." instance=ExtResource("1_oribb")]
+position = Vector2(102, 246)
+type = "sinus"
+agr_v = 50.0
+agr_h = 0.5
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
