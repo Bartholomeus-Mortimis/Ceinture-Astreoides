@@ -1,0 +1,57 @@
+[gd_scene load_steps=2 format=3 uid="uid://owejrghse8ei"]
+
+[ext_resource type="Script" uid="uid://b08eyh8gn0aro" path="res://objets/ui/hud/hud.gd" id="1_j02s5"]
+
+[node name="Hud" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j02s5")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -329.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Control" type="Control" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -333.0
+offset_top = -118.5
+offset_right = 333.0
+offset_bottom = 118.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LineEdit" type="LineEdit" parent="Panel/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -151.5
+offset_top = -38.5
+offset_right = 151.5
+offset_bottom = 38.5
+grow_horizontal = 2
+grow_vertical = 2
+placeholder_text = "Entrée Équation"
+alignment = 1
+emoji_menu_enabled = false
+caret_blink = true
+caret_force_displayed = true
+
+[connection signal="text_submitted" from="Panel/Control/LineEdit" to="." method="_on_line_edit_text_submitted"]
