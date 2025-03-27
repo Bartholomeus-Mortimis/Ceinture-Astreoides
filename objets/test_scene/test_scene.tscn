@@ -18,8 +18,8 @@ agr_h = 5.0
 one_shot = true
 
 [node name="Hud" parent="." instance=ExtResource("3_oa2i5")]
-offset_right = 1920.0
-offset_bottom = 1080.0
+offset_right = 1080.0
+offset_bottom = 720.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="équation_soumis" from="Hud" to="." method="_on_hud_équation_soumis"]
