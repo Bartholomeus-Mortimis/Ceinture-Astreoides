@@ -8,7 +8,7 @@ signal équation_soumis
 
 var opérateurs: Array = ["*", "+", "-", "/"]
 var chiffres: Array = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
-var symboles_avant: Array = ["√"]
+var symboles_avant: Array = ["√", "n", "s"]
 
 func _on_line_edit_text_submitted(new_text: String) -> void:
 	équation = new_text
@@ -22,12 +22,13 @@ func équation_en_expression(nouveau_équation: String):
 	print(nouveau_équation)
 	
 	nouveau_équation = nouveau_équation.replace(" ", "") # Enlève tout les espaces vide
+	nouveau_équation = nouveau_équation.replace("x", "(x)") # Separer les variables des chiffres
 	print(nouveau_équation)
 	
 	for i in nouveau_équation.length(): 
 		if i > 0: 
 			
-			if nouveau_équation.substr(i, 1) == "(" and !opérateurs.has(nouveau_équation.substr(i-1, 1)) and !symboles_avant.has(nouveau_équation.substr(i-1, 1)):
+			if nouveau_équation.substr(i, 1) == "(" and !opérateurs.has(nouveau_équation.substr(i-1, 1)) and !symboles_avant.has(nouveau_équation.substr(i-1, 1)) and nouveau_équation.substr(i-1, 1) != "(":
 				# Ajoute des signes de multiplications au parathèses
 				nouveau_équation = nouveau_équation.insert(i, "*")
 	
@@ -51,12 +52,10 @@ func équation_en_expression(nouveau_équation: String):
 					nouveau_équation = nouveau_équation.replace(nouveau_équation.substr(i-clôt, ( (i-1) - (i-clôt-1) )) + "²",  "pow(" + nouveau_équation.substr(i-clôt, ( (i-1) - (i-clôt-1) ) ) + ", 2)")
 				elif nouveau_équation.substr(i, 1) == "³":
 					nouveau_équation = nouveau_équation.replace(nouveau_équation.substr(i-clôt, ( (i-1) - (i-clôt-1) )) + "³",  "pow(" + nouveau_équation.substr(i-clôt, ( (i-1) - (i-clôt-1) ) ) + ", 3)")
-	
-	print(nouveau_équation)
-	
-	for i in nouveau_équation.length():
+		
+		
 		if nouveau_équation.substr(i, 1) == "√":
-			
+		
 			var clôt: int
 			
 			if nouveau_équation.substr(i+1, 1) == "(":
@@ -64,9 +63,27 @@ func équation_en_expression(nouveau_équation: String):
 				
 			elif chiffres.has(nouveau_équation.substr(i+1, 1)):
 				clôt =  trouveau_chiffres_correspondante(nouveau_équation, i, -1)
-				
 			
+		
 			nouveau_équation = nouveau_équation.replace( "√" + nouveau_équation.substr(i+1, ((i+clôt+1) - (i+1))), "sqrt(" + nouveau_équation.substr(i+1, ((i+clôt+1) - (i+1))) + ")" )
+		
+		if nouveau_équation.substr(i, 3) == "sin" or nouveau_équation.substr(i, 3) == "cos" or nouveau_équation.substr(i, 3) == "tan":
+			
+			var clôt: int
+			
+			if nouveau_équation.substr(i+3, 1) == "(":
+				clôt = trouveau_parathèse_correspondante(nouveau_équation, i+2, -1)
+				
+			elif chiffres.has(nouveau_équation.substr(i+3, 1)):
+				clôt =  trouveau_chiffres_correspondante(nouveau_équation, i+2, -1)
+			
+			if nouveau_équation.substr(i, 3) == "sin":
+				nouveau_équation = nouveau_équation.replace( "sin" + nouveau_équation.substr(i+3, ((i+clôt+3) - (i+3))), "sin(" + nouveau_équation.substr(i+3, ((i+clôt+3) - (i+3))) + ")" )
+			elif nouveau_équation.substr(i, 3) == "sin":
+				nouveau_équation = nouveau_équation.replace( "cos" + nouveau_équation.substr(i+3, ((i+clôt+3) - (i+3))), "cos(" + nouveau_équation.substr(i+3, ((i+clôt+3) - (i+3))) + ")" )
+			elif nouveau_équation.substr(i, 3) == "tan":
+				nouveau_équation = nouveau_équation.replace( "tan" + nouveau_équation.substr(i+3, ((i+clôt+3) - (i+3))), "tan(" + nouveau_équation.substr(i+3, ((i+clôt+3) - (i+3))) + ")" )
+		
 		
 	
 	print(nouveau_équation)
