@@ -21,7 +21,7 @@ offset_top = -209.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Control" type="Control" parent="Panel"]
+[node name="ÉcriveurCanonique" type="Control" parent="Panel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -34,8 +34,9 @@ offset_right = 333.0
 offset_bottom = 118.5
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
-[node name="LineEdit" type="LineEdit" parent="Panel/Control"]
+[node name="LineEdit" type="LineEdit" parent="Panel/ÉcriveurCanonique"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -43,9 +44,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -151.5
-offset_top = -38.5
+offset_top = -72.5
 offset_right = 151.5
-offset_bottom = 38.5
+offset_bottom = 4.5
 grow_horizontal = 2
 grow_vertical = 2
 placeholder_text = "Entrée Équation"
@@ -54,4 +55,37 @@ emoji_menu_enabled = false
 caret_blink = true
 caret_force_displayed = true
 
-[connection signal="text_submitted" from="Panel/Control/LineEdit" to="." method="_on_line_edit_text_submitted"]
+[node name="Erreur" type="Label" parent="Panel/ÉcriveurCanonique"]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -115.0
+offset_top = -106.0
+offset_right = 115.0
+offset_bottom = -65.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Équation Ne Fonctionne Pas!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ÉcriveurTransformations" type="Control" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -333.0
+offset_top = -118.5
+offset_right = 333.0
+offset_bottom = 118.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[connection signal="text_submitted" from="Panel/ÉcriveurCanonique/LineEdit" to="." method="_on_line_edit_text_submitted"]

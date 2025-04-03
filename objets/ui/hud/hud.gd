@@ -3,6 +3,8 @@ class_name Hud
 
 signal équation_soumis
 
+@onready var message_erreur_canonique: Label = $"Panel/ÉcriveurCanonique/Erreur"
+
 @export var équation: String = "0"
 @export var expression: String = "0"
 
@@ -10,50 +12,74 @@ var opérateurs: Array = ["*", "+", "-", "/"]
 var chiffres: Array = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 var symboles_avant: Array = ["√", "n", "s"]
 
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("test_1"):
+		get_tree().reload_current_scene()
+
 func _on_line_edit_text_submitted(new_text: String) -> void:
 	équation = new_text
 	expression = équation_en_expression(équation)
-	équation_soumis.emit()
 	
+	# Tester l'expression
+	
+	if expression == "":
+		message_erreur_canonique.show()
+		await get_tree().create_timer(1.0).timeout
+		message_erreur_canonique.hide()
+		return
+	
+	var test_expression: Expression = Expression.new()
+	test_expression.parse(expression, ["x"])
+	test_expression.execute([1])
+	
+	if test_expression.has_execute_failed() and expression != "":
+		message_erreur_canonique.show()
+		await get_tree().create_timer(1.0).timeout
+		message_erreur_canonique.hide()
+	else:
+		équation_soumis.emit()
 
 func équation_en_expression(nouveau_équation: String):
 	
 	# Convertis le String en formule ultilisable par Godot
 	print(nouveau_équation)
 	
+	nouveau_équation = nouveau_équation.to_lower()
 	nouveau_équation = nouveau_équation.replace(" ", "") # Enlève tout les espaces vide
 	nouveau_équation = nouveau_équation.replace("x", "(x)") # Separer les variables des chiffres
+	
 	print(nouveau_équation)
 	
 	for i in nouveau_équation.length(): 
 		if i > 0: 
 			
-			if nouveau_équation.substr(i, 1) == "(" and !opérateurs.has(nouveau_équation.substr(i-1, 1)) and !symboles_avant.has(nouveau_équation.substr(i-1, 1)) and nouveau_équation.substr(i-1, 1) != "(":
-				# Ajoute des signes de multiplications au parathèses
-				nouveau_équation = nouveau_équation.insert(i, "*")
+			if !opérateurs.has(nouveau_équation.substr(i-1, 1)) and !symboles_avant.has(nouveau_équation.substr(i-1, 1)) and nouveau_équation.substr(i-1, 1) != "(":
+				
+				if nouveau_équation.substr(i, 1) == "(" or nouveau_équation.substr(i, 3) == "sin" or nouveau_équation.substr(i, 13) == "cos" or nouveau_équation.substr(i, 3) == "tan":
+					nouveau_équation = nouveau_équation.insert(i, "*")
 	
 	print(nouveau_équation)
 	
 	for i in nouveau_équation.length():
-		if i > 0:
-			if nouveau_équation.substr(i, 1) == "²" or nouveau_équation.substr(i, 1) == "³":
-				
-				var clôt: int
-				
-				if nouveau_équation.substr(i-1, 1) == ")":
-					# Isoler la partie en parathèses qui doit être mise au exponentielle.
-					clôt = trouveau_parathèse_correspondante(nouveau_équation, i)
-					
-				elif chiffres.has(nouveau_équation.substr(i-1, 1)) or nouveau_équation.substr(i-1, 1) == "x":
-					# Isoler le nombre (ou variable) qui doit être mise au exponentielle.
-					clôt = trouveau_chiffres_correspondante(nouveau_équation, i)
-				
-				if nouveau_équation.substr(i, 1) == "²":
-					nouveau_équation = nouveau_équation.replace(nouveau_équation.substr(i-clôt, ( (i-1) - (i-clôt-1) )) + "²",  "pow(" + nouveau_équation.substr(i-clôt, ( (i-1) - (i-clôt-1) ) ) + ", 2)")
-				elif nouveau_équation.substr(i, 1) == "³":
-					nouveau_équation = nouveau_équation.replace(nouveau_équation.substr(i-clôt, ( (i-1) - (i-clôt-1) )) + "³",  "pow(" + nouveau_équation.substr(i-clôt, ( (i-1) - (i-clôt-1) ) ) + ", 3)")
 		
+		if nouveau_équation.substr(i, 1) == "²" or nouveau_équation.substr(i, 1) == "³":
+			print("power found")
+			var clôt: int
+			
+			if nouveau_équation.substr(i-1, 1) == ")":
+				# Isoler la partie en parathèses qui doit être mise au exponentielle.
+				clôt = trouveau_parathèse_correspondante(nouveau_équation, i)
+				
+			elif chiffres.has(nouveau_équation.substr(i-1, 1)) or nouveau_équation.substr(i-1, 1) == "x":
+				# Isoler le nombre (ou variable) qui doit être mise au exponentielle.
+				clôt = trouveau_chiffres_correspondante(nouveau_équation, i)
+			
+			if nouveau_équation.substr(i, 1) == "²":
+				nouveau_équation = nouveau_équation.replace(nouveau_équation.substr(i-clôt, ( (i-1) - (i-clôt-1) )) + "²",  "pow(" + nouveau_équation.substr(i-clôt, ( (i-1) - (i-clôt-1) ) ) + ", 2)")
+			elif nouveau_équation.substr(i, 1) == "³":
+				nouveau_équation = nouveau_équation.replace(nouveau_équation.substr(i-clôt, ( (i-1) - (i-clôt-1) )) + "³",  "pow(" + nouveau_équation.substr(i-clôt, ( (i-1) - (i-clôt-1) ) ) + ", 3)")
 		
+	for i in nouveau_équation.length():
 		if nouveau_équation.substr(i, 1) == "√":
 		
 			var clôt: int
@@ -66,8 +92,10 @@ func équation_en_expression(nouveau_équation: String):
 			
 		
 			nouveau_équation = nouveau_équation.replace( "√" + nouveau_équation.substr(i+1, ((i+clôt+1) - (i+1))), "sqrt(" + nouveau_équation.substr(i+1, ((i+clôt+1) - (i+1))) + ")" )
-		
+	
+	for i in nouveau_équation.length():
 		if nouveau_équation.substr(i, 3) == "sin" or nouveau_équation.substr(i, 3) == "cos" or nouveau_équation.substr(i, 3) == "tan":
+			print("sin found")
 			
 			var clôt: int
 			
@@ -77,9 +105,12 @@ func équation_en_expression(nouveau_équation: String):
 			elif chiffres.has(nouveau_équation.substr(i+3, 1)):
 				clôt =  trouveau_chiffres_correspondante(nouveau_équation, i+2, -1)
 			
+			if nouveau_équation.substr(i+3, ((i+clôt+3) - (i+3))) == "":
+				return ""
+			
 			if nouveau_équation.substr(i, 3) == "sin":
 				nouveau_équation = nouveau_équation.replace( "sin" + nouveau_équation.substr(i+3, ((i+clôt+3) - (i+3))), "sin(" + nouveau_équation.substr(i+3, ((i+clôt+3) - (i+3))) + ")" )
-			elif nouveau_équation.substr(i, 3) == "sin":
+			elif nouveau_équation.substr(i, 3) == "cos":
 				nouveau_équation = nouveau_équation.replace( "cos" + nouveau_équation.substr(i+3, ((i+clôt+3) - (i+3))), "cos(" + nouveau_équation.substr(i+3, ((i+clôt+3) - (i+3))) + ")" )
 			elif nouveau_équation.substr(i, 3) == "tan":
 				nouveau_équation = nouveau_équation.replace( "tan" + nouveau_équation.substr(i+3, ((i+clôt+3) - (i+3))), "tan(" + nouveau_équation.substr(i+3, ((i+clôt+3) - (i+3))) + ")" )
