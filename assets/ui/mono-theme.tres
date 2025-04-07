@@ -1,0 +1,66 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://xu1wqc4xh2mu"]
+
+[ext_resource type="StyleBox" path="res://assets/ui/mono-style-flat.tres" id="1_xtpis"]
+[ext_resource type="FontFile" uid="uid://cqlmch8d0j188" path="res://assets/ui/Jellee_1223/WEB/Jellee-Bold.woff" id="2_dgkr1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yfib4"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q1l3w"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 10
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eieid"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pcwxu"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[resource]
+default_font = ExtResource("2_dgkr1")
+default_font_size = 16
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/styles/focus = null
+Button/styles/hover = SubResource("StyleBoxFlat_yfib4")
+Button/styles/normal = SubResource("StyleBoxFlat_q1l3w")
+Button/styles/pressed = SubResource("StyleBoxFlat_eieid")
+Fonts/fonts/normal = ExtResource("2_dgkr1")
+Panel/styles/panel = ExtResource("1_xtpis")
+ProgressBar/colors/font_color = Color(0, 0, 0, 1)
+ProgressBar/colors/font_outline_color = Color(1, 1, 1, 1)
+ProgressBar/constants/outline_size = 10
+ProgressBar/styles/background = ExtResource("1_xtpis")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_pcwxu")

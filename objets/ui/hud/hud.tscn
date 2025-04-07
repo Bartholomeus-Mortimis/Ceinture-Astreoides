@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://owejrghse8ei"]
+[gd_scene load_steps=3 format=3 uid="uid://owejrghse8ei"]
 
+[ext_resource type="Theme" uid="uid://xu1wqc4xh2mu" path="res://assets/ui/mono-theme.tres" id="1_7orxp"]
 [ext_resource type="Script" uid="uid://b08eyh8gn0aro" path="res://objets/ui/hud/hud.gd" id="1_j02s5"]
 
 [node name="Hud" type="Control"]
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_7orxp")
 script = ExtResource("1_j02s5")
 
 [node name="Panel" type="Panel" parent="."]
@@ -36,7 +38,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="LineEdit" type="LineEdit" parent="Panel/ÉcriveurCanonique"]
+[node name="CanoniqueEdit" type="LineEdit" parent="Panel/ÉcriveurCanonique"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -44,11 +46,12 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -151.5
-offset_top = -72.5
+offset_top = -60.5
 offset_right = 151.5
-offset_bottom = 4.5
+offset_bottom = 16.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_font_sizes/font_size = 25
 placeholder_text = "Entrée Équation"
 alignment = 1
 emoji_menu_enabled = false
@@ -64,14 +67,62 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -115.0
-offset_top = -106.0
+offset_top = -215.0
 offset_right = 115.0
-offset_bottom = -65.0
+offset_bottom = -174.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Équation Ne Fonctionne Pas!"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Puissance2" type="Button" parent="Panel/ÉcriveurCanonique"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -76.0
+offset_top = 33.5
+offset_right = -36.0
+offset_bottom = 73.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "x²"
+
+[node name="Puissance3" type="Button" parent="Panel/ÉcriveurCanonique"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = 33.5
+offset_right = 19.0
+offset_bottom = 73.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "x³"
+
+[node name="Puissance4" type="Button" parent="Panel/ÉcriveurCanonique"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 34.0
+offset_top = 33.5
+offset_right = 74.0
+offset_bottom = 73.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "√"
 
 [node name="ÉcriveurTransformations" type="Control" parent="Panel"]
 layout_mode = 1
@@ -88,4 +139,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[connection signal="text_submitted" from="Panel/ÉcriveurCanonique/LineEdit" to="." method="_on_line_edit_text_submitted"]
+[connection signal="text_submitted" from="Panel/ÉcriveurCanonique/CanoniqueEdit" to="." method="_on_line_edit_text_submitted"]
+[connection signal="pressed" from="Panel/ÉcriveurCanonique/Puissance2" to="." method="_on_puissance_2_pressed"]
+[connection signal="pressed" from="Panel/ÉcriveurCanonique/Puissance3" to="." method="_on_puissance_3_pressed"]
+[connection signal="pressed" from="Panel/ÉcriveurCanonique/Puissance4" to="." method="_on_puissance_4_pressed"]

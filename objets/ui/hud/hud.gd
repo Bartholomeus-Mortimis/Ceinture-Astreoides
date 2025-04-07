@@ -3,6 +3,7 @@ class_name Hud
 
 signal équation_soumis
 
+@onready var cano_edit: LineEdit = $"Panel/ÉcriveurCanonique/CanoniqueEdit"
 @onready var message_erreur_canonique: Label = $"Panel/ÉcriveurCanonique/Erreur"
 
 @export var équation: String = "0"
@@ -36,8 +37,12 @@ func _on_line_edit_text_submitted(new_text: String) -> void:
 		message_erreur_canonique.show()
 		await get_tree().create_timer(1.0).timeout
 		message_erreur_canonique.hide()
-	else:
+	elif test_expression.execute([1]) is float:
 		équation_soumis.emit()
+	else:
+		message_erreur_canonique.show()
+		await get_tree().create_timer(1.0).timeout
+		message_erreur_canonique.hide()
 
 func équation_en_expression(nouveau_équation: String):
 	
@@ -74,7 +79,7 @@ func équation_en_expression(nouveau_équation: String):
 				# Isoler le nombre (ou variable) qui doit être mise au exponentielle.
 				clôt = trouveau_chiffres_correspondante(nouveau_équation, i)
 			
-			if nouveau_équation.substr(i, 1) == "²":
+			if nouveau_équation.substr(i, 1) == "²": 
 				nouveau_équation = nouveau_équation.replace(nouveau_équation.substr(i-clôt, ( (i-1) - (i-clôt-1) )) + "²",  "pow(" + nouveau_équation.substr(i-clôt, ( (i-1) - (i-clôt-1) ) ) + ", 2)")
 			elif nouveau_équation.substr(i, 1) == "³":
 				nouveau_équation = nouveau_équation.replace(nouveau_équation.substr(i-clôt, ( (i-1) - (i-clôt-1) )) + "³",  "pow(" + nouveau_équation.substr(i-clôt, ( (i-1) - (i-clôt-1) ) ) + ", 3)")
@@ -143,3 +148,13 @@ func trouveau_chiffres_correspondante(string: String, position_départ: int, dir
 		x += 1
 	
 	return x
+
+
+func _on_puissance_2_pressed() -> void:
+	cano_edit.text += "²"
+
+func _on_puissance_3_pressed() -> void:
+	cano_edit.text += "³"
+
+func _on_puissance_4_pressed() -> void:
+	cano_edit.text += "√"
