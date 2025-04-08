@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=7 format=3 uid="uid://xu1wqc4xh2mu"]
 
-[ext_resource type="StyleBox" path="res://assets/ui/mono-style-flat.tres" id="1_xtpis"]
+[ext_resource type="StyleBox" uid="uid://c5q7syr812x6v" path="res://assets/ui/mono-style-flat.tres" id="1_xtpis"]
 [ext_resource type="FontFile" uid="uid://cqlmch8d0j188" path="res://assets/ui/Jellee_1223/WEB/Jellee-Bold.woff" id="2_dgkr1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yfib4"]
