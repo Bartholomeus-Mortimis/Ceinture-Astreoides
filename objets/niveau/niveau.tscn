@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b28kgmg66coa2"]
+[gd_scene load_steps=4 format=3 uid="uid://b28kgmg66coa2"]
 
 [ext_resource type="PackedScene" uid="uid://owejrghse8ei" path="res://objets/ui/hud/hud.tscn" id="1_gjxbg"]
 [ext_resource type="Script" uid="uid://d4efigttmdf55" path="res://objets/niveau/niveau.gd" id="1_sm3tw"]
+[ext_resource type="Texture2D" uid="uid://qmgvsljqrd8e" path="res://assets/sprites/WhiteSquare_64px.png" id="4_dckc2"]
 
 [node name="Niveau" type="Node2D"]
 script = ExtResource("1_sm3tw")
@@ -9,6 +10,17 @@ script = ExtResource("1_sm3tw")
 [node name="Hud" parent="." instance=ExtResource("1_gjxbg")]
 offset_right = 1920.0
 offset_bottom = 1080.0
+
+[node name="TextureRect" type="TextureRect" parent="Hud"]
+modulate = Color(0.325572, 0.326316, 0.3914, 1)
+z_index = -5
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_dckc2")
 
 [node name="Canvas" type="Node" parent="."]
 
