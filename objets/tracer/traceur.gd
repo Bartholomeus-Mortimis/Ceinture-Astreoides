@@ -2,6 +2,7 @@ extends Node2D
 class_name Traceur
 
 @export var équation: String = "x"
+@export var temps_passer: float = 0.0
 @export_group("Transformations")
 @export var mode_transformations: bool = false
 @export var type: String = "parabole"
@@ -9,6 +10,8 @@ class_name Traceur
 @export var agr_h: float = 1.0
 @export var transl_v: float
 @export var transl_h: float
+
+var points: Array[Vector2] = []
 
 func calculer_position(valeur_x: float):
 	
@@ -29,3 +32,8 @@ func calculer_position(valeur_x: float):
 		valeur_y = expression.execute([valeur_x])
 	
 	return valeur_y
+
+func ajouter_point(p: Vector2):
+	points.append(p)
+	if points.size() > 100:
+		points.pop_front()

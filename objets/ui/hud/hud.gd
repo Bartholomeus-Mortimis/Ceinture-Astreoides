@@ -33,16 +33,13 @@ func _on_line_edit_text_submitted(new_text: String) -> void:
 	test_expression.parse(expression, ["x"])
 	test_expression.execute([1])
 	
-	if test_expression.has_execute_failed() and expression != "":
-		message_erreur_canonique.show()
-		await get_tree().create_timer(1.0).timeout
-		message_erreur_canonique.hide()
-	elif test_expression.execute([1]) is float:
+	if test_expression.has_execute_failed():
+		équation_briser()
+	elif test_expression.execute([1]) is float or test_expression.execute([1]) is String or test_expression.execute([1]) is int:
 		équation_soumis.emit()
+		print("submit")
 	else:
-		message_erreur_canonique.show()
-		await get_tree().create_timer(1.0).timeout
-		message_erreur_canonique.hide()
+		équation_briser()
 
 func équation_en_expression(nouveau_équation: String):
 	
@@ -158,3 +155,8 @@ func _on_puissance_3_pressed() -> void:
 
 func _on_puissance_4_pressed() -> void:
 	cano_edit.text += "√"
+
+func équation_briser():
+	message_erreur_canonique.show()
+	await get_tree().create_timer(1.0).timeout
+	message_erreur_canonique.hide()
