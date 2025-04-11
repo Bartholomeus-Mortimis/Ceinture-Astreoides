@@ -8,6 +8,8 @@ extends Node2D
 var étirage_v: float = 1.0
 var étirage_h: float = 10
 
+var origine_v: int = 0
+var origine_h: int = 0
 
 var bonds_v: int = 100
 var bonds_h: int = 100
@@ -16,6 +18,18 @@ var label_font: FontFile = preload('res://assets/ui/Jellee_1223/TTF/Jellee-Bold.
 
 var points: Array = []
 
+#region Processus
+
+func _ready() -> void:
+	
+	load_niveau(load("res://resources/test_level.tres"))
+	
+	temps_bonds = 2.5 / étirage_h
+	temps_timer.start()
+
+func _process(delta: float) -> void:
+	jouer_traceurs()
+
 func _draw() -> void:
 	draw_line( Vector2(markeur_1.position.x, markeur_1.position.y), Vector2(markeur_1.position.x, markeur_2.position.y), Color(255, 255, 255), 3.0)
 	draw_line( Vector2(markeur_2.position.x, markeur_2.position.y), Vector2(markeur_1.position.x, markeur_2.position.y), Color(255, 255, 255), 3.0)
@@ -23,12 +37,12 @@ func _draw() -> void:
 	for i in range(markeur_2.position.x - markeur_1.position.x):
 		if i % bonds_h == 0:
 			draw_line(Vector2(markeur_1.position.x + i, markeur_2.position.y), Vector2(markeur_1.position.x + i, markeur_2.position.y + 10), Color(255, 255, 255), 3.0)
-			draw_string(label_font, Vector2(markeur_1.position.x + i, markeur_2.position.y + 30), var_to_str(roundi(i / étirage_h)) )
+			draw_string(label_font, Vector2(markeur_1.position.x + i, markeur_2.position.y + 30), var_to_str(roundi(i / étirage_h) + origine_h) )
 	
 	for i in range(markeur_2.position.y - markeur_1.position.y):
 		if i % bonds_v == 0:
 			draw_line(Vector2(markeur_1.position.x, markeur_2.position.y - i), Vector2(markeur_1.position.x - 10, markeur_2.position.y - i), Color(255, 255, 255), 3.0)
-			draw_string(label_font, Vector2(markeur_1.position.x - 45, markeur_2.position.y - i), var_to_str(roundi(i / étirage_v)))
+			draw_string(label_font, Vector2(markeur_1.position.x - 45, markeur_2.position.y - i), var_to_str(roundi(i / étirage_v) + origine_v))
 	
 	for t: Traceur in get_tree().get_nodes_in_group("traceurs"): # Dessine une ligne entre chaque point, créeant la courbe visuel.
 		var valeur_pré: Vector2
@@ -37,13 +51,9 @@ func _draw() -> void:
 				draw_line(p, valeur_pré, Color("#29ADFF"), 2.0, true)
 			valeur_pré = p
 
+#endregion
 
-func _ready() -> void:
-	queue_redraw()
-	temps_bonds = 2.5 / étirage_h
-
-func _process(delta: float) -> void:
-	jouer_traceurs()
+#region Traceurs
 
 var traceur_path: PackedScene = preload("res://objets/tracer/traceur.tscn")
 var traceur_existe: bool = false
@@ -53,7 +63,7 @@ var temps_bonds: float = 1
 
 func jouer_traceurs():
 	for traceur in get_tree().get_nodes_in_group("traceurs"):
-		print( Vector2( (traceur.position.x - markeur_1.position.x), traceur.position.y - markeur_2.position.y) )
+		#print( Vector2( (traceur.position.x - markeur_1.position.x), traceur.position.y - markeur_2.position.y) )
 		
 		traceur.position.y = -(traceur.calculer_position((traceur.temps_passer)) * étirage_v) + markeur_2.position.y
 		traceur.position.x = ( (traceur.temps_passer) * étirage_h) + markeur_1.position.x 
@@ -76,12 +86,52 @@ func crée_traceur_de_équation(équation: String):
 	
 	get_tree().root.add_child(nouveau_traceur)
 
+#endregion
+
+#region Niveau Resources
+
+var astreoide_path: PackedScene = preload("res://objets/astreoid/astreoid.tscn")
+var bombe_path: PackedScene = preload("res://objets/bombe/bombe.tscn")
+
+func load_niveau(niveau: NiveauResource):
+	
+	# Une resource est ultiliser pour crée les niveaux.
+	
+	étirage_h = niveau.étirage_h
+	étirage_v = niveau.étirage_v
+	origine_h = niveau.origine_h
+	origine_v = niveau.origine_v
+	
+	queue_redraw()
+	
+	for a: Vector2 in niveau.astreoides:
+		
+		var nouveau_astreoide: Astreoide = astreoide_path.instantiate()
+		
+		nouveau_astreoide.position_relatif = a
+		nouveau_astreoide.position = Vector2(
+			(a.x * étirage_h) + markeur_1.position.x,
+			-(a.y * étirage_v) + markeur_2.position.y
+		)
+		
+		get_tree().root.add_child.call_deferred(nouveau_astreoide)
+	
+	for b: Vector2 in niveau.bombes:
+		
+		var nouveau_bombe: Bombe = bombe_path.instantiate()
+		
+		nouveau_bombe.position_relatif = b
+		nouveau_bombe.position = Vector2(
+			(b.x * étirage_h) + markeur_1.position.x,
+			-(b.y * étirage_v) + markeur_2.position.y
+		)
+		
+		get_tree().root.add_child.call_deferred(nouveau_bombe)
 
 func _on_hud_équation_soumis() -> void:
 	if !traceur_existe:
 		crée_traceur_de_équation(hud.expression)
 		traceur_existe = true
-
 
 @onready var temps_timer: Timer = $TempsTimer
 

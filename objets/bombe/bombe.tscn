@@ -1,0 +1,101 @@
+[gd_scene load_steps=9 format=3 uid="uid://d2nr2e8lt4fo1"]
+
+[ext_resource type="Script" uid="uid://btdi78lt042xx" path="res://objets/bombe/bombe.gd" id="1_hfd6h"]
+[ext_resource type="Texture2D" uid="uid://bgraig727rtfn" path="res://assets/sprites/bomb.png" id="1_svkcr"]
+[ext_resource type="Theme" uid="uid://xu1wqc4xh2mu" path="res://assets/ui/mono-theme.tres" id="2_hfd6h"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7ad3w"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gstul"]
+font_size = 24
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_irumh"]
+resource_name = "hover"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0523599, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_43in3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_aifp7"]
+_data = {
+&"RESET": SubResource("Animation_43in3"),
+&"hover": SubResource("Animation_irumh")
+}
+
+[node name="Bombe" type="Node2D"]
+script = ExtResource("1_hfd6h")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("1_svkcr")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_7ad3w")
+
+[node name="SourisHover" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -30.0
+offset_top = -30.0
+offset_right = 31.0
+offset_bottom = 31.0
+theme = ExtResource("2_hfd6h")
+
+[node name="Label" type="Label" parent="SourisHover"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -58.0
+offset_top = -29.5
+offset_right = 58.0
+offset_bottom = 29.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "(xx, yy)"
+label_settings = SubResource("LabelSettings_gstul")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_aifp7")
+}
+autoplay = "hover"
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="mouse_entered" from="SourisHover" to="." method="_on_souris_hover_mouse_entered"]
+[connection signal="mouse_exited" from="SourisHover" to="." method="_on_souris_hover_mouse_exited"]

@@ -83,30 +83,14 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -319.0
+offset_left = -289.0
 offset_top = -68.0
-offset_right = -289.0
+offset_right = -259.0
 offset_bottom = -33.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 14
 text = "x²"
-
-[node name="Puissance3" type="Button" parent="Panel/ÉcriveurCanonique"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -279.0
-offset_top = -68.0
-offset_right = -249.0
-offset_bottom = -33.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_font_sizes/font_size = 14
-text = "x³"
 
 [node name="Puissance4" type="Button" parent="Panel/ÉcriveurCanonique"]
 layout_mode = 1
@@ -126,5 +110,4 @@ text = "√"
 
 [connection signal="text_submitted" from="Panel/ÉcriveurCanonique/CanoniqueEdit" to="." method="_on_line_edit_text_submitted"]
 [connection signal="pressed" from="Panel/ÉcriveurCanonique/Puissance2" to="." method="_on_puissance_2_pressed"]
-[connection signal="pressed" from="Panel/ÉcriveurCanonique/Puissance3" to="." method="_on_puissance_3_pressed"]
 [connection signal="pressed" from="Panel/ÉcriveurCanonique/Puissance4" to="." method="_on_puissance_4_pressed"]

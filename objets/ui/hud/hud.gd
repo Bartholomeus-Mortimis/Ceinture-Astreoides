@@ -52,7 +52,7 @@ func équation_en_expression(nouveau_équation: String):
 	
 	print(nouveau_équation)
 	
-	for i in nouveau_équation.length(): 
+	for i in nouveau_équation.length() + 1: 
 		if i > 0: 
 			
 			if !opérateurs.has(nouveau_équation.substr(i-1, 1)) and !symboles_avant.has(nouveau_équation.substr(i-1, 1)) and nouveau_équation.substr(i-1, 1) != "(":
@@ -62,7 +62,7 @@ func équation_en_expression(nouveau_équation: String):
 	
 	print(nouveau_équation)
 	
-	for i in nouveau_équation.length():
+	for i in nouveau_équation.length() + 1:
 		
 		if nouveau_équation.substr(i, 1) == "²" or nouveau_équation.substr(i, 1) == "³":
 			print("power found")
@@ -81,7 +81,7 @@ func équation_en_expression(nouveau_équation: String):
 			elif nouveau_équation.substr(i, 1) == "³":
 				nouveau_équation = nouveau_équation.replace(nouveau_équation.substr(i-clôt, ( (i-1) - (i-clôt-1) )) + "³",  "pow(" + nouveau_équation.substr(i-clôt, ( (i-1) - (i-clôt-1) ) ) + ", 3)")
 		
-	for i in nouveau_équation.length():
+	for i in nouveau_équation.length() + 1:
 		if nouveau_équation.substr(i, 1) == "√":
 		
 			var clôt: int
@@ -95,7 +95,7 @@ func équation_en_expression(nouveau_équation: String):
 		
 			nouveau_équation = nouveau_équation.replace( "√" + nouveau_équation.substr(i+1, ((i+clôt+1) - (i+1))), "sqrt(" + nouveau_équation.substr(i+1, ((i+clôt+1) - (i+1))) + ")" )
 	
-	for i in nouveau_équation.length():
+	for i in nouveau_équation.length() + 1:
 		if nouveau_équation.substr(i, 3) == "sin" or nouveau_équation.substr(i, 3) == "cos" or nouveau_équation.substr(i, 3) == "tan":
 			print("sin found")
 			

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="NiveauResource" load_steps=2 format=3 uid="uid://6r556b0mw3ae"]
+
+[ext_resource type="Script" uid="uid://d0laq2yso5j1h" path="res://scripts/niveau_resource.gd" id="1_kqm6m"]
+
+[resource]
+script = ExtResource("1_kqm6m")
+"étirage_h" = 10.0
+"étirage_v" = 0.5
+origine_h = 0
+origine_v = 0
+astreoides = Array[Vector2]([Vector2(10, 100), Vector2(20, 400)])
+bombes = Array[Vector2]([Vector2(30, 100)])
+metadata/_custom_type_script = "uid://d0laq2yso5j1h"

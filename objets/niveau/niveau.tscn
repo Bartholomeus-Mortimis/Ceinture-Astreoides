@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://b28kgmg66coa2"]
+[gd_scene load_steps=16 format=3 uid="uid://b28kgmg66coa2"]
 
 [ext_resource type="PackedScene" uid="uid://owejrghse8ei" path="res://objets/ui/hud/hud.tscn" id="1_gjxbg"]
 [ext_resource type="Script" uid="uid://d4efigttmdf55" path="res://objets/niveau/niveau.gd" id="1_sm3tw"]
 [ext_resource type="Shader" uid="uid://bwfn5hp35hrbj" path="res://assets/shaders/crt.gdshader" id="2_bae1c"]
 [ext_resource type="Texture2D" uid="uid://qmgvsljqrd8e" path="res://assets/sprites/WhiteSquare_64px.png" id="4_dckc2"]
+[ext_resource type="Texture2D" uid="uid://don866n3l2yfw" path="res://assets/sprites/alien.png" id="5_dckc2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dckc2"]
 shader = ExtResource("2_bae1c")
@@ -22,6 +23,42 @@ shader_parameter/roll_speed = 1.0
 shader_parameter/scan_line_strength = -8.0
 shader_parameter/pixel_strength = -2.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_t448f"]
+atlas = ExtResource("5_dckc2")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rjxka"]
+atlas = ExtResource("5_dckc2")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qru1x"]
+atlas = ExtResource("5_dckc2")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7hmwk"]
+atlas = ExtResource("5_dckc2")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cnm47"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t448f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rjxka")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qru1x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7hmwk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bae1c"]
 shader = ExtResource("2_bae1c")
 shader_parameter/resolution = Vector2(720, 540)
@@ -39,13 +76,51 @@ shader_parameter/roll_speed = -0.173
 shader_parameter/scan_line_strength = -1.0
 shader_parameter/pixel_strength = -2.0
 
+[sub_resource type="Animation" id="Animation_dckc2"]
+resource_name = "hover"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Extraterrestre:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1.10957, 0.812252, 1),
+"update": 0,
+"values": [Vector2(98, 207), Vector2(98, 202), Vector2(98, 207)]
+}
+
+[sub_resource type="Animation" id="Animation_t448f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Extraterrestre:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(98, 207)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rjxka"]
+_data = {
+&"RESET": SubResource("Animation_t448f"),
+&"hover": SubResource("Animation_dckc2")
+}
+
 [node name="Niveau" type="Node2D"]
 script = ExtResource("1_sm3tw")
 
 [node name="Canvas" type="Node" parent="."]
 
 [node name="Markeur1" type="Marker2D" parent="Canvas"]
-position = Vector2(148.435, 45.5589)
+position = Vector2(216.562, 41.7916)
 
 [node name="Markeur2" type="Marker2D" parent="Canvas"]
 position = Vector2(681.803, 373.711)
@@ -62,7 +137,7 @@ mouse_filter = 2
 layout_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="UI"]
-modulate = Color(0.160582, 0.16097, 0.199942, 1)
+modulate = Color(0.113725, 0.168627, 0.32549, 1)
 z_index = -5
 layout_mode = 1
 anchors_preset = 15
@@ -75,7 +150,12 @@ texture = ExtResource("4_dckc2")
 
 [node name="TempsTimer" type="Timer" parent="."]
 wait_time = 0.1
-autostart = true
+
+[node name="Extraterrestre" type="AnimatedSprite2D" parent="."]
+position = Vector2(98, 207)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_cnm47")
+autoplay = "default"
 
 [node name="Filtre" type="ColorRect" parent="."]
 modulate = Color(0.435294, 0.435294, 0.435294, 0.231373)
@@ -88,6 +168,13 @@ offset_bottom = 540.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_rjxka")
+}
+autoplay = "hover"
 
 [connection signal="équation_soumis" from="UI/Hud" to="." method="_on_hud_équation_soumis"]
 [connection signal="timeout" from="TempsTimer" to="." method="_on_temps_timer_timeout"]
