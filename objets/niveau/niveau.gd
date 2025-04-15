@@ -4,6 +4,7 @@ extends Node2D
 @onready var markeur_1: Marker2D = $Canvas/Markeur1
 @onready var markeur_2: Marker2D = $Canvas/Markeur2
 @onready var hud: Hud = $UI/Hud
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var étirage_v: float = 1.0
 var étirage_h: float = 10
@@ -21,11 +22,14 @@ var points: Array = []
 #region Processus
 
 func _ready() -> void:
-	
-	load_niveau(load("res://resources/test_level.tres"))
+	queue_redraw()
+	load_niveau(Singleton.niveau_présent)
 	
 	temps_bonds = 2.5 / étirage_h
 	temps_timer.start()
+	
+	animation_player.play_backwards("transition_niveau")
+	
 
 func _process(delta: float) -> void:
 	jouer_traceurs()
@@ -76,8 +80,7 @@ func jouer_traceurs():
 	
 
 func crée_traceur_de_équation(équation: String):
-	
-	print("received")
+
 	var nouveau_traceur: Traceur = traceur_path.instantiate()
 	
 	nouveau_traceur.équation = équation
@@ -136,14 +139,61 @@ func _on_hud_équation_soumis() -> void:
 @onready var temps_timer: Timer = $TempsTimer
 
 
+
 func _on_temps_timer_timeout() -> void:
 	temps += temps_bonds
 	temps_timer.start(0.01)
 	
 	for t: Traceur in get_tree().get_nodes_in_group("traceurs"):
-		t.temps_passer += temps_bonds
-		t.points.append(t.global_position) # Ajouter un point pour tracer la courbe
+		
+		if t.actif:
+			t.temps_passer += temps_bonds
+			t.points.append(t.global_position) # Ajouter un point pour tracer la courbe
+		
+		if t.position.x >= 1000 or t.position.y < -50:
+			if !résultat_vérifier and t.actif:
+				résultat_vérifier = true
+				vérifier_résultat()
+			
 		#if t.points.size() > (500):
 		#	t.points.pop_front()
 	
 	queue_redraw()
+
+#region Réussite/Faillite
+
+var résultat_vérifier: bool = false # Assure que l'animation de faillite/réussite n'est pas jouer 2 fois
+
+func _on_boutton_recommence_pressed() -> void:
+	Singleton.scene_viser = "res://objets/niveau/niveau.tscn"
+	fermer_niveau()
+
+func vérifier_résultat():
+	if get_tree().get_node_count_in_group("astreoides") > 0:
+		animation_player.play("AnimationFaillite")
+	else:
+		animation_player.play("AnimationReussite")
+
+func fermer_niveau():
+	
+	animation_player.play("transition_niveau")
+	await animation_player.animation_finished
+	
+	while get_tree().get_node_count_in_group("obstacles") > 1:
+		await get_tree().create_timer(0.01).timeout
+		var obstacle_a_détruire: Node2D = get_tree().get_nodes_in_group("obstacles")[0]
+		obstacle_a_détruire.queue_free()
+	
+	
+	for t: Traceur in get_tree().get_nodes_in_group("traceurs"):  # Désactiver les traceur dans le scene
+		t.actif = false
+		t.points.clear()
+		t.position.x = -100.0
+		t.équation = ""
+	
+	queue_redraw()
+	
+	
+	get_tree().change_scene_to_file("res://objets/ui/écran_téléchargement/écran_téléchargement.tscn")
+
+#endregion

@@ -3,6 +3,7 @@ class_name Traceur
 
 @export var équation: String = "x"
 @export var temps_passer: float = 0.0
+@export var actif: float = true
 @export_group("Transformations")
 @export var mode_transformations: bool = false
 @export var type: String = "parabole"
@@ -24,7 +25,7 @@ func calculer_position(valeur_x: float):
 		elif type.to_lower() == "sinus":
 			valeur_y = agr_v * sin( deg_to_rad( 1/agr_h * valeur_x - transl_h )) + transl_v
 		
-	else:
+	elif équation != "":
 		
 		var expression: Expression = Expression.new()
 		expression.parse(équation, ["x"])

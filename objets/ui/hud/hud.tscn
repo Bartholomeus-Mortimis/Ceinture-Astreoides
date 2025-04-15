@@ -45,7 +45,7 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -159.0
+offset_left = -123.0
 offset_top = -15.0
 offset_right = 159.0
 offset_bottom = 24.0
@@ -107,6 +107,14 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 14
 text = "√"
+
+[node name="Label" type="Label" parent="Panel/ÉcriveurCanonique"]
+layout_mode = 0
+offset_left = 203.0
+offset_top = 50.0
+offset_right = 228.0
+offset_bottom = 74.0
+text = "y ="
 
 [connection signal="text_submitted" from="Panel/ÉcriveurCanonique/CanoniqueEdit" to="." method="_on_line_edit_text_submitted"]
 [connection signal="pressed" from="Panel/ÉcriveurCanonique/Puissance2" to="." method="_on_puissance_2_pressed"]

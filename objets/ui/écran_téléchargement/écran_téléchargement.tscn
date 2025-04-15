@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://d3cgegjp3vdp3"]
+
+[ext_resource type="Script" uid="uid://dlkrtq0de28k4" path="res://objets/ui/écran_téléchargement/écran_téléchargement.gd" id="1_6gt8q"]
+[ext_resource type="Theme" uid="uid://xu1wqc4xh2mu" path="res://assets/ui/mono-theme.tres" id="1_6jex4"]
+[ext_resource type="Texture2D" uid="uid://qmgvsljqrd8e" path="res://assets/sprites/WhiteSquare_64px.png" id="3_hun5a"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_d0dib"]
+font_size = 40
+
+[node name="ÉcranTéléchargement" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_6jex4")
+script = ExtResource("1_6gt8q")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_hun5a")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Attente..."
+label_settings = SubResource("LabelSettings_d0dib")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

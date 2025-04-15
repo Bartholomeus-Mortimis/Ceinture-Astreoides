@@ -14,6 +14,10 @@ config/name="Graph Blaster"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Singleton="*res://scripts/singleton.gd"
+
 [display]
 
 window/size/viewport_width=720
@@ -23,6 +27,8 @@ window/stretch/mode="viewport"
 [global_group]
 
 traceurs=""
+astreoides=""
+obstacles=""
 
 [input]
 

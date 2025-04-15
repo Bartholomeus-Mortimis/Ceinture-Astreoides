@@ -19,7 +19,7 @@ func _process(delta: float) -> void:
 
 func _on_line_edit_text_submitted(new_text: String) -> void:
 	équation = new_text
-	expression = équation_en_expression(équation)
+	expression = await équation_en_expression(équation)
 	
 	# Tester l'expression
 	
@@ -61,25 +61,28 @@ func équation_en_expression(nouveau_équation: String):
 					nouveau_équation = nouveau_équation.insert(i, "*")
 	
 	print(nouveau_équation)
-	
-	for i in nouveau_équation.length() + 1:
+
+	while nouveau_équation.contains("²") or nouveau_équation.contains("³"):
+		await get_tree().create_timer(0.01).timeout
 		
-		if nouveau_équation.substr(i, 1) == "²" or nouveau_équation.substr(i, 1) == "³":
-			print("power found")
-			var clôt: int
+		for i in nouveau_équation.length() + 1:
 			
-			if nouveau_équation.substr(i-1, 1) == ")":
-				# Isoler la partie en parathèses qui doit être mise au exponentielle.
-				clôt = trouveau_parathèse_correspondante(nouveau_équation, i)
+			if nouveau_équation.substr(i, 1) == "²" or nouveau_équation.substr(i, 1) == "³":
+				print("power found")
+				var clôt: int
 				
-			elif chiffres.has(nouveau_équation.substr(i-1, 1)) or nouveau_équation.substr(i-1, 1) == "x":
-				# Isoler le nombre (ou variable) qui doit être mise au exponentielle.
-				clôt = trouveau_chiffres_correspondante(nouveau_équation, i)
-			
-			if nouveau_équation.substr(i, 1) == "²": 
-				nouveau_équation = nouveau_équation.replace(nouveau_équation.substr(i-clôt, ( (i-1) - (i-clôt-1) )) + "²",  "pow(" + nouveau_équation.substr(i-clôt, ( (i-1) - (i-clôt-1) ) ) + ", 2)")
-			elif nouveau_équation.substr(i, 1) == "³":
-				nouveau_équation = nouveau_équation.replace(nouveau_équation.substr(i-clôt, ( (i-1) - (i-clôt-1) )) + "³",  "pow(" + nouveau_équation.substr(i-clôt, ( (i-1) - (i-clôt-1) ) ) + ", 3)")
+				if nouveau_équation.substr(i-1, 1) == ")":
+					# Isoler la partie en parathèses qui doit être mise au exponentielle.
+					clôt = trouveau_parathèse_correspondante(nouveau_équation, i)
+					
+				elif chiffres.has(nouveau_équation.substr(i-1, 1)) or nouveau_équation.substr(i-1, 1) == "x":
+					# Isoler le nombre (ou variable) qui doit être mise au exponentielle.
+					clôt = trouveau_chiffres_correspondante(nouveau_équation, i)
+				
+				if nouveau_équation.substr(i, 1) == "²": 
+					nouveau_équation = nouveau_équation.replace(nouveau_équation.substr(i-clôt, ( (i-1) - (i-clôt-1) )) + "²",  "pow(" + nouveau_équation.substr(i-clôt, ( (i-1) - (i-clôt-1) ) ) + ", 2)")
+				elif nouveau_équation.substr(i, 1) == "³":
+					nouveau_équation = nouveau_équation.replace(nouveau_équation.substr(i-clôt, ( (i-1) - (i-clôt-1) )) + "³",  "pow(" + nouveau_équation.substr(i-clôt, ( (i-1) - (i-clôt-1) ) ) + ", 3)")
 		
 	for i in nouveau_équation.length() + 1:
 		if nouveau_équation.substr(i, 1) == "√":

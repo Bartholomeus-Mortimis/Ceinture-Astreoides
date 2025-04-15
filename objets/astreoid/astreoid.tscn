@@ -11,6 +11,21 @@ font_size = 24
 outline_size = 5
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="Animation" id="Animation_43in3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
 [sub_resource type="Animation" id="Animation_irumh"]
 resource_name = "hover"
 length = 2.0
@@ -28,28 +43,13 @@ tracks/0/keys = {
 "values": [0.0, 0.0523599, 0.0]
 }
 
-[sub_resource type="Animation" id="Animation_43in3"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_aifp7"]
 _data = {
 &"RESET": SubResource("Animation_43in3"),
 &"hover": SubResource("Animation_irumh")
 }
 
-[node name="Astreoid" type="Node2D"]
+[node name="Astreoid" type="Node2D" groups=["astreoides", "obstacles"]]
 script = ExtResource("1_irumh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
