@@ -4,8 +4,8 @@
 [ext_resource type="Script" uid="uid://d4efigttmdf55" path="res://objets/niveau/niveau.gd" id="1_sm3tw"]
 [ext_resource type="Shader" uid="uid://bwfn5hp35hrbj" path="res://assets/shaders/crt.gdshader" id="2_bae1c"]
 [ext_resource type="Theme" uid="uid://xu1wqc4xh2mu" path="res://assets/ui/mono-theme.tres" id="3_t448f"]
-[ext_resource type="Texture2D" uid="uid://qmgvsljqrd8e" path="res://assets/sprites/WhiteSquare_64px.png" id="4_dckc2"]
 [ext_resource type="Texture2D" uid="uid://don866n3l2yfw" path="res://assets/sprites/alien.png" id="5_dckc2"]
+[ext_resource type="Texture2D" uid="uid://d2rtn17t0cw6n" path="res://assets/sprites/arriereplan.png" id="5_t448f"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dckc2"]
 shader = ExtResource("2_bae1c")
@@ -387,7 +387,7 @@ theme = ExtResource("3_t448f")
 layout_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="UI"]
-modulate = Color(0.113725, 0.168627, 0.32549, 1)
+modulate = Color(0.568973, 0.568973, 0.568973, 1)
 z_index = -5
 layout_mode = 1
 anchors_preset = 15
@@ -396,7 +396,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("4_dckc2")
+texture = ExtResource("5_t448f")
 
 [node name="WinScreen" type="Control" parent="UI"]
 layout_mode = 1
@@ -476,7 +476,6 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_bottom = -540.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)

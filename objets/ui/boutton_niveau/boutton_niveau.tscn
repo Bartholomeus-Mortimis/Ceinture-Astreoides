@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgkh80ht75444"]
+
+[ext_resource type="Theme" uid="uid://xu1wqc4xh2mu" path="res://assets/ui/mono-theme.tres" id="1_v33w6"]
+[ext_resource type="Script" uid="uid://b676esdu34nyc" path="res://objets/ui/boutton_niveau/boutton_niveau.gd" id="2_8hlgq"]
+
+[node name="BouttonNiveau" type="Button"]
+offset_right = 50.0
+offset_bottom = 50.0
+theme = ExtResource("1_v33w6")
+text = "X"
+script = ExtResource("2_8hlgq")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -29,6 +29,8 @@ func _ready() -> void:
 	temps_timer.start()
 	
 	animation_player.play_backwards("transition_niveau")
+	await animation_player.animation_finished
+	animation_player.play("hover")
 	
 
 func _process(delta: float) -> void:

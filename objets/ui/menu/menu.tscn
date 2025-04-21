@@ -1,14 +1,42 @@
-[gd_scene load_steps=8 format=3 uid="uid://312pl8bfq1yp"]
+[gd_scene load_steps=17 format=3 uid="uid://312pl8bfq1yp"]
 
 [ext_resource type="Theme" uid="uid://xu1wqc4xh2mu" path="res://assets/ui/mono-theme.tres" id="1_8vxjh"]
-[ext_resource type="Texture2D" uid="uid://qmgvsljqrd8e" path="res://assets/sprites/WhiteSquare_64px.png" id="1_hf6sd"]
 [ext_resource type="Texture2D" uid="uid://cj5udm2hpdpp5" path="res://assets/sprites/astreoid1.png" id="2_8vxjh"]
 [ext_resource type="Script" uid="uid://dssht6tnnaw14" path="res://objets/ui/menu/menu.gd" id="2_xtla6"]
 [ext_resource type="Texture2D" uid="uid://b00qkkbimjylc" path="res://assets/sprites/astreoid2.png" id="5_uxqil"]
 [ext_resource type="Texture2D" uid="uid://cj4yakpihqjoi" path="res://assets/sprites/astreoid3.png" id="6_5mgcq"]
+[ext_resource type="Texture2D" uid="uid://d2rtn17t0cw6n" path="res://assets/sprites/arriereplan.png" id="6_uxqil"]
+[ext_resource type="PackedScene" uid="uid://dgkh80ht75444" path="res://objets/ui/boutton_niveau/boutton_niveau.tscn" id="7_5mgcq"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_xtla6"]
 font_size = 40
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uxqil"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 10
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uxqil"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5mgcq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lrmth"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0x3ub"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tsbuv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oxmov"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_el7rv"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -27,17 +55,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="TextureRect" type="TextureRect" parent="ArrièrePlan"]
-modulate = Color(0.100827, 0.100827, 0.100827, 1)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("1_hf6sd")
-metadata/_edit_lock_ = true
 
 [node name="Astreoides" type="Control" parent="ArrièrePlan"]
 anchors_preset = 0
@@ -144,6 +161,18 @@ texture = ExtResource("5_uxqil")
 expand_mode = 3
 stretch_mode = 5
 
+[node name="TextureRect" type="TextureRect" parent="ArrièrePlan"]
+modulate = Color(0.568973, 0.568973, 0.568973, 1)
+z_index = -5
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("6_uxqil")
+
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
@@ -173,5 +202,56 @@ offset_bottom = 26.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Jouer"
+
+[node name="Niveaux" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -204.0
+offset_top = -115.0
+offset_right = 204.0
+offset_bottom = 210.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_uxqil")
+
+[node name="TabContainer" type="TabContainer" parent="Niveaux"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -164.0
+offset_top = -106.5
+offset_right = 164.0
+offset_bottom = 137.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/tab_focus = SubResource("StyleBoxEmpty_uxqil")
+theme_override_styles/tab_disabled = SubResource("StyleBoxEmpty_5mgcq")
+theme_override_styles/tabbar_background = SubResource("StyleBoxEmpty_lrmth")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_0x3ub")
+theme_override_styles/tab_selected = SubResource("StyleBoxEmpty_tsbuv")
+theme_override_styles/tab_hovered = SubResource("StyleBoxEmpty_oxmov")
+theme_override_styles/tab_unselected = SubResource("StyleBoxEmpty_el7rv")
+current_tab = 0
+tabs_visible = false
+
+[node name="Groupe1" type="Control" parent="Niveaux/TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="BouttonNiveau" parent="Niveaux/TabContainer/Groupe1" instance=ExtResource("7_5mgcq")]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 63.0
+offset_right = 80.0
+offset_bottom = 113.0
+niveau_path = "res://resources/test_level.tres"
 
 [connection signal="pressed" from="BouttonJouer" to="." method="_on_boutton_jouer_pressed"]
