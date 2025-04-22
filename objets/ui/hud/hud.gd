@@ -6,6 +6,10 @@ signal équation_soumis
 @onready var cano_edit: LineEdit = $"Panel/ÉcriveurCanonique/CanoniqueEdit"
 @onready var message_erreur_canonique: Label = $"Panel/ÉcriveurCanonique/Erreur"
 
+@onready var écriveur_canonique: Control = $Panel/ÉcriveurCanonique
+@onready var écriveur_transformations: Control = $Panel/ÉcriveurTransformations
+@onready var second_degrée: Control = $Panel/ÉcriveurTransformations/SecondDegrée
+
 @export var équation: String = "0"
 @export var expression: String = "0"
 
@@ -13,9 +17,8 @@ var opérateurs: Array = ["*", "+", "-", "/"]
 var chiffres: Array = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 var symboles_avant: Array = ["√", "n", "s"]
 
-func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("test_1"):
-		get_tree().reload_current_scene()
+
+#region Canonique
 
 func _on_line_edit_text_submitted(new_text: String) -> void:
 	équation = new_text
@@ -163,3 +166,18 @@ func équation_briser():
 	message_erreur_canonique.show()
 	await get_tree().create_timer(1.0).timeout
 	message_erreur_canonique.hide()
+
+
+#endregion
+
+#region Transformations Second Degrée
+
+@onready var av_edit: SpinBox = $Panel/ÉcriveurTransformations/SecondDegrée/AgrV/AVedit
+@onready var th_edit: SpinBox = $Panel/ÉcriveurTransformations/SecondDegrée/TranslH/THedit
+@onready var tv_edit: SpinBox = $Panel/ÉcriveurTransformations/SecondDegrée/TranslV/TVedit
+
+func _on_boutton_soumettre_pressed() -> void:
+	expression = var_to_str(av_edit.value) + "* pow( (x + " + var_to_str(th_edit.value) + "), 2) + " + var_to_str(tv_edit.value)
+	
+	print("submit")
+	équation_soumis.emit()

@@ -118,7 +118,6 @@ offset_bottom = 74.0
 text = "y ="
 
 [node name="ÉcriveurTransformations" type="Control" parent="Panel"]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -133,7 +132,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="SecondDegrée" type="Control" parent="Panel/ÉcriveurTransformations"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -160,7 +158,7 @@ vertical_alignment = 1
 
 [node name="AgrV" type="Control" parent="Panel/ÉcriveurTransformations/SecondDegrée"]
 anchors_preset = 0
-offset_left = 94.0
+offset_left = 107.0
 offset_right = 214.0
 offset_bottom = 40.0
 
@@ -182,21 +180,18 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -93.0
+offset_left = -92.5625
 offset_top = -14.0
 offset_bottom = 14.0
 grow_horizontal = 0
 grow_vertical = 2
-min_value = -1e+14
 max_value = 1e+08
 step = 0.0
-value = 1.0
-custom_arrow_step = 0.1
 
 [node name="TranslH" type="Control" parent="Panel/ÉcriveurTransformations/SecondDegrée"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 94.0
+offset_left = 107.0
 offset_top = 47.0
 offset_right = 214.0
 offset_bottom = 87.0
@@ -212,27 +207,24 @@ offset_bottom = 10.0
 grow_vertical = 2
 text = "h = "
 
-[node name="THedit" type="SpinBox" parent="Panel/ÉcriveurTransformations/SecondDegrée/TranslH"]
+[node name="THedit" type="LineEdit" parent="Panel/ÉcriveurTransformations/SecondDegrée/TranslH"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -93.0
+offset_left = -74.5625
 offset_top = -14.0
 offset_bottom = 14.0
 grow_horizontal = 0
 grow_vertical = 2
-min_value = -1e+14
-max_value = 1e+08
-step = 0.0
-custom_arrow_step = 1.0
+placeholder_text = "0"
 
 [node name="TranslV" type="Control" parent="Panel/ÉcriveurTransformations/SecondDegrée"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 418.0
+offset_left = 431.0
 offset_right = 538.0
 offset_bottom = 40.0
 
@@ -247,22 +239,19 @@ offset_bottom = 10.0
 grow_vertical = 2
 text = "k = "
 
-[node name="TVedit" type="SpinBox" parent="Panel/ÉcriveurTransformations/SecondDegrée/TranslV"]
+[node name="TVedit" type="LineEdit" parent="Panel/ÉcriveurTransformations/SecondDegrée/TranslV"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -93.0
+offset_left = -74.5625
 offset_top = -14.0
 offset_bottom = 14.0
 grow_horizontal = 0
 grow_vertical = 2
-min_value = -1e+14
-max_value = 1e+08
-step = 0.0
-custom_arrow_step = 1.0
+placeholder_text = "0"
 
 [node name="BouttonSoumettre" type="Button" parent="Panel/ÉcriveurTransformations/SecondDegrée"]
 layout_mode = 0

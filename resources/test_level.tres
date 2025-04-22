@@ -4,10 +4,12 @@
 
 [resource]
 script = ExtResource("1_kqm6m")
+canonique = true
+"second_degrée" = false
 "étirage_h" = 10.0
 "étirage_v" = 0.5
 origine_h = 0
 origine_v = 0
-astreoides = Array[Vector2]([Vector2(15, 100), Vector2(25, 400)])
+astreoides = Array[Vector2]([Vector2(15, 100)])
 bombes = Array[Vector2]([Vector2(35, 100)])
 metadata/_custom_type_script = "uid://d0laq2yso5j1h"

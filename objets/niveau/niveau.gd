@@ -5,6 +5,7 @@ extends Node2D
 @onready var markeur_2: Marker2D = $Canvas/Markeur2
 @onready var hud: Hud = $UI/Hud
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var temps_timer: Timer = $TempsTimer
 
 var étirage_v: float = 1.0
 var étirage_h: float = 10
@@ -91,6 +92,26 @@ func crée_traceur_de_équation(équation: String):
 	
 	get_tree().root.add_child(nouveau_traceur)
 
+func _on_temps_timer_timeout() -> void:
+	temps += temps_bonds
+	temps_timer.start(0.01)
+	
+	for t: Traceur in get_tree().get_nodes_in_group("traceurs"):
+		
+		if t.actif:
+			t.temps_passer += temps_bonds
+			t.points.append(t.global_position) # Ajouter un point pour tracer la courbe
+		
+		if t.position.x >= 1000 or t.position.y < -50:
+			if !résultat_vérifier and t.actif:
+				résultat_vérifier = true
+				vérifier_résultat()
+			
+		#if t.points.size() > (500):
+		#	t.points.pop_front()
+	
+	queue_redraw()
+
 #endregion
 
 #region Niveau Resources
@@ -106,6 +127,15 @@ func load_niveau(niveau: NiveauResource):
 	étirage_v = niveau.étirage_v
 	origine_h = niveau.origine_h
 	origine_v = niveau.origine_v
+	
+	if niveau.canonique:
+		hud.écriveur_canonique.show()
+	else:
+		
+		hud.écriveur_transformations.show()
+		
+		if niveau.second_degrée:
+			hud.second_degrée.show()
 	
 	queue_redraw()
 	
@@ -131,6 +161,8 @@ func load_niveau(niveau: NiveauResource):
 			-(b.y * étirage_v) + markeur_2.position.y
 		)
 		
+		nouveau_bombe.bombe_exploser.connect(bombe_exploser)
+		
 		get_tree().root.add_child.call_deferred(nouveau_bombe)
 
 func _on_hud_équation_soumis() -> void:
@@ -138,33 +170,18 @@ func _on_hud_équation_soumis() -> void:
 		crée_traceur_de_équation(hud.expression)
 		traceur_existe = true
 
-@onready var temps_timer: Timer = $TempsTimer
 
-
-
-func _on_temps_timer_timeout() -> void:
-	temps += temps_bonds
-	temps_timer.start(0.01)
-	
-	for t: Traceur in get_tree().get_nodes_in_group("traceurs"):
-		
-		if t.actif:
-			t.temps_passer += temps_bonds
-			t.points.append(t.global_position) # Ajouter un point pour tracer la courbe
-		
-		if t.position.x >= 1000 or t.position.y < -50:
-			if !résultat_vérifier and t.actif:
-				résultat_vérifier = true
-				vérifier_résultat()
-			
-		#if t.points.size() > (500):
-		#	t.points.pop_front()
-	
-	queue_redraw()
+#endregion
 
 #region Réussite/Faillite
 
 var résultat_vérifier: bool = false # Assure que l'animation de faillite/réussite n'est pas jouer 2 fois
+
+
+func bombe_exploser():
+	résultat_vérifier = true
+	animation_player.play("AnimationFaillite")
+	
 
 func _on_boutton_recommence_pressed() -> void:
 	Singleton.scene_viser = "res://objets/niveau/niveau.tscn"

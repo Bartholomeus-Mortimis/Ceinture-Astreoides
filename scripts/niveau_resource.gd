@@ -1,6 +1,10 @@
 extends Resource
 class_name NiveauResource
 
+@export_group("Générale")
+
+@export var canonique: bool = true
+@export var second_degrée: bool
 
 @export_group("Graphique")
 
