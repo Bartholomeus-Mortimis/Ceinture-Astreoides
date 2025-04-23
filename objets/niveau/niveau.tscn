@@ -209,6 +209,30 @@ tracks/4/keys = {
 "update": 0,
 "values": [Vector2(256.5, 105.5), Vector2(256.5, 250), Vector2(256.5, 105.5)]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("UI/WinScreen/BouttonProchaine/Boutton:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 5.97),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("UI/WinScreen/BouttonMenu:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 5.97),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
 
 [sub_resource type="Animation" id="Animation_t448f"]
 length = 0.001
@@ -320,6 +344,30 @@ tracks/8/keys = {
 "update": 0,
 "values": [Vector2(720, 540)]
 }
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("UI/WinScreen/BouttonProchaine/Boutton:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("UI/WinScreen/BouttonMenu:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_dckc2"]
 resource_name = "hover"
@@ -425,6 +473,51 @@ text = "Réussite!"
 label_settings = SubResource("LabelSettings_rjxka")
 horizontal_alignment = 1
 
+[node name="BouttonMenu" type="Button" parent="UI/WinScreen"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -53.0
+offset_top = 22.0
+offset_right = 53.0
+offset_bottom = 66.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Menu"
+
+[node name="BouttonProchaine" type="Control" parent="UI/WinScreen"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Boutton" type="Button" parent="UI/WinScreen/BouttonProchaine"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -67.0
+offset_top = -51.0
+offset_right = 67.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Prochaine
+Niveau"
+
 [node name="ÉcranFaillite" type="Control" parent="UI"]
 layout_mode = 1
 anchors_preset = 15
@@ -476,7 +569,6 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_bottom = -540.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
@@ -511,6 +603,9 @@ libraries = {
 }
 autoplay = "hover"
 
+[connection signal="boutton_menu_pesser" from="UI/Hud" to="." method="_on_hud_boutton_menu_pesser"]
 [connection signal="équation_soumis" from="UI/Hud" to="." method="_on_hud_équation_soumis"]
+[connection signal="pressed" from="UI/WinScreen/BouttonMenu" to="." method="_on_boutton_menu_pressed"]
+[connection signal="pressed" from="UI/WinScreen/BouttonProchaine/Boutton" to="." method="_on_boutton_prochaine_pressed"]
 [connection signal="pressed" from="UI/ÉcranFaillite/BouttonRecommence" to="." method="_on_boutton_recommence_pressed"]
 [connection signal="timeout" from="TempsTimer" to="." method="_on_temps_timer_timeout"]

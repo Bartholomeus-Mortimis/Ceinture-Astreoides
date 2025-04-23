@@ -6,6 +6,7 @@ extends Node2D
 @onready var hud: Hud = $UI/Hud
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var temps_timer: Timer = $TempsTimer
+@onready var boutton_prochaine: Control = $UI/WinScreen/BouttonProchaine
 
 var étirage_v: float = 1.0
 var étirage_h: float = 10
@@ -25,6 +26,7 @@ var points: Array = []
 func _ready() -> void:
 	queue_redraw()
 	load_niveau(Singleton.niveau_présent)
+	hud.load_tutoriel(Singleton.niveau_présent)
 	
 	temps_bonds = 2.5 / étirage_h
 	temps_timer.start()
@@ -88,7 +90,6 @@ func crée_traceur_de_équation(équation: String):
 	
 	nouveau_traceur.équation = équation
 	nouveau_traceur.position = Vector2(markeur_1.position.x, markeur_2.position.y)
-	#nouveau_traceur.visible = false
 	
 	get_tree().root.add_child(nouveau_traceur)
 
@@ -123,10 +124,15 @@ func load_niveau(niveau: NiveauResource):
 	
 	# Une resource est ultiliser pour crée les niveaux.
 	
+	hud.niveau_id.text = var_to_str(niveau.niveau_page) + " - "  + var_to_str(niveau.niveau_nombre)
+	
 	étirage_h = niveau.étirage_h
 	étirage_v = niveau.étirage_v
 	origine_h = niveau.origine_h
 	origine_v = niveau.origine_v
+	
+	if niveau.prochaine_niveau:
+		boutton_prochaine.show()
 	
 	if niveau.canonique:
 		hud.écriveur_canonique.show()
@@ -181,7 +187,6 @@ var résultat_vérifier: bool = false # Assure que l'animation de faillite/réus
 func bombe_exploser():
 	résultat_vérifier = true
 	animation_player.play("AnimationFaillite")
-	
 
 func _on_boutton_recommence_pressed() -> void:
 	Singleton.scene_viser = "res://objets/niveau/niveau.tscn"
@@ -198,11 +203,11 @@ func fermer_niveau():
 	animation_player.play("transition_niveau")
 	await animation_player.animation_finished
 	
-	while get_tree().get_node_count_in_group("obstacles") > 1:
+	while get_tree().get_node_count_in_group("obstacles") > 0:
 		await get_tree().create_timer(0.01).timeout
-		var obstacle_a_détruire: Node2D = get_tree().get_nodes_in_group("obstacles")[0]
-		obstacle_a_détruire.queue_free()
-	
+		var obstacle_a_détruire: Node2D = get_tree().get_first_node_in_group("obstacles")
+		if obstacle_a_détruire:
+			obstacle_a_détruire.queue_free()
 	
 	for t: Traceur in get_tree().get_nodes_in_group("traceurs"):  # Désactiver les traceur dans le scene
 		t.actif = false
@@ -214,5 +219,18 @@ func fermer_niveau():
 	
 	
 	get_tree().change_scene_to_file("res://objets/ui/écran_téléchargement/écran_téléchargement.tscn")
+
+func _on_boutton_prochaine_pressed() -> void:
+	Singleton.niveau_présent = Singleton.niveau_présent.prochaine_niveau
+	Singleton.scene_viser = "res://objets/niveau/niveau.tscn"
+	fermer_niveau()
+
+func _on_boutton_menu_pressed() -> void:
+	Singleton.scene_viser = "res://objets/ui/menu/menu.tscn"
+	fermer_niveau()
+
+func _on_hud_boutton_menu_pesser() -> void:
+	Singleton.scene_viser = "res://objets/ui/menu/menu.tscn"
+	fermer_niveau()
 
 #endregion

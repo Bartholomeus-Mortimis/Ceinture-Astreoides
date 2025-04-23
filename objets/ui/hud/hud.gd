@@ -2,6 +2,9 @@ extends Control
 class_name Hud
 
 signal équation_soumis
+signal boutton_menu_pesser
+
+@onready var niveau_id: Label = $NiveauId
 
 @onready var cano_edit: LineEdit = $"Panel/ÉcriveurCanonique/CanoniqueEdit"
 @onready var message_erreur_canonique: Label = $"Panel/ÉcriveurCanonique/Erreur"
@@ -177,7 +180,48 @@ func équation_briser():
 @onready var tv_edit: SpinBox = $Panel/ÉcriveurTransformations/SecondDegrée/TranslV/TVedit
 
 func _on_boutton_soumettre_pressed() -> void:
-	expression = var_to_str(av_edit.value) + "* pow( (x + " + var_to_str(th_edit.value) + "), 2) + " + var_to_str(tv_edit.value)
+	expression = var_to_str(av_edit.value) + "* pow( (x - " + var_to_str(th_edit.value) + "), 2) + " + var_to_str(tv_edit.value)
 	
 	print("submit")
 	équation_soumis.emit()
+
+#endregion
+
+#region Tutoriel
+
+@onready var tutoriel: Panel = $Tutoriel
+@onready var image_1: TextureRect = $Tutoriel/Images/Image1
+@onready var image_2: TextureRect = $Tutoriel/Images/Image2
+@onready var label: Label = $Tutoriel/Label
+@onready var boutton_tutoriel: Button = $BouttonTutoriel
+@onready var tag_1: Label = $Tutoriel/Images/Image1/Tag1
+@onready var tag_2: Label = $Tutoriel/Images/Image2/Tag2
+
+func _on_boutton_fermer_pressed() -> void:
+	tutoriel.hide()
+
+func _on_boutton_tutoriel_pressed() -> void:
+	tutoriel.visible = !tutoriel.visible
+
+func load_tutoriel(niveau: NiveauResource):
+	if niveau.tutoriel_actif:
+		boutton_tutoriel.show()
+		tutoriel.show()
+		label.text = niveau.texte
+		
+		if niveau.image_1:
+			image_1.show()
+			image_1.texture = niveau.image_1
+			tag_1.text = niveau.tag_1
+		if niveau.image_2:
+			image_2.show()
+			image_2.texture = niveau.image_2
+			tag_2.text = niveau.tag_2
+		
+	else:
+		return
+
+#endregion
+
+func _on_boutton_menu_pressed() -> void:
+	boutton_menu_pesser.emit()

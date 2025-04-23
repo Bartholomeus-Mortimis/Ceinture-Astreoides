@@ -1,7 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://owejrghse8ei"]
+[gd_scene load_steps=7 format=3 uid="uid://owejrghse8ei"]
 
 [ext_resource type="Theme" uid="uid://xu1wqc4xh2mu" path="res://assets/ui/mono-theme.tres" id="1_7orxp"]
 [ext_resource type="Script" uid="uid://b08eyh8gn0aro" path="res://objets/ui/hud/hud.gd" id="1_j02s5"]
+[ext_resource type="Texture2D" uid="uid://qmgvsljqrd8e" path="res://assets/sprites/WhiteSquare_64px.png" id="3_iw17j"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iw17j"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_iw17j"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vs35f"]
+font_size = 18
 
 [node name="Hud" type="Control"]
 layout_mode = 3
@@ -272,7 +291,150 @@ offset_right = 538.0
 offset_bottom = 87.0
 text = "Soumettre"
 
+[node name="Tutoriel" type="Panel" parent="."]
+visible = false
+z_index = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.0
+offset_top = -217.0
+offset_right = 260.0
+offset_bottom = 131.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_iw17j")
+
+[node name="Images" type="HBoxContainer" parent="Tutoriel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 20.0
+offset_top = 9.0
+offset_right = -20.0
+offset_bottom = 219.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="Image1" type="TextureRect" parent="Tutoriel/Images"]
+visible = false
+layout_mode = 2
+texture = ExtResource("3_iw17j")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Tag1" type="Label" parent="Tutoriel/Images/Image1"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -59.5
+offset_top = 7.0
+offset_right = 60.5
+offset_bottom = 27.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Test"
+label_settings = SubResource("LabelSettings_iw17j")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Image2" type="TextureRect" parent="Tutoriel/Images"]
+visible = false
+layout_mode = 2
+texture = ExtResource("3_iw17j")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Tag2" type="Label" parent="Tutoriel/Images/Image2"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -59.5
+offset_top = 7.0
+offset_right = 60.5
+offset_bottom = 27.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Test"
+label_settings = SubResource("LabelSettings_iw17j")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Tutoriel"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -88.0
+offset_right = -20.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Lorem Ipsum"
+label_settings = SubResource("LabelSettings_vs35f")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="BouttonFermer" type="Button" parent="Tutoriel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -24.0
+offset_top = -7.0
+offset_right = 6.0
+offset_bottom = 23.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 12
+text = "X"
+
+[node name="NiveauId" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -138.0
+offset_top = 5.0
+offset_right = -5.0
+offset_bottom = 25.0
+grow_horizontal = 0
+text = "X - X"
+horizontal_alignment = 2
+
+[node name="BouttonTutoriel" type="Button" parent="."]
+visible = false
+layout_mode = 1
+offset_left = 93.0
+offset_top = 6.0
+offset_right = 171.0
+offset_bottom = 41.0
+theme_override_font_sizes/font_size = 15
+text = "Tutoriel"
+
+[node name="BouttonMenu" type="Button" parent="."]
+offset_left = 10.0
+offset_top = 6.0
+offset_right = 81.0
+offset_bottom = 40.0
+theme_override_font_sizes/font_size = 15
+text = "Menu"
+
 [connection signal="text_submitted" from="Panel/ÉcriveurCanonique/CanoniqueEdit" to="." method="_on_line_edit_text_submitted"]
 [connection signal="pressed" from="Panel/ÉcriveurCanonique/Puissance2" to="." method="_on_puissance_2_pressed"]
 [connection signal="pressed" from="Panel/ÉcriveurCanonique/Puissance4" to="." method="_on_puissance_4_pressed"]
 [connection signal="pressed" from="Panel/ÉcriveurTransformations/SecondDegrée/BouttonSoumettre" to="." method="_on_boutton_soumettre_pressed"]
+[connection signal="pressed" from="Tutoriel/BouttonFermer" to="." method="_on_boutton_fermer_pressed"]
+[connection signal="pressed" from="BouttonTutoriel" to="." method="_on_boutton_tutoriel_pressed"]
+[connection signal="pressed" from="BouttonMenu" to="." method="_on_boutton_menu_pressed"]
