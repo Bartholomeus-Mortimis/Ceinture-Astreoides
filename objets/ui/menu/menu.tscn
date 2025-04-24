@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://312pl8bfq1yp"]
+[gd_scene load_steps=23 format=3 uid="uid://312pl8bfq1yp"]
 
 [ext_resource type="Theme" uid="uid://xu1wqc4xh2mu" path="res://assets/ui/mono-theme.tres" id="1_8vxjh"]
 [ext_resource type="Texture2D" uid="uid://cj5udm2hpdpp5" path="res://assets/sprites/astreoid1.png" id="2_8vxjh"]
@@ -6,9 +6,11 @@
 [ext_resource type="Resource" uid="uid://6wxy34lnoenb" path="res://resources/niveau_dev.tres" id="4_0x3ub"]
 [ext_resource type="Texture2D" uid="uid://b00qkkbimjylc" path="res://assets/sprites/astreoid2.png" id="5_uxqil"]
 [ext_resource type="Texture2D" uid="uid://cj4yakpihqjoi" path="res://assets/sprites/astreoid3.png" id="6_5mgcq"]
+[ext_resource type="Texture2D" uid="uid://bgraig727rtfn" path="res://assets/sprites/bomb.png" id="6_oxmov"]
 [ext_resource type="Texture2D" uid="uid://d2rtn17t0cw6n" path="res://assets/sprites/arriereplan.png" id="6_uxqil"]
 [ext_resource type="PackedScene" uid="uid://dgkh80ht75444" path="res://objets/ui/boutton_niveau/boutton_niveau.tscn" id="7_5mgcq"]
-[ext_resource type="Resource" uid="uid://6r556b0mw3ae" path="res://resources/test_level.tres" id="8_lrmth"]
+[ext_resource type="Resource" uid="uid://dabkm6xge4dc1" path="res://resources/second_dégrée/2-1.tres" id="9_tsbuv"]
+[ext_resource type="Resource" uid="uid://boe556loy525t" path="res://resources/second_dégrée/2-2.tres" id="10_tsbuv"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_xtla6"]
 font_size = 40
@@ -85,7 +87,7 @@ offset_left = 605.0
 offset_top = 293.0
 offset_right = 685.0
 offset_bottom = 373.0
-texture = ExtResource("5_uxqil")
+texture = ExtResource("6_oxmov")
 expand_mode = 3
 stretch_mode = 5
 
@@ -242,6 +244,7 @@ grow_vertical = 2
 text = "Quitter"
 
 [node name="BouttonNiveau" parent="." instance=ExtResource("7_5mgcq")]
+layout_mode = 0
 offset_left = 53.0
 offset_top = 48.0
 offset_right = 103.0
@@ -250,32 +253,29 @@ text = "Dev"
 niveau_resource = ExtResource("4_0x3ub")
 
 [node name="Niveaux" type="Panel" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -204.0
+offset_left = -264.0
 offset_top = -115.0
-offset_right = 204.0
-offset_bottom = 210.0
+offset_right = 264.0
+offset_bottom = 224.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_uxqil")
 
 [node name="TabContainer" type="TabContainer" parent="Niveaux"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -164.0
-offset_top = -135.5
-offset_right = 164.0
-offset_bottom = 100.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 28.0
+offset_top = 18.0
+offset_right = -28.0
+offset_bottom = -21.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/tab_focus = SubResource("StyleBoxEmpty_uxqil")
@@ -285,23 +285,15 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_0x3ub")
 theme_override_styles/tab_selected = SubResource("StyleBoxEmpty_tsbuv")
 theme_override_styles/tab_hovered = SubResource("StyleBoxEmpty_oxmov")
 theme_override_styles/tab_unselected = SubResource("StyleBoxEmpty_el7rv")
+tab_alignment = 1
 current_tab = 0
 tabs_visible = false
 
-[node name="Groupe1" type="Control" parent="Niveaux/TabContainer"]
+[node name="Paraboles" type="Control" parent="Niveaux/TabContainer"]
 layout_mode = 2
 metadata/_tab_index = 0
 
-[node name="BouttonNiveau" parent="Niveaux/TabContainer/Groupe1" instance=ExtResource("7_5mgcq")]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 77.0
-offset_right = 66.0
-offset_bottom = 127.0
-text = "1"
-niveau_resource = ExtResource("8_lrmth")
-
-[node name="Label" type="Label" parent="Niveaux/TabContainer/Groupe1"]
+[node name="Titre" type="Label" parent="Niveaux/TabContainer/Paraboles"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -310,21 +302,50 @@ offset_left = -36.0
 offset_right = 36.0
 offset_bottom = 20.0
 grow_horizontal = 2
-text = "Les Fonctions Au Second Degrée"
+text = "2 - Les Paraboles"
 label_settings = SubResource("LabelSettings_lrmth")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="GridContainer" type="GridContainer" parent="Niveaux/TabContainer/Paraboles"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -9.0
+offset_top = 37.0
+offset_right = 9.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BouttonNiveau" parent="Niveaux/TabContainer/Paraboles/GridContainer" instance=ExtResource("7_5mgcq")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "1"
+niveau_resource = ExtResource("9_tsbuv")
+
+[node name="BouttonNiveau2" parent="Niveaux/TabContainer/Paraboles/GridContainer" instance=ExtResource("7_5mgcq")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "2"
+niveau_resource = ExtResource("10_tsbuv")
+
 [node name="BouttonFermer" type="Button" parent="Niveaux"]
 layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 13.0
-offset_top = -53.0
-offset_right = 53.0
-offset_bottom = -13.0
-grow_vertical = 0
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -25.0
+offset_top = -7.0
+offset_right = 15.0
+offset_bottom = 33.0
+grow_horizontal = 0
 text = "X"
 
 [node name="Paramètres" type="Panel" parent="."]

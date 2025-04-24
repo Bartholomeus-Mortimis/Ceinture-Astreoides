@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="NiveauResource" load_steps=5 format=3 uid="uid://dabkm6xge4dc1"]
+
+[ext_resource type="Texture2D" uid="uid://bb4s7qwtstms4" path="res://assets/tutoriels/second_degrée/2-1a.png" id="1_ae4ts"]
+[ext_resource type="Script" uid="uid://d0laq2yso5j1h" path="res://scripts/niveau_resource.gd" id="1_om6oy"]
+[ext_resource type="Texture2D" uid="uid://beks3nn6onrvl" path="res://assets/tutoriels/second_degrée/2-1b.png" id="2_sghnk"]
+[ext_resource type="Resource" uid="uid://boe556loy525t" path="res://resources/second_dégrée/2-2.tres" id="3_sghnk"]
+
+[resource]
+script = ExtResource("1_om6oy")
+canonique = true
+"second_degrée" = true
+prochaine_niveau = ExtResource("3_sghnk")
+niveau_page = 2
+niveau_nombre = 1
+"étirage_h" = 100.0
+"étirage_v" = 40.0
+origine_h = 0
+origine_v = 0
+astreoides = Array[Vector2]([Vector2(1, 1), Vector2(2, 4), Vector2(3, 9)])
+bombes = Array[Vector2]([])
+tutoriel_actif = true
+texte = "À l'aide d'un d'un exposant, une fonction linéaire devienne une fonction de second dégrée (aussi connu comme une parabole)."
+image_1 = ExtResource("1_ae4ts")
+image_2 = ExtResource("2_sghnk")
+tag_1 = "y = x"
+tag_2 = "y = x²"
+metadata/_custom_type_script = "uid://d0laq2yso5j1h"

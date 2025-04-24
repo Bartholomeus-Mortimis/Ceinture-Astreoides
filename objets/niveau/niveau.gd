@@ -46,12 +46,12 @@ func _draw() -> void:
 	for i in range(markeur_2.position.x - markeur_1.position.x):
 		if i % bonds_h == 0:
 			draw_line(Vector2(markeur_1.position.x + i, markeur_2.position.y), Vector2(markeur_1.position.x + i, markeur_2.position.y + 10), Color(255, 255, 255), 3.0)
-			draw_string(label_font, Vector2(markeur_1.position.x + i, markeur_2.position.y + 30), var_to_str(roundi(i / étirage_h) + origine_h) )
+			draw_string(label_font, Vector2(markeur_1.position.x + i, markeur_2.position.y + 30), var_to_str(roundi(i / étirage_h) + origine_h), 0, -1, 18)
 	
 	for i in range(markeur_2.position.y - markeur_1.position.y):
 		if i % bonds_v == 0:
 			draw_line(Vector2(markeur_1.position.x, markeur_2.position.y - i), Vector2(markeur_1.position.x - 10, markeur_2.position.y - i), Color(255, 255, 255), 3.0)
-			draw_string(label_font, Vector2(markeur_1.position.x - 45, markeur_2.position.y - i), var_to_str(roundi(i / étirage_v) + origine_v))
+			draw_string(label_font, Vector2(markeur_1.position.x - 80, markeur_2.position.y - i), var_to_str(roundi(i / étirage_v) + origine_v), HORIZONTAL_ALIGNMENT_RIGHT, 70, 18)
 	
 	for t: Traceur in get_tree().get_nodes_in_group("traceurs"): # Dessine une ligne entre chaque point, créeant la courbe visuel.
 		var valeur_pré: Vector2
@@ -74,7 +74,7 @@ func jouer_traceurs():
 	for traceur in get_tree().get_nodes_in_group("traceurs"):
 		#print( Vector2( (traceur.position.x - markeur_1.position.x), traceur.position.y - markeur_2.position.y) )
 		
-		traceur.position.y = -(traceur.calculer_position((traceur.temps_passer)) * étirage_v) + markeur_2.position.y
+		traceur.position.y = -((traceur.calculer_position((traceur.temps_passer + Singleton.niveau_présent.origine_h)) - Singleton.niveau_présent.origine_v)* étirage_v) + markeur_2.position.y
 		traceur.position.x = ( (traceur.temps_passer) * étirage_h) + markeur_1.position.x 
 		
 		# Vérifier que le traceur se situe dans les extremitées du graphique
@@ -151,8 +151,8 @@ func load_niveau(niveau: NiveauResource):
 		
 		nouveau_astreoide.position_relatif = a
 		nouveau_astreoide.position = Vector2(
-			(a.x * étirage_h) + markeur_1.position.x,
-			-(a.y * étirage_v) + markeur_2.position.y
+			((a.x - niveau.origine_h) * étirage_h) + markeur_1.position.x,
+			-((a.y - niveau.origine_v) * étirage_v) + markeur_2.position.y
 		)
 		
 		get_tree().root.add_child.call_deferred(nouveau_astreoide)
@@ -163,8 +163,8 @@ func load_niveau(niveau: NiveauResource):
 		
 		nouveau_bombe.position_relatif = b
 		nouveau_bombe.position = Vector2(
-			(b.x * étirage_h) + markeur_1.position.x,
-			-(b.y * étirage_v) + markeur_2.position.y
+			(b.x - niveau.origine_h * étirage_h) + markeur_1.position.x ,
+			-(b.y - niveau.origine_v * étirage_v) + markeur_2.position.y
 		)
 		
 		nouveau_bombe.bombe_exploser.connect(bombe_exploser)
