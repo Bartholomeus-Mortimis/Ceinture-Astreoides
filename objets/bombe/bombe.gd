@@ -8,8 +8,7 @@ signal bombe_exploser
 @onready var label: Label = $SourisHover/Label
 
 func _on_souris_hover_mouse_entered() -> void:
-	label.text = "(" + var_to_str(roundi(position_relatif.x)) + "," + var_to_str(roundi(position_relatif.y)) + ")"
-	label.show()
+	label.text = "(" + var_to_str(snappedf(position_relatif.x, Singleton.niveau_présent.point_arrondissement)) + ", " + var_to_str(snappedf(position_relatif.y, Singleton.niveau_présent.point_arrondissement)) + ")"
 	print("on")
 
 func _on_souris_hover_mouse_exited() -> void:

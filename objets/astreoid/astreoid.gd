@@ -8,7 +8,7 @@ class_name Astreoide
 
 
 func _on_souris_hover_mouse_entered() -> void:
-	label.text = "(" + var_to_str(roundi(position_relatif.x)) + "," + var_to_str(roundi(position_relatif.y)) + ")"
+	label.text = "(" + var_to_str(snappedf(position_relatif.x, Singleton.niveau_présent.point_arrondissement)) + ", " + var_to_str(snappedf(position_relatif.y, Singleton.niveau_présent.point_arrondissement)) + ")"
 	label.show()
 	print("on")
 

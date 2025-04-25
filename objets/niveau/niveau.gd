@@ -46,12 +46,12 @@ func _draw() -> void:
 	for i in range(markeur_2.position.x - markeur_1.position.x):
 		if i % bonds_h == 0:
 			draw_line(Vector2(markeur_1.position.x + i, markeur_2.position.y), Vector2(markeur_1.position.x + i, markeur_2.position.y + 10), Color(255, 255, 255), 3.0)
-			draw_string(label_font, Vector2(markeur_1.position.x + i, markeur_2.position.y + 30), var_to_str(roundi(i / étirage_h) + origine_h), 0, -1, 18)
+			draw_string(label_font, Vector2(markeur_1.position.x + i, markeur_2.position.y + 30), var_to_str(roundi((i / étirage_h) + origine_h)), 0, -1, 18)
 	
 	for i in range(markeur_2.position.y - markeur_1.position.y):
 		if i % bonds_v == 0:
 			draw_line(Vector2(markeur_1.position.x, markeur_2.position.y - i), Vector2(markeur_1.position.x - 10, markeur_2.position.y - i), Color(255, 255, 255), 3.0)
-			draw_string(label_font, Vector2(markeur_1.position.x - 80, markeur_2.position.y - i), var_to_str(roundi(i / étirage_v) + origine_v), HORIZONTAL_ALIGNMENT_RIGHT, 70, 18)
+			draw_string(label_font, Vector2(markeur_1.position.x - 80, markeur_2.position.y - i), var_to_str(roundi((i / étirage_v) + origine_v)), HORIZONTAL_ALIGNMENT_RIGHT, 70, 18)
 	
 	for t: Traceur in get_tree().get_nodes_in_group("traceurs"): # Dessine une ligne entre chaque point, créeant la courbe visuel.
 		var valeur_pré: Vector2
@@ -103,7 +103,7 @@ func _on_temps_timer_timeout() -> void:
 			t.temps_passer += temps_bonds
 			t.points.append(t.global_position) # Ajouter un point pour tracer la courbe
 		
-		if t.position.x >= 1000 or t.position.y < -50:
+		if t.position.x >= 900 or t.position.y < -40 or t.position.y > 650:
 			if !résultat_vérifier and t.actif:
 				résultat_vérifier = true
 				vérifier_résultat()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://312pl8bfq1yp"]
+[gd_scene load_steps=29 format=3 uid="uid://312pl8bfq1yp"]
 
 [ext_resource type="Theme" uid="uid://xu1wqc4xh2mu" path="res://assets/ui/mono-theme.tres" id="1_8vxjh"]
 [ext_resource type="Texture2D" uid="uid://cj5udm2hpdpp5" path="res://assets/sprites/astreoid1.png" id="2_8vxjh"]
@@ -10,7 +10,13 @@
 [ext_resource type="Texture2D" uid="uid://d2rtn17t0cw6n" path="res://assets/sprites/arriereplan.png" id="6_uxqil"]
 [ext_resource type="PackedScene" uid="uid://dgkh80ht75444" path="res://objets/ui/boutton_niveau/boutton_niveau.tscn" id="7_5mgcq"]
 [ext_resource type="Resource" uid="uid://dabkm6xge4dc1" path="res://resources/second_dégrée/2-1.tres" id="9_tsbuv"]
-[ext_resource type="Resource" uid="uid://boe556loy525t" path="res://resources/second_dégrée/2-2.tres" id="10_tsbuv"]
+[ext_resource type="Resource" uid="uid://qxjo3kkiv4ia" path="res://resources/second_dégrée/2-2.tres" id="10_tsbuv"]
+[ext_resource type="Resource" uid="uid://dnjrufsndvb4i" path="res://resources/second_dégrée/2-3.tres" id="12_el7rv"]
+[ext_resource type="Resource" uid="uid://o7bvoh54cp45" path="res://resources/second_dégrée/2-4.tres" id="13_vkeg7"]
+[ext_resource type="Resource" uid="uid://ds62ixr7dvnux" path="res://resources/second_dégrée/2-5.tres" id="14_2qqy2"]
+[ext_resource type="Resource" uid="uid://c5gsf5u4derjr" path="res://resources/second_dégrée/2-6.tres" id="15_3m856"]
+[ext_resource type="Resource" uid="uid://bymj81cj36rji" path="res://resources/second_dégrée/2-7.tres" id="16_2qqy2"]
+[ext_resource type="Resource" uid="uid://cji6e6qpjbjta" path="res://resources/second_dégrée/2-8.tres" id="17_3m856"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_xtla6"]
 font_size = 40
@@ -319,6 +325,7 @@ offset_right = 9.0
 offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
+columns = 3
 
 [node name="BouttonNiveau" parent="Niveaux/TabContainer/Paraboles/GridContainer" instance=ExtResource("7_5mgcq")]
 custom_minimum_size = Vector2(50, 50)
@@ -335,6 +342,62 @@ size_flags_horizontal = 6
 size_flags_vertical = 6
 text = "2"
 niveau_resource = ExtResource("10_tsbuv")
+
+[node name="BouttonNiveau3" parent="Niveaux/TabContainer/Paraboles/GridContainer" instance=ExtResource("7_5mgcq")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "3"
+niveau_resource = ExtResource("12_el7rv")
+
+[node name="BouttonNiveau4" parent="Niveaux/TabContainer/Paraboles/GridContainer" instance=ExtResource("7_5mgcq")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "4"
+niveau_resource = ExtResource("13_vkeg7")
+
+[node name="BouttonNiveau5" parent="Niveaux/TabContainer/Paraboles/GridContainer" instance=ExtResource("7_5mgcq")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "5"
+niveau_resource = ExtResource("14_2qqy2")
+
+[node name="BouttonNiveau6" parent="Niveaux/TabContainer/Paraboles/GridContainer" instance=ExtResource("7_5mgcq")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "6"
+niveau_resource = ExtResource("15_3m856")
+
+[node name="BouttonNiveau7" parent="Niveaux/TabContainer/Paraboles/GridContainer" instance=ExtResource("7_5mgcq")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "7"
+niveau_resource = ExtResource("16_2qqy2")
+
+[node name="BouttonNiveau8" parent="Niveaux/TabContainer/Paraboles/GridContainer" instance=ExtResource("7_5mgcq")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "8"
+niveau_resource = ExtResource("17_3m856")
+
+[node name="BouttonNiveau9" parent="Niveaux/TabContainer/Paraboles/GridContainer" instance=ExtResource("7_5mgcq")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "9"
+niveau_resource = ExtResource("15_3m856")
 
 [node name="BouttonFermer" type="Button" parent="Niveaux"]
 layout_mode = 1

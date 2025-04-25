@@ -4,6 +4,8 @@ class_name Hud
 signal équation_soumis
 signal boutton_menu_pesser
 
+@onready var panel_équation: Panel = $Panel
+
 @onready var niveau_id: Label = $NiveauId
 
 @onready var cano_edit: LineEdit = $"Panel/ÉcriveurCanonique/CanoniqueEdit"
@@ -43,6 +45,7 @@ func _on_line_edit_text_submitted(new_text: String) -> void:
 		équation_briser()
 	elif test_expression.execute([1]) is float or test_expression.execute([1]) is String or test_expression.execute([1]) is int:
 		équation_soumis.emit()
+		panel_équation.hide()
 		print("submit")
 	else:
 		équation_briser()
@@ -55,6 +58,7 @@ func équation_en_expression(nouveau_équation: String):
 	nouveau_équation = nouveau_équation.to_lower()
 	nouveau_équation = nouveau_équation.replace(" ", "") # Enlève tout les espaces vide
 	nouveau_équation = nouveau_équation.replace("x", "(x)") # Separer les variables des chiffres
+	nouveau_équation = nouveau_équation.replace(",", ".") # Pour les équations française
 	
 	print(nouveau_équation)
 	
@@ -184,6 +188,7 @@ func _on_boutton_soumettre_pressed() -> void:
 	
 	print("submit")
 	équation_soumis.emit()
+	panel_équation.hide()
 
 #endregion
 

@@ -1,23 +1,27 @@
-[gd_resource type="Resource" script_class="NiveauResource" load_steps=3 format=3 uid="uid://boe556loy525t"]
+[gd_resource type="Resource" script_class="NiveauResource" load_steps=5 format=3 uid="uid://qxjo3kkiv4ia"]
 
 [ext_resource type="Texture2D" uid="uid://yip5m7hrsl7o" path="res://assets/tutoriels/second_degrée/2-2a.png" id="1_u7fvx"]
+[ext_resource type="Texture2D" uid="uid://b200mpobuiav2" path="res://assets/tutoriels/second_degrée/2-2b.png" id="2_engim"]
 [ext_resource type="Script" uid="uid://d0laq2yso5j1h" path="res://scripts/niveau_resource.gd" id="3_h0oet"]
+[ext_resource type="Resource" uid="uid://dnjrufsndvb4i" path="res://resources/second_dégrée/2-3.tres" id="3_umbgv"]
 
 [resource]
 script = ExtResource("3_h0oet")
 canonique = true
 "second_degrée" = true
+prochaine_niveau = ExtResource("3_umbgv")
 niveau_page = 2
-niveau_nombre = 1
+niveau_nombre = 2
 "étirage_h" = 100.0
 "étirage_v" = 40.0
-origine_h = -2
+origine_h = 0
 origine_v = 0
-astreoides = Array[Vector2]([Vector2(1, 1), Vector2(2, 4), Vector2(-1, 1)])
+astreoides = Array[Vector2]([Vector2(1, 2), Vector2(2, 5)])
 bombes = Array[Vector2]([])
 tutoriel_actif = true
-texte = "Un parabole a un axe de symétrie. L'axe est à y = 0 par défaut."
+texte = "Un parabole a un minimum, un point qu'il va jamais croissé. Le minimum peut être modifier avec une translation verticale."
 image_1 = ExtResource("1_u7fvx")
+image_2 = ExtResource("2_engim")
 tag_1 = "y = x²"
-tag_2 = ""
+tag_2 = "y = x² + 1"
 metadata/_custom_type_script = "uid://d0laq2yso5j1h"

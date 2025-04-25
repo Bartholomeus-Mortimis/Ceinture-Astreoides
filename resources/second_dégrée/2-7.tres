@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="NiveauResource" load_steps=5 format=3 uid="uid://bymj81cj36rji"]
+
+[ext_resource type="Texture2D" uid="uid://wfjq257a1l54" path="res://assets/tutoriels/second_degrée/2-7a.png" id="1_uovrx"]
+[ext_resource type="Texture2D" uid="uid://bm7jora375tcx" path="res://assets/tutoriels/second_degrée/2-7b.png" id="2_aqdye"]
+[ext_resource type="Script" uid="uid://d0laq2yso5j1h" path="res://scripts/niveau_resource.gd" id="3_7urll"]
+[ext_resource type="Resource" uid="uid://cji6e6qpjbjta" path="res://resources/second_dégrée/2-8.tres" id="3_aqdye"]
+
+[resource]
+script = ExtResource("3_7urll")
+canonique = true
+"second_degrée" = true
+prochaine_niveau = ExtResource("3_aqdye")
+niveau_page = 2
+niveau_nombre = 7
+"étirage_h" = 100.0
+"étirage_v" = 50.0
+origine_h = 0
+origine_v = 0
+point_arrondissement = 0.1
+astreoides = Array[Vector2]([Vector2(1, 0.5), Vector2(3, 4.5)])
+bombes = Array[Vector2]([])
+tutoriel_actif = true
+texte = "Le coefficient peut aussi être un nombre positif. Si le coefficient est moins que 1, le parapole va agrandir."
+image_1 = ExtResource("1_uovrx")
+image_2 = ExtResource("2_aqdye")
+tag_1 = "y = x²"
+tag_2 = "y = 0,25x²"
+metadata/_custom_type_script = "uid://d0laq2yso5j1h"

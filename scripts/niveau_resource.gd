@@ -4,7 +4,7 @@ class_name NiveauResource
 @export_group("Générale")
 
 @export var canonique: bool = true
-@export var second_degrée: bool
+@export var second_degrée: bool = true
 @export var prochaine_niveau: NiveauResource
 @export var niveau_page: int = 0
 @export var niveau_nombre: int = 0
@@ -18,6 +18,7 @@ class_name NiveauResource
 @export var origine_h: int = 0
 @export var origine_v: int = 0
 
+@export var point_arrondissement: float = 1.0
 
 @export_group("Obstacles")
 

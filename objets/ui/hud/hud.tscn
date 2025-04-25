@@ -303,7 +303,7 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -260.0
-offset_top = -229.0
+offset_top = -221.0
 offset_right = 260.0
 offset_bottom = 155.0
 grow_horizontal = 2
@@ -422,10 +422,10 @@ visible = false
 layout_mode = 1
 offset_left = 93.0
 offset_top = 6.0
-offset_right = 171.0
+offset_right = 165.0
 offset_bottom = 41.0
 theme_override_font_sizes/font_size = 15
-text = "Tutoriel"
+text = "Aide"
 
 [node name="BouttonMenu" type="Button" parent="."]
 layout_mode = 0
