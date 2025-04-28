@@ -103,7 +103,7 @@ func _on_temps_timer_timeout() -> void:
 			t.temps_passer += temps_bonds
 			t.points.append(t.global_position) # Ajouter un point pour tracer la courbe
 		
-		if t.position.x >= 900 or t.position.y < -40 or t.position.y > 650:
+		if t.position.x >= 900: #or t.position.y < -40 or t.position.y > 650:
 			if !résultat_vérifier and t.actif:
 				résultat_vérifier = true
 				vérifier_résultat()

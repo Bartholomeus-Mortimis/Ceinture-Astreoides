@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="NiveauResource" load_steps=4 format=3 uid="uid://l18mp0cc66oe"]
+
+[ext_resource type="Script" uid="uid://d0laq2yso5j1h" path="res://scripts/niveau_resource.gd" id="1_alr3r"]
+[ext_resource type="Texture2D" uid="uid://bspiiold3ukta" path="res://assets/tutoriels/second_degrée/2-15a.png" id="1_kag0p"]
+[ext_resource type="Texture2D" uid="uid://l1a2bet06ah2" path="res://assets/tutoriels/second_degrée/2-18b.png" id="2_bn5wp"]
+
+[resource]
+script = ExtResource("1_alr3r")
+canonique = true
+"second_degrée" = true
+niveau_page = 2
+niveau_nombre = 16
+"étirage_h" = 50.0
+"étirage_v" = 50.0
+origine_h = -4
+origine_v = 0
+point_arrondissement = 1.0
+astreoides = Array[Vector2]([Vector2(2, 1), Vector2(3, 4), Vector2(0, 1), Vector2(-1, 4)])
+bombes = Array[Vector2]([])
+tutoriel_actif = true
+texte = "Avec la formule (x-h)², l'axe de symétrie d'une parabole peut être bouger."
+image_1 = ExtResource("1_kag0p")
+image_2 = ExtResource("2_bn5wp")
+tag_1 = "y = x²"
+tag_2 = "y = (x-1)²"
+metadata/_custom_type_script = "uid://d0laq2yso5j1h"

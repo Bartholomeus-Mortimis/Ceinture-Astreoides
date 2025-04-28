@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://312pl8bfq1yp"]
+[gd_scene load_steps=39 format=3 uid="uid://312pl8bfq1yp"]
 
 [ext_resource type="Theme" uid="uid://xu1wqc4xh2mu" path="res://assets/ui/mono-theme.tres" id="1_8vxjh"]
 [ext_resource type="Texture2D" uid="uid://cj5udm2hpdpp5" path="res://assets/sprites/astreoid1.png" id="2_8vxjh"]
@@ -15,8 +15,18 @@
 [ext_resource type="Resource" uid="uid://o7bvoh54cp45" path="res://resources/second_dégrée/2-4.tres" id="13_vkeg7"]
 [ext_resource type="Resource" uid="uid://ds62ixr7dvnux" path="res://resources/second_dégrée/2-5.tres" id="14_2qqy2"]
 [ext_resource type="Resource" uid="uid://c5gsf5u4derjr" path="res://resources/second_dégrée/2-6.tres" id="15_3m856"]
-[ext_resource type="Resource" uid="uid://bymj81cj36rji" path="res://resources/second_dégrée/2-7.tres" id="16_2qqy2"]
-[ext_resource type="Resource" uid="uid://cji6e6qpjbjta" path="res://resources/second_dégrée/2-8.tres" id="17_3m856"]
+[ext_resource type="Resource" uid="uid://6011dnjttupt" path="res://resources/second_dégrée/2-7.tres" id="16_2qqy2"]
+[ext_resource type="Resource" uid="uid://bc6f02o2efvr" path="res://resources/second_dégrée/2-8.tres" id="17_3m856"]
+[ext_resource type="Resource" uid="uid://bymj81cj36rji" path="res://resources/second_dégrée/2-9.tres" id="18_owrud"]
+[ext_resource type="Resource" uid="uid://cji6e6qpjbjta" path="res://resources/second_dégrée/2-10.tres" id="19_byw0u"]
+[ext_resource type="Resource" uid="uid://bnmwchucdaj63" path="res://resources/second_dégrée/2-11.tres" id="20_4165d"]
+[ext_resource type="Resource" uid="uid://ch1rdlaj6fe6r" path="res://resources/second_dégrée/2-12.tres" id="21_jtjuo"]
+[ext_resource type="Resource" uid="uid://cahr2muobjum0" path="res://resources/second_dégrée/2-13.tres" id="22_ed7bm"]
+[ext_resource type="Resource" uid="uid://cqw5b4ohy31il" path="res://resources/second_dégrée/2-14.tres" id="23_sqow3"]
+[ext_resource type="Resource" uid="uid://boe556loy525t" path="res://resources/second_dégrée/2-15.tres" id="24_ug7qx"]
+[ext_resource type="Resource" uid="uid://cjjtbf5mpewo7" path="res://resources/second_dégrée/2-16.tres" id="25_wjuca"]
+[ext_resource type="Resource" uid="uid://4b1bx2yug5ja" path="res://resources/second_dégrée/2-17.tres" id="26_gjl4m"]
+[ext_resource type="Resource" uid="uid://l18mp0cc66oe" path="res://resources/second_dégrée/2-18.tres" id="27_vdl4s"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_xtla6"]
 font_size = 40
@@ -325,7 +335,7 @@ offset_right = 9.0
 offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
-columns = 3
+columns = 6
 
 [node name="BouttonNiveau" parent="Niveaux/TabContainer/Paraboles/GridContainer" instance=ExtResource("7_5mgcq")]
 custom_minimum_size = Vector2(50, 50)
@@ -397,7 +407,79 @@ layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
 text = "9"
-niveau_resource = ExtResource("15_3m856")
+niveau_resource = ExtResource("18_owrud")
+
+[node name="BouttonNiveau10" parent="Niveaux/TabContainer/Paraboles/GridContainer" instance=ExtResource("7_5mgcq")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "10"
+niveau_resource = ExtResource("19_byw0u")
+
+[node name="BouttonNiveau11" parent="Niveaux/TabContainer/Paraboles/GridContainer" instance=ExtResource("7_5mgcq")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "11"
+niveau_resource = ExtResource("20_4165d")
+
+[node name="BouttonNiveau12" parent="Niveaux/TabContainer/Paraboles/GridContainer" instance=ExtResource("7_5mgcq")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "12"
+niveau_resource = ExtResource("21_jtjuo")
+
+[node name="BouttonNiveau13" parent="Niveaux/TabContainer/Paraboles/GridContainer" instance=ExtResource("7_5mgcq")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "13"
+niveau_resource = ExtResource("22_ed7bm")
+
+[node name="BouttonNiveau14" parent="Niveaux/TabContainer/Paraboles/GridContainer" instance=ExtResource("7_5mgcq")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "14"
+niveau_resource = ExtResource("23_sqow3")
+
+[node name="BouttonNiveau15" parent="Niveaux/TabContainer/Paraboles/GridContainer" instance=ExtResource("7_5mgcq")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "15"
+niveau_resource = ExtResource("24_ug7qx")
+
+[node name="BouttonNiveau16" parent="Niveaux/TabContainer/Paraboles/GridContainer" instance=ExtResource("7_5mgcq")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "16"
+niveau_resource = ExtResource("25_wjuca")
+
+[node name="BouttonNiveau17" parent="Niveaux/TabContainer/Paraboles/GridContainer" instance=ExtResource("7_5mgcq")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "17"
+niveau_resource = ExtResource("26_gjl4m")
+
+[node name="BouttonNiveau18" parent="Niveaux/TabContainer/Paraboles/GridContainer" instance=ExtResource("7_5mgcq")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "18"
+niveau_resource = ExtResource("27_vdl4s")
 
 [node name="BouttonFermer" type="Button" parent="Niveaux"]
 layout_mode = 1

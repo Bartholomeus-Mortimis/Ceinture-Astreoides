@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://d4hpvmek287p6" path="res://assets/tutoriels/second_degrée/2-6a.png" id="1_tcpeq"]
 [ext_resource type="Texture2D" uid="uid://43pxbwk36umx" path="res://assets/tutoriels/second_degrée/2-6b.png" id="2_55ioy"]
-[ext_resource type="Resource" uid="uid://bymj81cj36rji" path="res://resources/second_dégrée/2-7.tres" id="3_wy0r5"]
+[ext_resource type="Resource" uid="uid://6011dnjttupt" path="res://resources/second_dégrée/2-7.tres" id="3_wy0r5"]
 [ext_resource type="Script" uid="uid://d0laq2yso5j1h" path="res://scripts/niveau_resource.gd" id="4_vpvc3"]
 
 [resource]
@@ -11,11 +11,12 @@ canonique = true
 "second_degrée" = true
 prochaine_niveau = ExtResource("3_wy0r5")
 niveau_page = 2
-niveau_nombre = 3
+niveau_nombre = 6
 "étirage_h" = 100.0
 "étirage_v" = 50.0
 origine_h = 0
 origine_v = -5
+point_arrondissement = 1.0
 astreoides = Array[Vector2]([Vector2(1, -1), Vector2(2, -4)])
 bombes = Array[Vector2]([])
 tutoriel_actif = true

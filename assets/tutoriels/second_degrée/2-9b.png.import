@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cg54yg232p0oi"
-path="res://.godot/imported/2-8b.png-746a6e1b008b0908227832cde11d30ba.ctex"
+uid="uid://bm7jora375tcx"
+path="res://.godot/imported/2-9b.png-aabe28280239da07fe0f0a78acebc830.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tutoriels/second_degrée/2-8b.png"
-dest_files=["res://.godot/imported/2-8b.png-746a6e1b008b0908227832cde11d30ba.ctex"]
+source_file="res://assets/tutoriels/second_degrée/2-9b.png"
+dest_files=["res://.godot/imported/2-9b.png-aabe28280239da07fe0f0a78acebc830.ctex"]
 
 [params]
 

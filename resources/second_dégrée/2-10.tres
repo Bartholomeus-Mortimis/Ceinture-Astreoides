@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="NiveauResource" load_steps=4 format=3 uid="uid://cji6e6qpjbjta"]
+
+[ext_resource type="Texture2D" uid="uid://wfjq257a1l54" path="res://assets/tutoriels/second_degrée/2-9a.png" id="1_0e8yg"]
+[ext_resource type="Texture2D" uid="uid://cg54yg232p0oi" path="res://assets/tutoriels/second_degrée/2-10b.png" id="2_0e8yg"]
+[ext_resource type="Script" uid="uid://d0laq2yso5j1h" path="res://scripts/niveau_resource.gd" id="3_amwvv"]
+
+[resource]
+script = ExtResource("3_amwvv")
+canonique = true
+"second_degrée" = true
+niveau_page = 2
+niveau_nombre = 8
+"étirage_h" = 100.0
+"étirage_v" = 25.0
+origine_h = 0
+origine_v = 0
+point_arrondissement = 1.0
+astreoides = Array[Vector2]([Vector2(1, 2), Vector2(2, 8)])
+bombes = Array[Vector2]([])
+tutoriel_actif = true
+texte = "Si le coefficient est plus gros que 1, le parabole va rétrécir."
+image_1 = ExtResource("1_0e8yg")
+image_2 = ExtResource("2_0e8yg")
+tag_1 = "y = x²"
+tag_2 = "y = 3x²"
+metadata/_custom_type_script = "uid://d0laq2yso5j1h"

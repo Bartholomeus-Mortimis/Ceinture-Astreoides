@@ -13,13 +13,14 @@ prochaine_niveau = ExtResource("3_umbgv")
 niveau_page = 2
 niveau_nombre = 2
 "étirage_h" = 100.0
-"étirage_v" = 40.0
+"étirage_v" = 50.0
 origine_h = 0
 origine_v = 0
+point_arrondissement = 1.0
 astreoides = Array[Vector2]([Vector2(1, 2), Vector2(2, 5)])
 bombes = Array[Vector2]([])
 tutoriel_actif = true
-texte = "Un parabole a un minimum, un point qu'il va jamais croissé. Le minimum peut être modifier avec une translation verticale."
+texte = "Un parabole a un minimum, un point qu'il va jamais dépasser. Le minimum peut être modifier avec une translation verticale."
 image_1 = ExtResource("1_u7fvx")
 image_2 = ExtResource("2_engim")
 tag_1 = "y = x²"

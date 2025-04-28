@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="NiveauResource" load_steps=4 format=3 uid="uid://boe556loy525t"]
+
+[ext_resource type="Texture2D" uid="uid://bspiiold3ukta" path="res://assets/tutoriels/second_degrée/2-15a.png" id="1_qwp74"]
+[ext_resource type="Resource" uid="uid://cjjtbf5mpewo7" path="res://resources/second_dégrée/2-16.tres" id="2_20o4i"]
+[ext_resource type="Script" uid="uid://d0laq2yso5j1h" path="res://scripts/niveau_resource.gd" id="2_oe23c"]
+
+[resource]
+script = ExtResource("2_oe23c")
+canonique = true
+"second_degrée" = true
+prochaine_niveau = ExtResource("2_20o4i")
+niveau_page = 2
+niveau_nombre = 15
+"étirage_h" = 100.0
+"étirage_v" = 50.0
+origine_h = -2
+origine_v = 0
+point_arrondissement = 1.0
+astreoides = Array[Vector2]([Vector2(1, 1), Vector2(2, 4), Vector2(-1, 1)])
+bombes = Array[Vector2]([])
+tutoriel_actif = true
+texte = "Un parabole a un axe de symétrie. L'axe est à y = 0 par défaut."
+image_1 = ExtResource("1_qwp74")
+tag_1 = "y = x²"
+tag_2 = ""
+metadata/_custom_type_script = "uid://d0laq2yso5j1h"
