@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="NiveauResource" load_steps=2 format=3 uid="uid://4b1bx2yug5ja"]
+[gd_resource type="Resource" script_class="NiveauResource" load_steps=3 format=3 uid="uid://4b1bx2yug5ja"]
 
+[ext_resource type="Resource" uid="uid://l18mp0cc66oe" path="res://resources/second_dégrée/2-18.tres" id="1_jep20"]
 [ext_resource type="Script" uid="uid://d0laq2yso5j1h" path="res://scripts/niveau_resource.gd" id="2_nahbc"]
 
 [resource]
 script = ExtResource("2_nahbc")
 canonique = true
 "second_degrée" = true
+prochaine_niveau = ExtResource("1_jep20")
 niveau_page = 2
 niveau_nombre = 17
 "étirage_h" = 50.0

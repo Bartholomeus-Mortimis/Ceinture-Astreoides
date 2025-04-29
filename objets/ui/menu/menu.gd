@@ -22,8 +22,8 @@ func _on_boutton_fermer_pressed() -> void:
 
 @onready var niveaux: Panel = $Niveaux
 @onready var tab_container: TabContainer = $Niveaux/TabContainer
-@onready var boutton_gauche: TextureButton = $Niveaux/BouttonGauche
-@onready var boutton_droite: TextureButton = $Niveaux/BouttonDroite
+@onready var boutton_gauche: Button = $Niveaux/BouttonGauche
+@onready var boutton_droite: Button = $Niveaux/BouttonDroite
 
 func _on_boutton_jouer_pressed() -> void:
 	niveaux.show()

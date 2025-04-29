@@ -1,13 +1,15 @@
-[gd_resource type="Resource" script_class="NiveauResource" load_steps=4 format=3 uid="uid://l18mp0cc66oe"]
+[gd_resource type="Resource" script_class="NiveauResource" load_steps=5 format=3 uid="uid://l18mp0cc66oe"]
 
 [ext_resource type="Script" uid="uid://d0laq2yso5j1h" path="res://scripts/niveau_resource.gd" id="1_alr3r"]
 [ext_resource type="Texture2D" uid="uid://bspiiold3ukta" path="res://assets/tutoriels/second_degrée/2-15a.png" id="1_kag0p"]
 [ext_resource type="Texture2D" uid="uid://l1a2bet06ah2" path="res://assets/tutoriels/second_degrée/2-18b.png" id="2_bn5wp"]
+[ext_resource type="Resource" uid="uid://ccfec3ge1sxqm" path="res://resources/second_dégrée/2-19.tres" id="3_5m4jj"]
 
 [resource]
 script = ExtResource("1_alr3r")
 canonique = true
 "second_degrée" = true
+prochaine_niveau = ExtResource("3_5m4jj")
 niveau_page = 2
 niveau_nombre = 18
 "étirage_h" = 50.0
