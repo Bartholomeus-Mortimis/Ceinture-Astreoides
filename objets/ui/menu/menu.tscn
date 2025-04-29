@@ -302,14 +302,15 @@ theme_override_styles/tab_selected = SubResource("StyleBoxEmpty_tsbuv")
 theme_override_styles/tab_hovered = SubResource("StyleBoxEmpty_oxmov")
 theme_override_styles/tab_unselected = SubResource("StyleBoxEmpty_el7rv")
 tab_alignment = 1
-current_tab = 0
+current_tab = 1
 tabs_visible = false
 
-[node name="Paraboles" type="Control" parent="Niveaux/TabContainer"]
+[node name="Paraboles1" type="Control" parent="Niveaux/TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
-[node name="Titre" type="Label" parent="Niveaux/TabContainer/Paraboles"]
+[node name="Titre" type="Label" parent="Niveaux/TabContainer/Paraboles1"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -323,7 +324,7 @@ label_settings = SubResource("LabelSettings_lrmth")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="GridContainer" type="GridContainer" parent="Niveaux/TabContainer/Paraboles"]
+[node name="GridContainer" type="GridContainer" parent="Niveaux/TabContainer/Paraboles1"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 1
 anchors_preset = 15
@@ -337,7 +338,7 @@ grow_horizontal = 2
 grow_vertical = 2
 columns = 6
 
-[node name="BouttonNiveau" parent="Niveaux/TabContainer/Paraboles/GridContainer" instance=ExtResource("7_5mgcq")]
+[node name="BouttonNiveau" parent="Niveaux/TabContainer/Paraboles1/GridContainer" instance=ExtResource("7_5mgcq")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -345,7 +346,7 @@ size_flags_vertical = 6
 text = "1"
 niveau_resource = ExtResource("9_tsbuv")
 
-[node name="BouttonNiveau2" parent="Niveaux/TabContainer/Paraboles/GridContainer" instance=ExtResource("7_5mgcq")]
+[node name="BouttonNiveau2" parent="Niveaux/TabContainer/Paraboles1/GridContainer" instance=ExtResource("7_5mgcq")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -353,7 +354,7 @@ size_flags_vertical = 6
 text = "2"
 niveau_resource = ExtResource("10_tsbuv")
 
-[node name="BouttonNiveau3" parent="Niveaux/TabContainer/Paraboles/GridContainer" instance=ExtResource("7_5mgcq")]
+[node name="BouttonNiveau3" parent="Niveaux/TabContainer/Paraboles1/GridContainer" instance=ExtResource("7_5mgcq")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -361,7 +362,7 @@ size_flags_vertical = 6
 text = "3"
 niveau_resource = ExtResource("12_el7rv")
 
-[node name="BouttonNiveau4" parent="Niveaux/TabContainer/Paraboles/GridContainer" instance=ExtResource("7_5mgcq")]
+[node name="BouttonNiveau4" parent="Niveaux/TabContainer/Paraboles1/GridContainer" instance=ExtResource("7_5mgcq")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -369,7 +370,7 @@ size_flags_vertical = 6
 text = "4"
 niveau_resource = ExtResource("13_vkeg7")
 
-[node name="BouttonNiveau5" parent="Niveaux/TabContainer/Paraboles/GridContainer" instance=ExtResource("7_5mgcq")]
+[node name="BouttonNiveau5" parent="Niveaux/TabContainer/Paraboles1/GridContainer" instance=ExtResource("7_5mgcq")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -377,7 +378,7 @@ size_flags_vertical = 6
 text = "5"
 niveau_resource = ExtResource("14_2qqy2")
 
-[node name="BouttonNiveau6" parent="Niveaux/TabContainer/Paraboles/GridContainer" instance=ExtResource("7_5mgcq")]
+[node name="BouttonNiveau6" parent="Niveaux/TabContainer/Paraboles1/GridContainer" instance=ExtResource("7_5mgcq")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -385,7 +386,7 @@ size_flags_vertical = 6
 text = "6"
 niveau_resource = ExtResource("15_3m856")
 
-[node name="BouttonNiveau7" parent="Niveaux/TabContainer/Paraboles/GridContainer" instance=ExtResource("7_5mgcq")]
+[node name="BouttonNiveau7" parent="Niveaux/TabContainer/Paraboles1/GridContainer" instance=ExtResource("7_5mgcq")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -393,7 +394,7 @@ size_flags_vertical = 6
 text = "7"
 niveau_resource = ExtResource("16_2qqy2")
 
-[node name="BouttonNiveau8" parent="Niveaux/TabContainer/Paraboles/GridContainer" instance=ExtResource("7_5mgcq")]
+[node name="BouttonNiveau8" parent="Niveaux/TabContainer/Paraboles1/GridContainer" instance=ExtResource("7_5mgcq")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -401,7 +402,7 @@ size_flags_vertical = 6
 text = "8"
 niveau_resource = ExtResource("17_3m856")
 
-[node name="BouttonNiveau9" parent="Niveaux/TabContainer/Paraboles/GridContainer" instance=ExtResource("7_5mgcq")]
+[node name="BouttonNiveau9" parent="Niveaux/TabContainer/Paraboles1/GridContainer" instance=ExtResource("7_5mgcq")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -409,7 +410,7 @@ size_flags_vertical = 6
 text = "9"
 niveau_resource = ExtResource("18_owrud")
 
-[node name="BouttonNiveau10" parent="Niveaux/TabContainer/Paraboles/GridContainer" instance=ExtResource("7_5mgcq")]
+[node name="BouttonNiveau10" parent="Niveaux/TabContainer/Paraboles1/GridContainer" instance=ExtResource("7_5mgcq")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -417,7 +418,7 @@ size_flags_vertical = 6
 text = "10"
 niveau_resource = ExtResource("19_byw0u")
 
-[node name="BouttonNiveau11" parent="Niveaux/TabContainer/Paraboles/GridContainer" instance=ExtResource("7_5mgcq")]
+[node name="BouttonNiveau11" parent="Niveaux/TabContainer/Paraboles1/GridContainer" instance=ExtResource("7_5mgcq")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -425,7 +426,7 @@ size_flags_vertical = 6
 text = "11"
 niveau_resource = ExtResource("20_4165d")
 
-[node name="BouttonNiveau12" parent="Niveaux/TabContainer/Paraboles/GridContainer" instance=ExtResource("7_5mgcq")]
+[node name="BouttonNiveau12" parent="Niveaux/TabContainer/Paraboles1/GridContainer" instance=ExtResource("7_5mgcq")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -433,7 +434,7 @@ size_flags_vertical = 6
 text = "12"
 niveau_resource = ExtResource("21_jtjuo")
 
-[node name="BouttonNiveau13" parent="Niveaux/TabContainer/Paraboles/GridContainer" instance=ExtResource("7_5mgcq")]
+[node name="BouttonNiveau13" parent="Niveaux/TabContainer/Paraboles1/GridContainer" instance=ExtResource("7_5mgcq")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -441,7 +442,7 @@ size_flags_vertical = 6
 text = "13"
 niveau_resource = ExtResource("22_ed7bm")
 
-[node name="BouttonNiveau14" parent="Niveaux/TabContainer/Paraboles/GridContainer" instance=ExtResource("7_5mgcq")]
+[node name="BouttonNiveau14" parent="Niveaux/TabContainer/Paraboles1/GridContainer" instance=ExtResource("7_5mgcq")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -449,7 +450,7 @@ size_flags_vertical = 6
 text = "14"
 niveau_resource = ExtResource("23_sqow3")
 
-[node name="BouttonNiveau15" parent="Niveaux/TabContainer/Paraboles/GridContainer" instance=ExtResource("7_5mgcq")]
+[node name="BouttonNiveau15" parent="Niveaux/TabContainer/Paraboles1/GridContainer" instance=ExtResource("7_5mgcq")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -457,7 +458,7 @@ size_flags_vertical = 6
 text = "15"
 niveau_resource = ExtResource("24_ug7qx")
 
-[node name="BouttonNiveau16" parent="Niveaux/TabContainer/Paraboles/GridContainer" instance=ExtResource("7_5mgcq")]
+[node name="BouttonNiveau16" parent="Niveaux/TabContainer/Paraboles1/GridContainer" instance=ExtResource("7_5mgcq")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -465,7 +466,7 @@ size_flags_vertical = 6
 text = "16"
 niveau_resource = ExtResource("25_wjuca")
 
-[node name="BouttonNiveau17" parent="Niveaux/TabContainer/Paraboles/GridContainer" instance=ExtResource("7_5mgcq")]
+[node name="BouttonNiveau17" parent="Niveaux/TabContainer/Paraboles1/GridContainer" instance=ExtResource("7_5mgcq")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -473,13 +474,52 @@ size_flags_vertical = 6
 text = "17"
 niveau_resource = ExtResource("26_gjl4m")
 
-[node name="BouttonNiveau18" parent="Niveaux/TabContainer/Paraboles/GridContainer" instance=ExtResource("7_5mgcq")]
+[node name="BouttonNiveau18" parent="Niveaux/TabContainer/Paraboles1/GridContainer" instance=ExtResource("7_5mgcq")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
 text = "18"
 niveau_resource = ExtResource("27_vdl4s")
+
+[node name="Paraboles2" type="Control" parent="Niveaux/TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Titre" type="Label" parent="Niveaux/TabContainer/Paraboles2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -36.0
+offset_right = 36.0
+offset_bottom = 20.0
+grow_horizontal = 2
+text = "2 - Les Paraboles"
+label_settings = SubResource("LabelSettings_lrmth")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="Niveaux/TabContainer/Paraboles2"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -9.0
+offset_top = 37.0
+offset_right = 9.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BouttonNiveau" parent="Niveaux/TabContainer/Paraboles2/GridContainer" instance=ExtResource("7_5mgcq")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "1"
+niveau_resource = ExtResource("9_tsbuv")
 
 [node name="BouttonFermer" type="Button" parent="Niveaux"]
 layout_mode = 1
@@ -492,6 +532,23 @@ offset_right = 15.0
 offset_bottom = 33.0
 grow_horizontal = 0
 text = "X"
+
+[node name="BouttonGauche" type="Button" parent="Niveaux"]
+layout_mode = 1
+offset_left = 35.0
+offset_top = 11.0
+offset_right = 96.0
+offset_bottom = 48.0
+text = "<"
+
+[node name="BouttonDroite" type="Button" parent="Niveaux"]
+visible = false
+layout_mode = 0
+offset_left = 415.0
+offset_top = 11.0
+offset_right = 476.0
+offset_bottom = 48.0
+text = ">"
 
 [node name="Paramètres" type="Panel" parent="."]
 visible = false
@@ -540,4 +597,6 @@ vertical_alignment = 1
 [connection signal="pressed" from="BouttonParamètres" to="." method="_on_boutton_paramètres_pressed"]
 [connection signal="pressed" from="BouttonQuitter" to="." method="_on_boutton_quitter_pressed"]
 [connection signal="pressed" from="Niveaux/BouttonFermer" to="." method="_on_boutton_fermer_pressed"]
+[connection signal="pressed" from="Niveaux/BouttonGauche" to="." method="_on_boutton_gauche_pressed"]
+[connection signal="pressed" from="Niveaux/BouttonDroite" to="." method="_on_boutton_droite_pressed"]
 [connection signal="pressed" from="Paramètres/BouttonFermer" to="." method="_on_boutton_fermer_pressed"]

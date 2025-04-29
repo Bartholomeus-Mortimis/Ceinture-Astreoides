@@ -21,9 +21,24 @@ func _on_boutton_fermer_pressed() -> void:
 #region Selection de Niveaux
 
 @onready var niveaux: Panel = $Niveaux
+@onready var tab_container: TabContainer = $Niveaux/TabContainer
+@onready var boutton_gauche: TextureButton = $Niveaux/BouttonGauche
+@onready var boutton_droite: TextureButton = $Niveaux/BouttonDroite
 
 func _on_boutton_jouer_pressed() -> void:
 	niveaux.show()
+
+func _on_boutton_droite_pressed() -> void:
+	tab_container.current_tab += 1
+	if tab_container.current_tab == 1:
+		boutton_droite.hide()
+	boutton_gauche.show()
+
+func _on_boutton_gauche_pressed() -> void:
+	tab_container.current_tab -= 1
+	if tab_container.current_tab == 0:
+		boutton_gauche.hide()
+	boutton_droite.show()
 
 #endregion
 
