@@ -46,7 +46,7 @@ func _on_line_edit_text_submitted(new_text: String) -> void:
 	elif test_expression.execute([1]) is float or test_expression.execute([1]) is String or test_expression.execute([1]) is int:
 		équation_soumis.emit()
 		panel_équation.hide()
-		print("submit")
+		tutoriel.hide()
 	else:
 		équation_briser()
 
@@ -186,9 +186,9 @@ func équation_briser():
 func _on_boutton_soumettre_pressed() -> void:
 	expression = var_to_str(av_edit.value) + "* pow( (x - " + var_to_str(th_edit.value) + "), 2) + " + var_to_str(tv_edit.value)
 	
-	print("submit")
 	équation_soumis.emit()
 	panel_équation.hide()
+	tutoriel.hide()
 
 #endregion
 

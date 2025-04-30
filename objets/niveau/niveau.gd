@@ -163,8 +163,8 @@ func load_niveau(niveau: NiveauResource):
 		
 		nouveau_bombe.position_relatif = b
 		nouveau_bombe.position = Vector2(
-			(b.x - niveau.origine_h * étirage_h) + markeur_1.position.x ,
-			-(b.y - niveau.origine_v * étirage_v) + markeur_2.position.y
+			((b.x - niveau.origine_h) * étirage_h) + markeur_1.position.x ,
+			-((b.y - niveau.origine_v) * étirage_v) + markeur_2.position.y
 		)
 		
 		nouveau_bombe.bombe_exploser.connect(bombe_exploser)

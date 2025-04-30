@@ -30,7 +30,7 @@ func _on_boutton_jouer_pressed() -> void:
 
 func _on_boutton_droite_pressed() -> void:
 	tab_container.current_tab += 1
-	if tab_container.current_tab == 1:
+	if tab_container.current_tab == 2:
 		boutton_droite.hide()
 	boutton_gauche.show()
 

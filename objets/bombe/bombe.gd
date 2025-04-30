@@ -9,7 +9,7 @@ signal bombe_exploser
 
 func _on_souris_hover_mouse_entered() -> void:
 	label.text = "(" + var_to_str(snappedf(position_relatif.x, Singleton.niveau_présent.point_arrondissement)) + ", " + var_to_str(snappedf(position_relatif.y, Singleton.niveau_présent.point_arrondissement)) + ")"
-	print("on")
+	label.show()
 
 func _on_souris_hover_mouse_exited() -> void:
 	label.hide()

@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="NiveauResource" load_steps=2 format=3 uid="uid://dpdbtsxt1fi10"]
+[gd_resource type="Resource" script_class="NiveauResource" load_steps=3 format=3 uid="uid://dpdbtsxt1fi10"]
 
+[ext_resource type="Resource" uid="uid://bq1ev8tju5sca" path="res://resources/second_dégrée/2-26.tres" id="1_imou2"]
 [ext_resource type="Script" uid="uid://d0laq2yso5j1h" path="res://scripts/niveau_resource.gd" id="1_lthdv"]
 
 [resource]
 script = ExtResource("1_lthdv")
 canonique = false
 "second_degrée" = true
+prochaine_niveau = ExtResource("1_imou2")
 niveau_page = 2
 niveau_nombre = 25
 "étirage_h" = 50.0

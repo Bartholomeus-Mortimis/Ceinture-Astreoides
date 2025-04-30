@@ -247,6 +247,7 @@ offset_top = 48.0
 offset_right = 103.0
 offset_bottom = 98.0
 text = "Dev"
+niveau_resource = "res://resources/niveau_dev.tres"
 
 [node name="Niveaux" type="Panel" parent="."]
 layout_mode = 1
@@ -285,10 +286,57 @@ tab_alignment = 1
 current_tab = 1
 tabs_visible = false
 
-[node name="Paraboles1" type="Control" parent="Niveaux/TabContainer"]
+[node name="Tutoriel" type="Control" parent="Niveaux/TabContainer"]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 0
+
+[node name="Titre" type="Label" parent="Niveaux/TabContainer/Tutoriel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -36.0
+offset_right = 36.0
+offset_bottom = 20.0
+grow_horizontal = 2
+text = "0 - Tutoriel"
+label_settings = SubResource("LabelSettings_lrmth")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="Niveaux/TabContainer/Tutoriel"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -9.0
+offset_top = 78.0
+offset_right = 9.0
+offset_bottom = -45.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BouttonNiveau" parent="Niveaux/TabContainer/Tutoriel/GridContainer" instance=ExtResource("7_5mgcq")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "1"
+niveau_resource = "res://resources/tutoriel/0-1.tres"
+
+[node name="BouttonNiveau2" parent="Niveaux/TabContainer/Tutoriel/GridContainer" instance=ExtResource("7_5mgcq")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "2"
+niveau_resource = "res://resources/tutoriel/0-2.tres"
+
+[node name="Paraboles1" type="Control" parent="Niveaux/TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 1
 
 [node name="Titre" type="Label" parent="Niveaux/TabContainer/Paraboles1"]
 layout_mode = 1
@@ -463,8 +511,9 @@ text = "18"
 niveau_resource = "res://resources/second_dégrée/2-18.tres"
 
 [node name="Paraboles2" type="Control" parent="Niveaux/TabContainer"]
+visible = false
 layout_mode = 2
-metadata/_tab_index = 1
+metadata/_tab_index = 2
 
 [node name="Titre" type="Label" parent="Niveaux/TabContainer/Paraboles2"]
 layout_mode = 1
@@ -564,7 +613,7 @@ layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
 text = "27"
-niveau_resource = "res://resources/second_dégrée/2-20.tres"
+niveau_resource = "res://resources/second_dégrée/2-27.tres"
 
 [node name="BouttonNiveau28" parent="Niveaux/TabContainer/Paraboles2/GridContainer" instance=ExtResource("7_5mgcq")]
 custom_minimum_size = Vector2(50, 50)
@@ -572,7 +621,7 @@ layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
 text = "28"
-niveau_resource = "res://resources/second_dégrée/2-20.tres"
+niveau_resource = "res://resources/second_dégrée/2-28.tres"
 
 [node name="BouttonNiveau29" parent="Niveaux/TabContainer/Paraboles2/GridContainer" instance=ExtResource("7_5mgcq")]
 custom_minimum_size = Vector2(50, 50)
@@ -580,7 +629,7 @@ layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
 text = "29"
-niveau_resource = "res://resources/second_dégrée/2-20.tres"
+niveau_resource = "res://resources/second_dégrée/2-29.tres"
 
 [node name="BouttonNiveau30" parent="Niveaux/TabContainer/Paraboles2/GridContainer" instance=ExtResource("7_5mgcq")]
 custom_minimum_size = Vector2(50, 50)
@@ -588,7 +637,7 @@ layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
 text = "30"
-niveau_resource = "res://resources/second_dégrée/2-20.tres"
+niveau_resource = "res://resources/second_dégrée/2-30.tres"
 
 [node name="BouttonFermer" type="Button" parent="Niveaux"]
 layout_mode = 1

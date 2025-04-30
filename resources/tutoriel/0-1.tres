@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="NiveauResource" load_steps=4 format=3 uid="uid://8i55ev046ocm"]
+
+[ext_resource type="Texture2D" uid="uid://b46k22hwyssu2" path="res://assets/tutoriels/tutoriel/0-1a.png" id="1_jxeo6"]
+[ext_resource type="Script" uid="uid://d0laq2yso5j1h" path="res://scripts/niveau_resource.gd" id="1_wordu"]
+[ext_resource type="Resource" uid="uid://codyyo1356dk8" path="res://resources/tutoriel/0-2.tres" id="2_q158f"]
+
+[resource]
+script = ExtResource("1_wordu")
+canonique = true
+"second_degrée" = true
+prochaine_niveau = ExtResource("2_q158f")
+niveau_page = 0
+niveau_nombre = 1
+"étirage_h" = 100.0
+"étirage_v" = 100.0
+origine_h = 0
+origine_v = 0
+point_arrondissement = 1.0
+astreoides = Array[Vector2]([Vector2(1, 1)])
+bombes = Array[Vector2]([])
+tutoriel_actif = true
+texte = "Crée une fonction qui atteint le centre de les astréoïdes. Détruit tout les astréoïdes pour réussir."
+image_1 = ExtResource("1_jxeo6")
+tag_1 = "y = x"
+tag_2 = ""
+metadata/_custom_type_script = "uid://d0laq2yso5j1h"

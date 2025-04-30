@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="NiveauResource" load_steps=3 format=3 uid="uid://codyyo1356dk8"]
+
+[ext_resource type="Texture2D" uid="uid://wh51x3y0i35o" path="res://assets/tutoriels/tutoriel/0-2a.png" id="1_6x7a3"]
+[ext_resource type="Script" uid="uid://d0laq2yso5j1h" path="res://scripts/niveau_resource.gd" id="2_3qpro"]
+
+[resource]
+script = ExtResource("2_3qpro")
+canonique = true
+"second_degrée" = true
+niveau_page = 0
+niveau_nombre = 2
+"étirage_h" = 100.0
+"étirage_v" = 100.0
+origine_h = 0
+origine_v = 0
+point_arrondissement = 1.0
+astreoides = Array[Vector2]([Vector2(1, 1)])
+bombes = Array[Vector2]([Vector2(2, 1)])
+tutoriel_actif = true
+texte = "Crée une fonction qui ne frappe pas le bombes. Frapper une bombe est une faillite immédiatement."
+image_1 = ExtResource("1_6x7a3")
+tag_1 = "y = x"
+tag_2 = ""
+metadata/_custom_type_script = "uid://d0laq2yso5j1h"
