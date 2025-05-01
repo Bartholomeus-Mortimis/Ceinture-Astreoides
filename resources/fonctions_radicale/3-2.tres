@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="NiveauResource" load_steps=5 format=3 uid="uid://eyd7f4d17i0q"]
+
+[ext_resource type="Texture2D" uid="uid://bhxeglmwg2cb5" path="res://assets/tutoriels/fonctions_radicale/3-2a.png" id="1_jogf4"]
+[ext_resource type="Texture2D" uid="uid://us61sv6u54ru" path="res://assets/tutoriels/fonctions_radicale/3-2b.png" id="2_gfbap"]
+[ext_resource type="Script" uid="uid://d0laq2yso5j1h" path="res://scripts/niveau_resource.gd" id="2_jogf4"]
+[ext_resource type="Resource" uid="uid://c4488pacnkcgg" path="res://resources/fonctions_radicale/3-3.tres" id="3_gfbap"]
+
+[resource]
+script = ExtResource("2_jogf4")
+canonique = true
+"second_degrée" = true
+prochaine_niveau = ExtResource("3_gfbap")
+niveau_page = 3
+niveau_nombre = 2
+"étirage_h" = 100.0
+"étirage_v" = 100.0
+origine_h = 0
+origine_v = 0
+point_arrondissement = 0.5
+astreoides = Array[Vector2]([Vector2(1, 2), Vector2(4, 3)])
+bombes = Array[Vector2]([])
+tutoriel_actif = true
+texte = "Comme une parabole, une fonction radicale a un minimum. Ce minimum peut être bouger avec une translation verticale."
+image_1 = ExtResource("1_jogf4")
+image_2 = ExtResource("2_gfbap")
+tag_1 = "y = √(x)"
+tag_2 = "y = √(x) + 1"
+metadata/_custom_type_script = "uid://d0laq2yso5j1h"

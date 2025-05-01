@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="NiveauResource" load_steps=5 format=3 uid="uid://c4488pacnkcgg"]
+
+[ext_resource type="Texture2D" uid="uid://d0a7vmerrwmsi" path="res://assets/tutoriels/fonctions_radicale/3-3a.png" id="1_8qwd4"]
+[ext_resource type="Texture2D" uid="uid://d1vgm4m0mlrhp" path="res://assets/tutoriels/fonctions_radicale/3-3b.png" id="2_wgm3i"]
+[ext_resource type="Script" uid="uid://d0laq2yso5j1h" path="res://scripts/niveau_resource.gd" id="3_ewffi"]
+[ext_resource type="Resource" uid="uid://bp3y8q51rwwsp" path="res://resources/fonctions_radicale/3-4.tres" id="3_wgm3i"]
+
+[resource]
+script = ExtResource("3_ewffi")
+canonique = true
+"second_degrée" = true
+prochaine_niveau = ExtResource("3_wgm3i")
+niveau_page = 3
+niveau_nombre = 3
+"étirage_h" = 50.0
+"étirage_v" = 50.0
+origine_h = 0
+origine_v = -3
+point_arrondissement = 1.0
+astreoides = Array[Vector2]([Vector2(1, -1), Vector2(4, -2)])
+bombes = Array[Vector2]([])
+tutoriel_actif = true
+texte = "Avec un premier coéfficient négatif, une fonction radicale subis une réflextion verticale"
+image_1 = ExtResource("1_8qwd4")
+image_2 = ExtResource("2_wgm3i")
+tag_1 = "y = √(x)"
+tag_2 = "y = -√(x) "
+metadata/_custom_type_script = "uid://d0laq2yso5j1h"

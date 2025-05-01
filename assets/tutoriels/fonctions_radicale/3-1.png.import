@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://de7ag8jbwpev4"
-path="res://.godot/imported/tutoriel_test_1.png-b7c2934fcb10b5c7bfd35d6e39a246ae.ctex"
+uid="uid://drvwk2vtg7r8l"
+path="res://.godot/imported/3-1.png-6edc00481635a9a0a66db28d23002d7c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tutoriels/tutoriel_test_1.png"
-dest_files=["res://.godot/imported/tutoriel_test_1.png-b7c2934fcb10b5c7bfd35d6e39a246ae.ctex"]
+source_file="res://assets/tutoriels/fonctions_radicale/3-1.png"
+dest_files=["res://.godot/imported/3-1.png-6edc00481635a9a0a66db28d23002d7c.ctex"]
 
 [params]
 

@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="NiveauResource" load_steps=4 format=3 uid="uid://dotqwer8awx0c"]
+
+[ext_resource type="Texture2D" uid="uid://drvwk2vtg7r8l" path="res://assets/tutoriels/fonctions_radicale/3-1.png" id="1_k0kli"]
+[ext_resource type="Script" uid="uid://d0laq2yso5j1h" path="res://scripts/niveau_resource.gd" id="1_q16km"]
+[ext_resource type="Resource" uid="uid://eyd7f4d17i0q" path="res://resources/fonctions_radicale/3-2.tres" id="2_wsk7b"]
+
+[resource]
+script = ExtResource("1_q16km")
+canonique = true
+"second_degrée" = true
+prochaine_niveau = ExtResource("2_wsk7b")
+niveau_page = 3
+niveau_nombre = 1
+"étirage_h" = 100.0
+"étirage_v" = 100.0
+origine_h = 0
+origine_v = 0
+point_arrondissement = 0.5
+astreoides = Array[Vector2]([Vector2(1, 1), Vector2(4, 2)])
+bombes = Array[Vector2]([])
+tutoriel_actif = true
+texte = "Une fonction peut devenir une fonction radicale avec une racine carée."
+image_1 = ExtResource("1_k0kli")
+tag_1 = "y = √(x)"
+tag_2 = ""
+metadata/_custom_type_script = "uid://d0laq2yso5j1h"

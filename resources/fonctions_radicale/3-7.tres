@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="NiveauResource" load_steps=5 format=3 uid="uid://bryyq44kt8kuu"]
+
+[ext_resource type="Texture2D" uid="uid://cgu0vlosxdovn" path="res://assets/tutoriels/fonctions_radicale/3-7a.png" id="1_ik64k"]
+[ext_resource type="Script" uid="uid://d0laq2yso5j1h" path="res://scripts/niveau_resource.gd" id="1_ripo3"]
+[ext_resource type="Texture2D" uid="uid://ffddp3wudrg8" path="res://assets/tutoriels/fonctions_radicale/3-7b.png" id="2_8fwco"]
+[ext_resource type="Resource" uid="uid://c8iaayy2sugfr" path="res://resources/fonctions_radicale/3-8.tres" id="3_iomyc"]
+
+[resource]
+script = ExtResource("1_ripo3")
+canonique = true
+"second_degrée" = true
+prochaine_niveau = ExtResource("3_iomyc")
+niveau_page = 3
+niveau_nombre = 7
+"étirage_h" = 100.0
+"étirage_v" = 50.0
+origine_h = 0
+origine_v = 0
+point_arrondissement = 1.0
+astreoides = Array[Vector2]([Vector2(1, 2), Vector2(4, 4)])
+bombes = Array[Vector2]([])
+tutoriel_actif = true
+texte = "Si le premier coéfficient d'une fonction radicale est plus que 1, il  va subir une agrandissement verticale."
+image_1 = ExtResource("1_ik64k")
+image_2 = ExtResource("2_8fwco")
+tag_1 = "y = √(x)"
+tag_2 = "y = 2√(x)"
+metadata/_custom_type_script = "uid://d0laq2yso5j1h"

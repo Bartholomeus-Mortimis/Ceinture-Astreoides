@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b120vqb41urma"
-path="res://.godot/imported/StaticBlobPotrait.png-58f74117da23c392090c507051488337.ctex"
+uid="uid://d1vgm4m0mlrhp"
+path="res://.godot/imported/3-3b.png-76ca0c1258d719555861691082037ca4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/StaticBlobPotrait.png"
-dest_files=["res://.godot/imported/StaticBlobPotrait.png-58f74117da23c392090c507051488337.ctex"]
+source_file="res://assets/tutoriels/fonctions_radicale/3-3b.png"
+dest_files=["res://.godot/imported/3-3b.png-76ca0c1258d719555861691082037ca4.ctex"]
 
 [params]
 

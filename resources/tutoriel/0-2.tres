@@ -7,7 +7,7 @@
 script = ExtResource("2_3qpro")
 canonique = true
 "second_degrée" = true
-niveau_page = 0
+niveau_page = 1
 niveau_nombre = 2
 "étirage_h" = 100.0
 "étirage_v" = 100.0

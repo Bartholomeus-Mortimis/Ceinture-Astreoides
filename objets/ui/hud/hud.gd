@@ -67,7 +67,7 @@ func équation_en_expression(nouveau_équation: String):
 			
 			if !opérateurs.has(nouveau_équation.substr(i-1, 1)) and !symboles_avant.has(nouveau_équation.substr(i-1, 1)) and nouveau_équation.substr(i-1, 1) != "(":
 				
-				if nouveau_équation.substr(i, 1) == "(" or nouveau_équation.substr(i, 3) == "sin" or nouveau_équation.substr(i, 3) == "cos" or nouveau_équation.substr(i, 3) == "tan":
+				if nouveau_équation.substr(i, 1) == "("  or nouveau_équation.substr(i, 1) == "√" or nouveau_équation.substr(i, 3) == "sin" or nouveau_équation.substr(i, 3) == "cos" or nouveau_équation.substr(i, 3) == "tan":
 					nouveau_équation = nouveau_équation.insert(i, "*")
 	
 	print(nouveau_équation)

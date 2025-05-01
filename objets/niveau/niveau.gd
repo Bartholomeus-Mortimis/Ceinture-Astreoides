@@ -212,7 +212,8 @@ func fermer_niveau():
 	for t: Traceur in get_tree().get_nodes_in_group("traceurs"):  # Désactiver les traceur dans le scene
 		t.actif = false
 		t.points.clear()
-		t.position.x = -100.0
+		t.hide()
+		t.position.x = -1000.0
 		t.équation = ""
 	
 	queue_redraw()

@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://d2nr2e8lt4fo1"]
+[gd_scene load_steps=19 format=3 uid="uid://d2nr2e8lt4fo1"]
 
 [ext_resource type="Script" uid="uid://btdi78lt042xx" path="res://objets/bombe/bombe.gd" id="1_hfd6h"]
 [ext_resource type="Texture2D" uid="uid://bgraig727rtfn" path="res://assets/sprites/bomb.png" id="1_svkcr"]
 [ext_resource type="Theme" uid="uid://xu1wqc4xh2mu" path="res://assets/ui/mono-theme.tres" id="2_hfd6h"]
+[ext_resource type="Texture2D" uid="uid://bfxt7usmdg7ts" path="res://assets/sprites/StaticBlob.png" id="4_7ad3w"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7ad3w"]
 
@@ -48,6 +49,70 @@ _data = {
 &"RESET": SubResource("Animation_43in3"),
 &"hover": SubResource("Animation_irumh")
 }
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gstul"]
+atlas = ExtResource("4_7ad3w")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rbvx2"]
+atlas = ExtResource("4_7ad3w")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_faouh"]
+atlas = ExtResource("4_7ad3w")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hyqx1"]
+atlas = ExtResource("4_7ad3w")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nuxy4"]
+atlas = ExtResource("4_7ad3w")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4c4yt"]
+atlas = ExtResource("4_7ad3w")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wown3"]
+atlas = ExtResource("4_7ad3w")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d27bi"]
+atlas = ExtResource("4_7ad3w")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_84cgg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gstul")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rbvx2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_faouh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hyqx1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nuxy4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4c4yt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wown3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d27bi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
 
 [node name="Bombe" type="Node2D" groups=["obstacles"]]
 script = ExtResource("1_hfd6h")
@@ -95,6 +160,16 @@ libraries = {
 &"": SubResource("AnimationLibrary_aifp7")
 }
 autoplay = "hover"
+
+[node name="Explosion" type="AnimatedSprite2D" parent="."]
+visible = false
+modulate = Color(1, 0.54477, 0.244831, 1)
+z_index = 2
+scale = Vector2(7.375, 7.375)
+sprite_frames = SubResource("SpriteFrames_84cgg")
+autoplay = "default"
+frame = 2
+frame_progress = 0.0251661
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="mouse_entered" from="SourisHover" to="." method="_on_souris_hover_mouse_entered"]
