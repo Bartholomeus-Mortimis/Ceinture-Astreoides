@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="NiveauResource" load_steps=2 format=3 uid="uid://dehr0f41y7lje"]
+[gd_resource type="Resource" script_class="NiveauResource" load_steps=3 format=3 uid="uid://dehr0f41y7lje"]
 
+[ext_resource type="Resource" uid="uid://fwkpt0l5mrw4" path="res://resources/fonctions_radicale/3-10.tres" id="1_32bpt"]
 [ext_resource type="Script" uid="uid://d0laq2yso5j1h" path="res://scripts/niveau_resource.gd" id="3_olo3e"]
 
 [resource]
 script = ExtResource("3_olo3e")
 canonique = true
 "second_degrée" = true
+prochaine_niveau = ExtResource("1_32bpt")
 niveau_page = 3
 niveau_nombre = 9
 "étirage_h" = 50.0

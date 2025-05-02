@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="NiveauResource" load_steps=5 format=3 uid="uid://coew5aplpar0a"]
+
+[ext_resource type="Texture2D" uid="uid://belu8t10dk0sr" path="res://assets/tutoriels/fonctions_radicale/3-11a.png" id="1_osomh"]
+[ext_resource type="Script" uid="uid://d0laq2yso5j1h" path="res://scripts/niveau_resource.gd" id="1_tahkj"]
+[ext_resource type="Texture2D" uid="uid://ds7jwug18vstn" path="res://assets/tutoriels/fonctions_radicale/3-11b.png" id="2_qaeet"]
+[ext_resource type="Resource" uid="uid://yef0mawim8q7" path="res://resources/fonctions_radicale/3-12.tres" id="3_qaeet"]
+
+[resource]
+script = ExtResource("1_tahkj")
+canonique = true
+"second_degrée" = true
+prochaine_niveau = ExtResource("3_qaeet")
+niveau_page = 3
+niveau_nombre = 11
+"étirage_h" = 50.0
+"étirage_v" = 100.0
+origine_h = -7
+origine_v = 0
+point_arrondissement = 1.0
+astreoides = Array[Vector2]([Vector2(-1, 1), Vector2(-4, 2)])
+bombes = Array[Vector2]([])
+tutoriel_actif = true
+texte = "La fonction contienne une deuxième coéfficient; une à l'intérieur de la racine carée. Si cette coéfficient est négative,  la fonction aura une réflexion horizontale."
+image_1 = ExtResource("1_osomh")
+image_2 = ExtResource("2_qaeet")
+tag_1 = "y = √(x)"
+tag_2 = "y = √(-x)"
+metadata/_custom_type_script = "uid://d0laq2yso5j1h"

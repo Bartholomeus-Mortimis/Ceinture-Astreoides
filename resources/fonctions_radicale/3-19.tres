@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="NiveauResource" load_steps=4 format=3 uid="uid://dvkl6vuqgigeu"]
+
+[ext_resource type="Script" uid="uid://d0laq2yso5j1h" path="res://scripts/niveau_resource.gd" id="1_chfhg"]
+[ext_resource type="Texture2D" uid="uid://dtaue3mnbr8gt" path="res://assets/tutoriels/fonctions_radicale/3-19a.png" id="1_xjrod"]
+[ext_resource type="Texture2D" uid="uid://1huxsrpxy5l0" path="res://assets/tutoriels/fonctions_radicale/3-19b.png" id="2_0ll4f"]
+
+[resource]
+script = ExtResource("1_chfhg")
+canonique = true
+"second_degrée" = true
+niveau_page = 3
+niveau_nombre = 18
+"étirage_h" = 50.0
+"étirage_v" = 100.0
+origine_h = -2
+origine_v = 0
+point_arrondissement = 0.5
+astreoides = Array[Vector2]([Vector2(-1, 1), Vector2(2, 2), Vector2(7, 3)])
+bombes = Array[Vector2]([])
+tutoriel_actif = true
+texte = "Une fonction radicale a un point de départ, x = 0 par défaut. Ce point peut être bouger avec une translation horizontal."
+image_1 = ExtResource("1_xjrod")
+image_2 = ExtResource("2_0ll4f")
+tag_1 = "y = √(x)"
+tag_2 = "y = √(x + 2)"
+metadata/_custom_type_script = "uid://d0laq2yso5j1h"

@@ -283,7 +283,7 @@ theme_override_styles/tab_selected = SubResource("StyleBoxEmpty_tsbuv")
 theme_override_styles/tab_hovered = SubResource("StyleBoxEmpty_oxmov")
 theme_override_styles/tab_unselected = SubResource("StyleBoxEmpty_el7rv")
 tab_alignment = 1
-current_tab = 3
+current_tab = 4
 tabs_visible = false
 
 [node name="Tutoriel" type="Control" parent="Niveaux/TabContainer"]
@@ -640,11 +640,12 @@ size_flags_vertical = 6
 text = "30"
 niveau_resource = "res://resources/second_dégrée/2-30.tres"
 
-[node name="Radicales" type="Control" parent="Niveaux/TabContainer"]
+[node name="Radicales1" type="Control" parent="Niveaux/TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 3
 
-[node name="Titre" type="Label" parent="Niveaux/TabContainer/Radicales"]
+[node name="Titre" type="Label" parent="Niveaux/TabContainer/Radicales1"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -658,7 +659,7 @@ label_settings = SubResource("LabelSettings_lrmth")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="GridContainer" type="GridContainer" parent="Niveaux/TabContainer/Radicales"]
+[node name="GridContainer" type="GridContainer" parent="Niveaux/TabContainer/Radicales1"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 1
 anchors_preset = 15
@@ -670,9 +671,9 @@ offset_right = 9.0
 offset_bottom = -8.0
 grow_horizontal = 2
 grow_vertical = 2
-columns = 3
+columns = 6
 
-[node name="BouttonNiveau" parent="Niveaux/TabContainer/Radicales/GridContainer" instance=ExtResource("7_5mgcq")]
+[node name="BouttonNiveau" parent="Niveaux/TabContainer/Radicales1/GridContainer" instance=ExtResource("7_5mgcq")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -680,7 +681,7 @@ size_flags_vertical = 6
 text = "1"
 niveau_resource = "res://resources/fonctions_radicale/3-1.tres"
 
-[node name="BouttonNiveau2" parent="Niveaux/TabContainer/Radicales/GridContainer" instance=ExtResource("7_5mgcq")]
+[node name="BouttonNiveau2" parent="Niveaux/TabContainer/Radicales1/GridContainer" instance=ExtResource("7_5mgcq")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -688,7 +689,7 @@ size_flags_vertical = 6
 text = "2"
 niveau_resource = "res://resources/fonctions_radicale/3-2.tres"
 
-[node name="BouttonNiveau3" parent="Niveaux/TabContainer/Radicales/GridContainer" instance=ExtResource("7_5mgcq")]
+[node name="BouttonNiveau3" parent="Niveaux/TabContainer/Radicales1/GridContainer" instance=ExtResource("7_5mgcq")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -696,7 +697,7 @@ size_flags_vertical = 6
 text = "3"
 niveau_resource = "res://resources/fonctions_radicale/3-3.tres"
 
-[node name="BouttonNiveau4" parent="Niveaux/TabContainer/Radicales/GridContainer" instance=ExtResource("7_5mgcq")]
+[node name="BouttonNiveau4" parent="Niveaux/TabContainer/Radicales1/GridContainer" instance=ExtResource("7_5mgcq")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -704,7 +705,7 @@ size_flags_vertical = 6
 text = "4"
 niveau_resource = "res://resources/fonctions_radicale/3-4.tres"
 
-[node name="BouttonNiveau5" parent="Niveaux/TabContainer/Radicales/GridContainer" instance=ExtResource("7_5mgcq")]
+[node name="BouttonNiveau5" parent="Niveaux/TabContainer/Radicales1/GridContainer" instance=ExtResource("7_5mgcq")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -712,7 +713,7 @@ size_flags_vertical = 6
 text = "5"
 niveau_resource = "res://resources/fonctions_radicale/3-5.tres"
 
-[node name="BouttonNiveau6" parent="Niveaux/TabContainer/Radicales/GridContainer" instance=ExtResource("7_5mgcq")]
+[node name="BouttonNiveau6" parent="Niveaux/TabContainer/Radicales1/GridContainer" instance=ExtResource("7_5mgcq")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -720,7 +721,7 @@ size_flags_vertical = 6
 text = "6"
 niveau_resource = "res://resources/fonctions_radicale/3-6.tres"
 
-[node name="BouttonNiveau7" parent="Niveaux/TabContainer/Radicales/GridContainer" instance=ExtResource("7_5mgcq")]
+[node name="BouttonNiveau7" parent="Niveaux/TabContainer/Radicales1/GridContainer" instance=ExtResource("7_5mgcq")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -728,7 +729,7 @@ size_flags_vertical = 6
 text = "7"
 niveau_resource = "res://resources/fonctions_radicale/3-7.tres"
 
-[node name="BouttonNiveau8" parent="Niveaux/TabContainer/Radicales/GridContainer" instance=ExtResource("7_5mgcq")]
+[node name="BouttonNiveau8" parent="Niveaux/TabContainer/Radicales1/GridContainer" instance=ExtResource("7_5mgcq")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -736,13 +737,125 @@ size_flags_vertical = 6
 text = "8"
 niveau_resource = "res://resources/fonctions_radicale/3-8.tres"
 
-[node name="BouttonNiveau9" parent="Niveaux/TabContainer/Radicales/GridContainer" instance=ExtResource("7_5mgcq")]
+[node name="BouttonNiveau9" parent="Niveaux/TabContainer/Radicales1/GridContainer" instance=ExtResource("7_5mgcq")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
 text = "9"
 niveau_resource = "res://resources/fonctions_radicale/3-9.tres"
+
+[node name="BouttonNiveau10" parent="Niveaux/TabContainer/Radicales1/GridContainer" instance=ExtResource("7_5mgcq")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "10"
+niveau_resource = "res://resources/fonctions_radicale/3-10.tres"
+
+[node name="BouttonNiveau11" parent="Niveaux/TabContainer/Radicales1/GridContainer" instance=ExtResource("7_5mgcq")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "11"
+niveau_resource = "res://resources/fonctions_radicale/3-11.tres"
+
+[node name="BouttonNiveau12" parent="Niveaux/TabContainer/Radicales1/GridContainer" instance=ExtResource("7_5mgcq")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "12"
+niveau_resource = "res://resources/fonctions_radicale/3-12.tres"
+
+[node name="BouttonNiveau13" parent="Niveaux/TabContainer/Radicales1/GridContainer" instance=ExtResource("7_5mgcq")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "13"
+niveau_resource = "res://resources/fonctions_radicale/3-13.tres"
+
+[node name="BouttonNiveau14" parent="Niveaux/TabContainer/Radicales1/GridContainer" instance=ExtResource("7_5mgcq")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "14"
+niveau_resource = "res://resources/fonctions_radicale/3-14.tres"
+
+[node name="BouttonNiveau15" parent="Niveaux/TabContainer/Radicales1/GridContainer" instance=ExtResource("7_5mgcq")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "15"
+niveau_resource = "res://resources/fonctions_radicale/3-15.tres"
+
+[node name="BouttonNiveau16" parent="Niveaux/TabContainer/Radicales1/GridContainer" instance=ExtResource("7_5mgcq")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "16"
+niveau_resource = "res://resources/fonctions_radicale/3-16.tres"
+
+[node name="BouttonNiveau17" parent="Niveaux/TabContainer/Radicales1/GridContainer" instance=ExtResource("7_5mgcq")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "17"
+niveau_resource = "res://resources/fonctions_radicale/3-17.tres"
+
+[node name="BouttonNiveau18" parent="Niveaux/TabContainer/Radicales1/GridContainer" instance=ExtResource("7_5mgcq")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "18"
+niveau_resource = "res://resources/fonctions_radicale/3-18.tres"
+
+[node name="Radicales2" type="Control" parent="Niveaux/TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 4
+
+[node name="Titre" type="Label" parent="Niveaux/TabContainer/Radicales2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -36.0
+offset_right = 36.0
+offset_bottom = 20.0
+grow_horizontal = 2
+text = "3 - Fonctions Radicales"
+label_settings = SubResource("LabelSettings_lrmth")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="Niveaux/TabContainer/Radicales2"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -9.0
+offset_top = 61.0
+offset_right = 9.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BouttonNiveau19" parent="Niveaux/TabContainer/Radicales2/GridContainer" instance=ExtResource("7_5mgcq")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "19
+"
+niveau_resource = "res://resources/fonctions_radicale/3-19.tres"
 
 [node name="BouttonFermer" type="Button" parent="Niveaux"]
 layout_mode = 1
