@@ -39,16 +39,17 @@ func _on_line_edit_text_submitted(new_text: String) -> void:
 	
 	var test_expression: Expression = Expression.new()
 	test_expression.parse(expression, ["x"])
-	test_expression.execute([1])
 	
-	if test_expression.has_execute_failed():
-		équation_briser()
-	elif test_expression.execute([1]) is float or test_expression.execute([1]) is String or test_expression.execute([1]) is int:
-		équation_soumis.emit()
-		panel_équation.hide()
-		tutoriel.hide()
-	else:
-		équation_briser()
+	for i in range(-10, 10):
+		test_expression.execute([i])
+		if test_expression.has_execute_failed():
+			équation_briser()
+		elif test_expression.execute([i]) is float or test_expression.execute([i]) is String or test_expression.execute([i]) is int:
+			équation_soumis.emit()
+			panel_équation.hide()
+			tutoriel.hide()
+			return
+	équation_briser()
 
 func équation_en_expression(nouveau_équation: String):
 	

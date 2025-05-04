@@ -1,13 +1,15 @@
-[gd_resource type="Resource" script_class="NiveauResource" load_steps=4 format=3 uid="uid://dvkl6vuqgigeu"]
+[gd_resource type="Resource" script_class="NiveauResource" load_steps=5 format=3 uid="uid://dvkl6vuqgigeu"]
 
 [ext_resource type="Script" uid="uid://d0laq2yso5j1h" path="res://scripts/niveau_resource.gd" id="1_chfhg"]
 [ext_resource type="Texture2D" uid="uid://dtaue3mnbr8gt" path="res://assets/tutoriels/fonctions_radicale/3-19a.png" id="1_xjrod"]
 [ext_resource type="Texture2D" uid="uid://1huxsrpxy5l0" path="res://assets/tutoriels/fonctions_radicale/3-19b.png" id="2_0ll4f"]
+[ext_resource type="Resource" uid="uid://brs4ji5kgy1qw" path="res://resources/fonctions_radicale/3-20.tres" id="3_0ll4f"]
 
 [resource]
 script = ExtResource("1_chfhg")
 canonique = true
 "second_degrée" = true
+prochaine_niveau = ExtResource("3_0ll4f")
 niveau_page = 3
 niveau_nombre = 18
 "étirage_h" = 50.0

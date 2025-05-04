@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="NiveauResource" load_steps=5 format=3 uid="uid://c6meqm4yixdst"]
+
+[ext_resource type="Texture2D" uid="uid://bjdg2by8ykpdx" path="res://assets/tutoriels/fonctions_rationelles/4-9a.png" id="1_nihkg"]
+[ext_resource type="Script" uid="uid://d0laq2yso5j1h" path="res://scripts/niveau_resource.gd" id="1_uyrrs"]
+[ext_resource type="Texture2D" uid="uid://cqsuxkgtxdiqh" path="res://assets/tutoriels/fonctions_rationelles/4-13b.png" id="2_oagy5"]
+[ext_resource type="Resource" uid="uid://dt4v34l7pkcn8" path="res://resources/fonctions_rationelles/4-14.tres" id="3_oagy5"]
+
+[resource]
+script = ExtResource("1_uyrrs")
+canonique = true
+"second_degrée" = true
+prochaine_niveau = ExtResource("3_oagy5")
+niveau_page = 4
+niveau_nombre = 13
+"étirage_h" = 50.0
+"étirage_v" = 50.0
+origine_h = -4
+origine_v = -4
+point_arrondissement = 0.5
+astreoides = Array[Vector2]([Vector2(1, 2), Vector2(2, 1), Vector2(-1, -2), Vector2(-2, -1)])
+bombes = Array[Vector2]([])
+tutoriel_actif = true
+texte = "Si le nominateur de la fonction est plus grand que 1, la fonction va subir une agrandissement."
+image_1 = ExtResource("1_nihkg")
+image_2 = ExtResource("2_oagy5")
+tag_1 = "y = 1/x"
+tag_2 = "y = 3/x"
+metadata/_custom_type_script = "uid://d0laq2yso5j1h"

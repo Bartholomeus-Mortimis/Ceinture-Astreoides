@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="NiveauResource" load_steps=5 format=3 uid="uid://dt4v34l7pkcn8"]
+
+[ext_resource type="Texture2D" uid="uid://bjdg2by8ykpdx" path="res://assets/tutoriels/fonctions_rationelles/4-9a.png" id="1_wjymn"]
+[ext_resource type="Texture2D" uid="uid://yec2wdilbys1" path="res://assets/tutoriels/fonctions_rationelles/4-14b.png" id="2_wjymn"]
+[ext_resource type="Script" uid="uid://d0laq2yso5j1h" path="res://scripts/niveau_resource.gd" id="3_3fl8t"]
+[ext_resource type="Resource" uid="uid://diypibxwdo42g" path="res://resources/fonctions_rationelles/4-15.tres" id="3_y2lyf"]
+
+[resource]
+script = ExtResource("3_3fl8t")
+canonique = true
+"second_degrée" = true
+prochaine_niveau = ExtResource("3_y2lyf")
+niveau_page = 4
+niveau_nombre = 14
+"étirage_h" = 100.0
+"étirage_v" = 100.0
+origine_h = -2
+origine_v = -2
+point_arrondissement = 0.5
+astreoides = Array[Vector2]([Vector2(1, 0.5), Vector2(-1, -0.5)])
+bombes = Array[Vector2]([Vector2(0, 0)])
+tutoriel_actif = true
+texte = "Si le nominateur de la fonction est inférieur que 1, la fonction subiras une rétrécissement."
+image_1 = ExtResource("1_wjymn")
+image_2 = ExtResource("2_wjymn")
+tag_1 = "y = 1/x"
+tag_2 = "y = 0,5/x"
+metadata/_custom_type_script = "uid://d0laq2yso5j1h"

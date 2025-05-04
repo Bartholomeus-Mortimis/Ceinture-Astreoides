@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="NiveauResource" load_steps=5 format=3 uid="uid://drvvo4e2dqhsd"]
+
+[ext_resource type="Texture2D" uid="uid://bsyqwllmdwdo5" path="res://assets/tutoriels/fonctions_rationelles/4-1a.png" id="1_7ih54"]
+[ext_resource type="Script" uid="uid://d0laq2yso5j1h" path="res://scripts/niveau_resource.gd" id="1_sj6yv"]
+[ext_resource type="Texture2D" uid="uid://7cealethr43k" path="res://assets/tutoriels/fonctions_rationelles/4-1b.png" id="2_6ge1j"]
+[ext_resource type="Resource" uid="uid://pepymywnb15y" path="res://resources/fonctions_rationelles/4-2.tres" id="3_6ge1j"]
+
+[resource]
+script = ExtResource("1_sj6yv")
+canonique = true
+"second_degrée" = true
+prochaine_niveau = ExtResource("3_6ge1j")
+niveau_page = 4
+niveau_nombre = 1
+"étirage_h" = 100.0
+"étirage_v" = 50.0
+origine_h = -2
+origine_v = -2
+point_arrondissement = 1.0
+astreoides = Array[Vector2]([Vector2(1, 1), Vector2(-1, -1)])
+bombes = Array[Vector2]([Vector2(0, 0)])
+tutoriel_actif = true
+texte = "En divisant par x, une fonction deviens une fonction rationelle."
+image_1 = ExtResource("1_7ih54")
+image_2 = ExtResource("2_6ge1j")
+tag_1 = "y = x"
+tag_2 = "y = 1/x"
+metadata/_custom_type_script = "uid://d0laq2yso5j1h"

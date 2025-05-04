@@ -185,12 +185,12 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -170.5
+offset_left = -229.0
 offset_top = 23.0
-offset_right = 171.5
+offset_right = 230.0
 offset_bottom = 139.0
 grow_horizontal = 2
-text = "Jeu De Fonctions"
+text = "Ceinture d'Astréoïdes"
 label_settings = SubResource("LabelSettings_xtla6")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -203,27 +203,12 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -75.0
-offset_top = -36.0
+offset_top = -4.0
 offset_right = 75.0
-offset_bottom = 26.0
+offset_bottom = 58.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Jouer"
-
-[node name="BouttonParamètres" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -60.0
-offset_top = 36.0
-offset_right = 60.0
-offset_bottom = 93.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Paramètres"
 
 [node name="BouttonQuitter" type="Button" parent="."]
 layout_mode = 1
@@ -233,19 +218,19 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -60.0
-offset_top = 102.0
+offset_top = 67.0
 offset_right = 60.0
-offset_bottom = 159.0
+offset_bottom = 124.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Quitter"
 
 [node name="BouttonNiveau" parent="." instance=ExtResource("7_5mgcq")]
 layout_mode = 0
-offset_left = 53.0
-offset_top = 48.0
-offset_right = 103.0
-offset_bottom = 98.0
+offset_left = 29.0
+offset_top = 33.0
+offset_right = 79.0
+offset_bottom = 83.0
 text = "Dev"
 niveau_resource = "res://resources/niveau_dev.tres"
 
@@ -283,7 +268,7 @@ theme_override_styles/tab_selected = SubResource("StyleBoxEmpty_tsbuv")
 theme_override_styles/tab_hovered = SubResource("StyleBoxEmpty_oxmov")
 theme_override_styles/tab_unselected = SubResource("StyleBoxEmpty_el7rv")
 tab_alignment = 1
-current_tab = 4
+current_tab = 5
 tabs_visible = false
 
 [node name="Tutoriel" type="Control" parent="Niveaux/TabContainer"]
@@ -818,6 +803,7 @@ text = "18"
 niveau_resource = "res://resources/fonctions_radicale/3-18.tres"
 
 [node name="Radicales2" type="Control" parent="Niveaux/TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 4
 
@@ -847,15 +833,231 @@ offset_right = 9.0
 offset_bottom = -8.0
 grow_horizontal = 2
 grow_vertical = 2
+columns = 3
 
 [node name="BouttonNiveau19" parent="Niveaux/TabContainer/Radicales2/GridContainer" instance=ExtResource("7_5mgcq")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
-text = "19
-"
+text = "19"
 niveau_resource = "res://resources/fonctions_radicale/3-19.tres"
+
+[node name="BouttonNiveau20" parent="Niveaux/TabContainer/Radicales2/GridContainer" instance=ExtResource("7_5mgcq")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "20"
+niveau_resource = "res://resources/fonctions_radicale/3-20.tres"
+
+[node name="BouttonNiveau21" parent="Niveaux/TabContainer/Radicales2/GridContainer" instance=ExtResource("7_5mgcq")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "21"
+niveau_resource = "res://resources/fonctions_radicale/3-21.tres"
+
+[node name="BouttonNiveau22" parent="Niveaux/TabContainer/Radicales2/GridContainer" instance=ExtResource("7_5mgcq")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "22"
+niveau_resource = "res://resources/fonctions_radicale/3-22.tres"
+
+[node name="BouttonNiveau23" parent="Niveaux/TabContainer/Radicales2/GridContainer" instance=ExtResource("7_5mgcq")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "23"
+niveau_resource = "res://resources/fonctions_radicale/3-23.tres"
+
+[node name="BouttonNiveau24" parent="Niveaux/TabContainer/Radicales2/GridContainer" instance=ExtResource("7_5mgcq")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "24"
+niveau_resource = "res://resources/fonctions_radicale/3-24.tres"
+
+[node name="Rationels" type="Control" parent="Niveaux/TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 5
+
+[node name="Titre" type="Label" parent="Niveaux/TabContainer/Rationels"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -36.0
+offset_right = 36.0
+offset_bottom = 20.0
+grow_horizontal = 2
+text = "4 - Fonctions Rationelles"
+label_settings = SubResource("LabelSettings_lrmth")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="Niveaux/TabContainer/Rationels"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -9.0
+offset_top = 61.0
+offset_right = 9.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 6
+
+[node name="BouttonNiveau" parent="Niveaux/TabContainer/Rationels/GridContainer" instance=ExtResource("7_5mgcq")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "1"
+niveau_resource = "res://resources/fonctions_rationelles/4-1.tres"
+
+[node name="BouttonNiveau2" parent="Niveaux/TabContainer/Rationels/GridContainer" instance=ExtResource("7_5mgcq")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "2"
+niveau_resource = "res://resources/fonctions_rationelles/4-2.tres"
+
+[node name="BouttonNiveau3" parent="Niveaux/TabContainer/Rationels/GridContainer" instance=ExtResource("7_5mgcq")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "3"
+niveau_resource = "res://resources/fonctions_rationelles/4-3.tres"
+
+[node name="BouttonNiveau4" parent="Niveaux/TabContainer/Rationels/GridContainer" instance=ExtResource("7_5mgcq")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "4"
+niveau_resource = "res://resources/fonctions_rationelles/4-4.tres"
+
+[node name="BouttonNiveau5" parent="Niveaux/TabContainer/Rationels/GridContainer" instance=ExtResource("7_5mgcq")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "5"
+niveau_resource = "res://resources/fonctions_rationelles/4-5.tres"
+
+[node name="BouttonNiveau6" parent="Niveaux/TabContainer/Rationels/GridContainer" instance=ExtResource("7_5mgcq")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "6"
+niveau_resource = "res://resources/fonctions_rationelles/4-6.tres"
+
+[node name="BouttonNiveau7" parent="Niveaux/TabContainer/Rationels/GridContainer" instance=ExtResource("7_5mgcq")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "7"
+niveau_resource = "res://resources/fonctions_rationelles/4-7.tres"
+
+[node name="BouttonNiveau8" parent="Niveaux/TabContainer/Rationels/GridContainer" instance=ExtResource("7_5mgcq")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "8"
+niveau_resource = "res://resources/fonctions_rationelles/4-8.tres"
+
+[node name="BouttonNiveau9" parent="Niveaux/TabContainer/Rationels/GridContainer" instance=ExtResource("7_5mgcq")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "9"
+niveau_resource = "res://resources/fonctions_rationelles/4-9.tres"
+
+[node name="BouttonNiveau10" parent="Niveaux/TabContainer/Rationels/GridContainer" instance=ExtResource("7_5mgcq")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "10"
+niveau_resource = "res://resources/fonctions_rationelles/4-10.tres"
+
+[node name="BouttonNiveau11" parent="Niveaux/TabContainer/Rationels/GridContainer" instance=ExtResource("7_5mgcq")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "11"
+niveau_resource = "res://resources/fonctions_rationelles/4-11.tres"
+
+[node name="BouttonNiveau12" parent="Niveaux/TabContainer/Rationels/GridContainer" instance=ExtResource("7_5mgcq")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "12"
+niveau_resource = "res://resources/fonctions_rationelles/4-12.tres"
+
+[node name="BouttonNiveau13" parent="Niveaux/TabContainer/Rationels/GridContainer" instance=ExtResource("7_5mgcq")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "13"
+niveau_resource = "res://resources/fonctions_rationelles/4-13.tres"
+
+[node name="BouttonNiveau14" parent="Niveaux/TabContainer/Rationels/GridContainer" instance=ExtResource("7_5mgcq")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "14"
+niveau_resource = "res://resources/fonctions_rationelles/4-14.tres"
+
+[node name="BouttonNiveau15" parent="Niveaux/TabContainer/Rationels/GridContainer" instance=ExtResource("7_5mgcq")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "15"
+niveau_resource = "res://resources/fonctions_rationelles/4-15.tres"
+
+[node name="BouttonNiveau16" parent="Niveaux/TabContainer/Rationels/GridContainer" instance=ExtResource("7_5mgcq")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "16"
+niveau_resource = "res://resources/fonctions_rationelles/4-16.tres"
+
+[node name="BouttonNiveau17" parent="Niveaux/TabContainer/Rationels/GridContainer" instance=ExtResource("7_5mgcq")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "17"
+niveau_resource = "res://resources/fonctions_rationelles/4-17.tres"
+
+[node name="BouttonNiveau18" parent="Niveaux/TabContainer/Rationels/GridContainer" instance=ExtResource("7_5mgcq")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+text = "18"
+niveau_resource = "res://resources/fonctions_rationelles/4-18.tres"
 
 [node name="BouttonFermer" type="Button" parent="Niveaux"]
 layout_mode = 1
@@ -930,7 +1132,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="pressed" from="BouttonJouer" to="." method="_on_boutton_jouer_pressed"]
-[connection signal="pressed" from="BouttonParamètres" to="." method="_on_boutton_paramètres_pressed"]
 [connection signal="pressed" from="BouttonQuitter" to="." method="_on_boutton_quitter_pressed"]
 [connection signal="pressed" from="Niveaux/BouttonFermer" to="." method="_on_boutton_fermer_pressed"]
 [connection signal="pressed" from="Niveaux/BouttonGauche" to="." method="_on_boutton_gauche_pressed"]

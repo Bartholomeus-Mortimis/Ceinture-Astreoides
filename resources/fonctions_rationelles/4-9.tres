@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="NiveauResource" load_steps=5 format=3 uid="uid://nhg60i3jglba"]
+
+[ext_resource type="Texture2D" uid="uid://bjdg2by8ykpdx" path="res://assets/tutoriels/fonctions_rationelles/4-9a.png" id="1_d5qae"]
+[ext_resource type="Script" uid="uid://d0laq2yso5j1h" path="res://scripts/niveau_resource.gd" id="1_skg2l"]
+[ext_resource type="Texture2D" uid="uid://cbi3012ddb6l5" path="res://assets/tutoriels/fonctions_rationelles/4-9b.png" id="2_3beaf"]
+[ext_resource type="Resource" uid="uid://0lrjbggmc4fb" path="res://resources/fonctions_rationelles/4-10.tres" id="3_3beaf"]
+
+[resource]
+script = ExtResource("1_skg2l")
+canonique = true
+"second_degrée" = true
+prochaine_niveau = ExtResource("3_3beaf")
+niveau_page = 4
+niveau_nombre = 9
+"étirage_h" = 100.0
+"étirage_v" = 100.0
+origine_h = -2
+origine_v = -2
+point_arrondissement = 1.0
+astreoides = Array[Vector2]([Vector2(-1, 1), Vector2(1, -1)])
+bombes = Array[Vector2]([Vector2(0, 0)])
+tutoriel_actif = true
+texte = "Si le numérateur de la fonction est négatif, la fonction subiras une réflexion."
+image_1 = ExtResource("1_d5qae")
+image_2 = ExtResource("2_3beaf")
+tag_1 = "y = 1/x"
+tag_2 = "y = -1/x"
+metadata/_custom_type_script = "uid://d0laq2yso5j1h"

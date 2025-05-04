@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="NiveauResource" load_steps=2 format=3 uid="uid://d0o3jkyy2sl62"]
+
+[ext_resource type="Script" uid="uid://d0laq2yso5j1h" path="res://scripts/niveau_resource.gd" id="1_nl73w"]
+
+[resource]
+script = ExtResource("1_nl73w")
+canonique = true
+"second_degrée" = true
+niveau_page = 4
+niveau_nombre = 18
+"étirage_h" = 50.0
+"étirage_v" = 50.0
+origine_h = -10
+origine_v = -12
+point_arrondissement = 1.0
+astreoides = Array[Vector2]([Vector2(-6, -8), Vector2(-7, -9), Vector2(-3, -11)])
+bombes = Array[Vector2]([Vector2(-4, -10)])
+tutoriel_actif = false
+texte = ""
+tag_1 = ""
+tag_2 = ""
+metadata/_custom_type_script = "uid://d0laq2yso5j1h"

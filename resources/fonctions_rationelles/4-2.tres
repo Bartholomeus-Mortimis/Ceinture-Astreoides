@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="NiveauResource" load_steps=5 format=3 uid="uid://pepymywnb15y"]
+
+[ext_resource type="Texture2D" uid="uid://b2q6wybbg7bhi" path="res://assets/tutoriels/fonctions_rationelles/4-2a.png" id="1_6awnl"]
+[ext_resource type="Texture2D" uid="uid://idcppeut3wj6" path="res://assets/tutoriels/fonctions_rationelles/4-2b.png" id="2_qspvv"]
+[ext_resource type="Script" uid="uid://d0laq2yso5j1h" path="res://scripts/niveau_resource.gd" id="3_a5xkm"]
+[ext_resource type="Resource" uid="uid://daf1dkig6xcyk" path="res://resources/fonctions_rationelles/4-3.tres" id="3_qspvv"]
+
+[resource]
+script = ExtResource("3_a5xkm")
+canonique = true
+"second_degrée" = true
+prochaine_niveau = ExtResource("3_qspvv")
+niveau_page = 4
+niveau_nombre = 2
+"étirage_h" = 100.0
+"étirage_v" = 50.0
+origine_h = -2
+origine_v = -2
+point_arrondissement = 1.0
+astreoides = Array[Vector2]([Vector2(1, 2), Vector2(-1, 0)])
+bombes = Array[Vector2]([Vector2(0, 1)])
+tutoriel_actif = true
+texte = "Une fonction rationelle a un asmyptote horizontale, un axe qu'elle n'atteindre jamais. Il peut être modifier avec une translation verticale."
+image_1 = ExtResource("1_6awnl")
+image_2 = ExtResource("2_qspvv")
+tag_1 = "y = 1/x"
+tag_2 = "y = 1/x + 1"
+metadata/_custom_type_script = "uid://d0laq2yso5j1h"

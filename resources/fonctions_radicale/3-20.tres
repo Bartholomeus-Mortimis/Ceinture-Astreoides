@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="NiveauResource" load_steps=3 format=3 uid="uid://brs4ji5kgy1qw"]
+
+[ext_resource type="Resource" uid="uid://vpkeksffxlxm" path="res://resources/fonctions_radicale/3-21.tres" id="1_ux7ff"]
+[ext_resource type="Script" uid="uid://d0laq2yso5j1h" path="res://scripts/niveau_resource.gd" id="3_5btvn"]
+
+[resource]
+script = ExtResource("3_5btvn")
+canonique = true
+"second_degrée" = true
+prochaine_niveau = ExtResource("1_ux7ff")
+niveau_page = 3
+niveau_nombre = 20
+"étirage_h" = 25.0
+"étirage_v" = 50.0
+origine_h = 0
+origine_v = 0
+point_arrondissement = 1.0
+astreoides = Array[Vector2]([Vector2(4, 1), Vector2(7, 2), Vector2(12, 3)])
+bombes = Array[Vector2]([])
+tutoriel_actif = false
+texte = ""
+tag_1 = ""
+tag_2 = ""
+metadata/_custom_type_script = "uid://d0laq2yso5j1h"

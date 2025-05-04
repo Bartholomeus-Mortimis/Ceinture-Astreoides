@@ -57,7 +57,8 @@ func _draw() -> void:
 		var valeur_pré: Vector2
 		for p in t.points:
 			if valeur_pré:
-				draw_line(p, valeur_pré, Color("#29ADFF"), 2.0, true)
+				if valeur_pré.distance_to(p) < 200:
+					draw_line(p, valeur_pré, Color("#29ADFF"), 2.0, true)
 			valeur_pré = p
 
 #endregion
@@ -91,7 +92,7 @@ func crée_traceur_de_équation(équation: String):
 	nouveau_traceur.équation = équation
 	nouveau_traceur.position = Vector2(markeur_1.position.x, markeur_2.position.y)
 	
-	get_tree().root.add_child(nouveau_traceur)
+	self.add_child(nouveau_traceur)
 
 func _on_temps_timer_timeout() -> void:
 	temps += temps_bonds
@@ -155,7 +156,7 @@ func load_niveau(niveau: NiveauResource):
 			-((a.y - niveau.origine_v) * étirage_v) + markeur_2.position.y
 		)
 		
-		get_tree().root.add_child.call_deferred(nouveau_astreoide)
+		self.add_child.call_deferred(nouveau_astreoide)
 	
 	for b: Vector2 in niveau.bombes:
 		
@@ -169,7 +170,7 @@ func load_niveau(niveau: NiveauResource):
 		
 		nouveau_bombe.bombe_exploser.connect(bombe_exploser)
 		
-		get_tree().root.add_child.call_deferred(nouveau_bombe)
+		self.add_child.call_deferred(nouveau_bombe)
 
 func _on_hud_équation_soumis() -> void:
 	if !traceur_existe:

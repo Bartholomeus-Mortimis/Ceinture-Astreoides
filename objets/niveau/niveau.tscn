@@ -447,6 +447,7 @@ mouse_filter = 2
 texture = ExtResource("5_t448f")
 
 [node name="WinScreen" type="Control" parent="UI"]
+z_index = 2
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -520,6 +521,7 @@ Niveau"
 
 [node name="ÉcranFaillite" type="Control" parent="UI"]
 visible = false
+z_index = 2
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
