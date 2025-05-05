@@ -683,7 +683,7 @@ offset_right = 67.0
 offset_bottom = 14.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Prochaine
+text = "Prochain
 Niveau"
 
 [node name="ÉcranFaillite" type="Control" parent="UI"]

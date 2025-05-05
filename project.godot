@@ -14,7 +14,7 @@ config/name="Ceinture d'Astréoïdes"
 run/main_scene="uid://312pl8bfq1yp"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 boot_splash/show_image=false
-config/icon="res://icon.svg"
+config/icon="uid://cpac8t2b4rmti"
 
 [autoload]
 

@@ -1133,6 +1133,18 @@ label_settings = SubResource("LabelSettings_0x3ub")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -39.0
+offset_right = 85.0
+grow_vertical = 0
+text = "v1.0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="BouttonJouer" to="." method="_on_boutton_jouer_pressed"]
 [connection signal="pressed" from="BouttonQuitter" to="." method="_on_boutton_quitter_pressed"]
 [connection signal="pressed" from="Niveaux/BouttonFermer" to="." method="_on_boutton_fermer_pressed"]
