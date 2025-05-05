@@ -163,7 +163,7 @@ autoplay = "hover"
 
 [node name="Explosion" type="AnimatedSprite2D" parent="."]
 visible = false
-modulate = Color(1, 0.54477, 0.244831, 1)
+modulate = Color(1, 0.244831, 0.314556, 1)
 z_index = 2
 scale = Vector2(7.375, 7.375)
 sprite_frames = SubResource("SpriteFrames_84cgg")

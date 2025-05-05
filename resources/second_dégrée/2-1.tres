@@ -20,7 +20,7 @@ point_arrondissement = 1.0
 astreoides = Array[Vector2]([Vector2(1, 1), Vector2(2, 4), Vector2(3, 9)])
 bombes = Array[Vector2]([])
 tutoriel_actif = true
-texte = "À l'aide d'un d'un exposant 2, une fonction linéaire devienne une fonction de second dégrée (aussi connu comme une parabole)."
+texte = "À l'aide d'un exposant de 2, une fonction linéaire devienne une parabole."
 image_1 = ExtResource("1_ae4ts")
 image_2 = ExtResource("2_sghnk")
 tag_1 = "y = x"

@@ -3,6 +3,33 @@ class_name Menu
 
 @onready var astreoides: Control = $ArrièrePlan/Astreoides
 
+func _ready() -> void:
+	if Singleton.niveau_présent: # Affiche le tab du dernier niveau jouer.
+		niveaux.show()
+		
+		if Singleton.niveau_présent.niveau_page == 4:
+			tab_container.current_tab = 5
+		elif Singleton.niveau_présent.niveau_page == 2:
+			
+			if Singleton.niveau_présent.niveau_nombre <= 18:
+				tab_container.current_tab = 1
+			else:
+				tab_container.current_tab = 2
+				
+		elif Singleton.niveau_présent.niveau_page == 3:
+			
+			if Singleton.niveau_présent.niveau_nombre <= 18:
+				tab_container.current_tab = 3
+			else:
+				tab_container.current_tab = 4
+		else:
+			tab_container.current_tab = 0
+		
+	if tab_container.current_tab != 0:
+		boutton_gauche.show()
+	if tab_container.current_tab == 5:
+		boutton_droite.hide()
+
 func _process(delta: float) -> void:
 	for a: TextureRect in astreoides.get_children():
 		if a.position.x < 900:
@@ -30,7 +57,7 @@ func _on_boutton_jouer_pressed() -> void:
 
 func _on_boutton_droite_pressed() -> void:
 	tab_container.current_tab += 1
-	if tab_container.current_tab == 4:
+	if tab_container.current_tab == 5:
 		boutton_droite.hide()
 	boutton_gauche.show()
 

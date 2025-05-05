@@ -19,7 +19,7 @@ point_arrondissement = 0.5
 astreoides = Array[Vector2]([Vector2(1, 1), Vector2(4, 2)])
 bombes = Array[Vector2]([])
 tutoriel_actif = true
-texte = "Une fonction peut devenir une fonction radicale avec une racine carée."
+texte = "En trouvant la racine carée, une fonction deviens une fonction radicale."
 image_1 = ExtResource("1_k0kli")
 tag_1 = "y = √(x)"
 tag_2 = ""

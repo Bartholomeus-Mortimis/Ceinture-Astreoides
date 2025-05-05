@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bsr86g4rqia1l"]
+[gd_scene load_steps=19 format=3 uid="uid://bsr86g4rqia1l"]
 
 [ext_resource type="Texture2D" uid="uid://cj5udm2hpdpp5" path="res://assets/sprites/astreoid1.png" id="1_0sb2a"]
 [ext_resource type="Script" uid="uid://cnc5ncgt2iuwt" path="res://objets/astreoid/astreoid.gd" id="1_irumh"]
 [ext_resource type="Theme" uid="uid://xu1wqc4xh2mu" path="res://assets/ui/mono-theme.tres" id="2_j81b4"]
+[ext_resource type="Texture2D" uid="uid://bfxt7usmdg7ts" path="res://assets/sprites/StaticBlob.png" id="4_43in3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_irumh"]
 
@@ -48,6 +49,70 @@ _data = {
 &"RESET": SubResource("Animation_43in3"),
 &"hover": SubResource("Animation_irumh")
 }
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gstul"]
+atlas = ExtResource("4_43in3")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rbvx2"]
+atlas = ExtResource("4_43in3")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_faouh"]
+atlas = ExtResource("4_43in3")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hyqx1"]
+atlas = ExtResource("4_43in3")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nuxy4"]
+atlas = ExtResource("4_43in3")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4c4yt"]
+atlas = ExtResource("4_43in3")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wown3"]
+atlas = ExtResource("4_43in3")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d27bi"]
+atlas = ExtResource("4_43in3")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aifp7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gstul")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rbvx2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_faouh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hyqx1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nuxy4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4c4yt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wown3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d27bi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
 
 [node name="Astreoid" type="Node2D" groups=["astreoides", "obstacles"]]
 script = ExtResource("1_irumh")
@@ -96,6 +161,14 @@ libraries = {
 &"": SubResource("AnimationLibrary_aifp7")
 }
 autoplay = "hover"
+
+[node name="Explosion" type="AnimatedSprite2D" parent="."]
+visible = false
+modulate = Color(0, 0.905882, 0.337255, 1)
+z_index = 2
+scale = Vector2(4.875, 4.875)
+sprite_frames = SubResource("SpriteFrames_aifp7")
+autoplay = "default"
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="mouse_entered" from="SourisHover" to="." method="_on_souris_hover_mouse_entered"]

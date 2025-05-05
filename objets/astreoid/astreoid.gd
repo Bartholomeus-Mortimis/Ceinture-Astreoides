@@ -5,6 +5,7 @@ class_name Astreoide
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
 @onready var label: Label = $SourisHover/Label
+@onready var explosion: AnimatedSprite2D = $Explosion
 
 var sprite_paths: Array[String] = ["res://assets/sprites/astreoid1.png", "res://assets/sprites/astreoid2.png", "res://assets/sprites/astreoid3.png"]
 func _ready() -> void:
@@ -20,4 +21,6 @@ func _on_souris_hover_mouse_exited() -> void:
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
+	explosion.show()
+	await get_tree().create_timer(0.2).timeout
 	queue_free()

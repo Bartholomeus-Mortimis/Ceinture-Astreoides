@@ -226,6 +226,7 @@ grow_vertical = 2
 text = "Quitter"
 
 [node name="BouttonNiveau" parent="." instance=ExtResource("7_5mgcq")]
+visible = false
 layout_mode = 0
 offset_left = 29.0
 offset_top = 33.0
@@ -235,6 +236,7 @@ text = "Dev"
 niveau_resource = "res://resources/niveau_dev.tres"
 
 [node name="Niveaux" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -268,11 +270,10 @@ theme_override_styles/tab_selected = SubResource("StyleBoxEmpty_tsbuv")
 theme_override_styles/tab_hovered = SubResource("StyleBoxEmpty_oxmov")
 theme_override_styles/tab_unselected = SubResource("StyleBoxEmpty_el7rv")
 tab_alignment = 1
-current_tab = 5
+current_tab = 0
 tabs_visible = false
 
 [node name="Tutoriel" type="Control" parent="Niveaux/TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -884,6 +885,7 @@ text = "24"
 niveau_resource = "res://resources/fonctions_radicale/3-24.tres"
 
 [node name="Rationels" type="Control" parent="Niveaux/TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 5
 
@@ -1072,6 +1074,7 @@ grow_horizontal = 0
 text = "X"
 
 [node name="BouttonGauche" type="Button" parent="Niveaux"]
+visible = false
 layout_mode = 1
 offset_left = 35.0
 offset_top = 11.0
@@ -1080,7 +1083,6 @@ offset_bottom = 48.0
 text = "<"
 
 [node name="BouttonDroite" type="Button" parent="Niveaux"]
-visible = false
 layout_mode = 0
 offset_left = 415.0
 offset_top = 11.0
