@@ -20,7 +20,7 @@ point_arrondissement = 0.5
 astreoides = Array[Vector2]([Vector2(-1, 1), Vector2(2, 2), Vector2(7, 3)])
 bombes = Array[Vector2]([])
 tutoriel_actif = true
-texte = "Une fonction radicale a un point de départ, x = 0 par défaut. Ce point peut être bouger avec une translation horizontal."
+texte = "Une fonction radicale a un point de départ, x = 0 par défaut. Ce point peut être bouger avec une translation horizontale."
 image_1 = ExtResource("1_xjrod")
 image_2 = ExtResource("2_0ll4f")
 tag_1 = "y = √(x)"

@@ -20,7 +20,7 @@ point_arrondissement = 1.0
 astreoides = Array[Vector2]([Vector2(1, 2), Vector2(-1, 0)])
 bombes = Array[Vector2]([Vector2(0, 1)])
 tutoriel_actif = true
-texte = "Une fonction rationelle a un asmyptote horizontale, un axe qu'elle n'atteindre jamais. Il peut être modifier avec une translation verticale."
+texte = "Une fonction rationnelle a une asymptote horizontale, un axe qu'elle n'atteindre jamais. Il peut être modifier avec une translation verticale."
 image_1 = ExtResource("1_6awnl")
 image_2 = ExtResource("2_qspvv")
 tag_1 = "y = 1/x"

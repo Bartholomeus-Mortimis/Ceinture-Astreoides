@@ -20,7 +20,7 @@ point_arrondissement = 1.0
 astreoides = Array[Vector2]([Vector2(1, -1), Vector2(4, -2)])
 bombes = Array[Vector2]([])
 tutoriel_actif = true
-texte = "Une fonction radicale a deux coéfficients, si le premier est négatif, la fonction va subir une réflexion verticale."
+texte = "Une fonction radicale a deux coefficients, si le premier est négatif, la fonction va subir une réflexion verticale."
 image_1 = ExtResource("1_8qwd4")
 image_2 = ExtResource("2_wgm3i")
 tag_1 = "y = √(x)"

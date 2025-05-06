@@ -20,7 +20,7 @@ point_arrondissement = 1.0
 astreoides = Array[Vector2]([Vector2(-1, 1), Vector2(1, -1)])
 bombes = Array[Vector2]([Vector2(0, 0)])
 tutoriel_actif = true
-texte = "Si le numérateur de la fonction est négatif, la fonction subiras une réflexion."
+texte = "Si le numérateur de la fonction est négatif, la fonction subira une réflexion."
 image_1 = ExtResource("1_d5qae")
 image_2 = ExtResource("2_3beaf")
 tag_1 = "y = 1/x"

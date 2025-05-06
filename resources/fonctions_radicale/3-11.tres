@@ -20,7 +20,7 @@ point_arrondissement = 1.0
 astreoides = Array[Vector2]([Vector2(-1, 1), Vector2(-4, 2)])
 bombes = Array[Vector2]([])
 tutoriel_actif = true
-texte = "La fonction contienne une deuxième coéfficient: une à l'intérieur de la racine carée. Si cette coéfficient est négative,  la fonction aura une réflexion horizontale."
+texte = "La fonction contienne un deuxième coefficient: une à l'intérieur de la racine carrée. Si ce coefficient est négatif,  la fonction aura une réflexion horizontale."
 image_1 = ExtResource("1_osomh")
 image_2 = ExtResource("2_qaeet")
 tag_1 = "y = √(x)"

@@ -20,7 +20,7 @@ point_arrondissement = 1.0
 astreoides = Array[Vector2]([Vector2(1, 2), Vector2(2, 8)])
 bombes = Array[Vector2]([])
 tutoriel_actif = true
-texte = "Si le coéfficient est plus grand que 1, le parabole va rétrécir."
+texte = "Si le coefficient est plus grand que 1, le parabole va rétrécir."
 image_1 = ExtResource("1_0e8yg")
 image_2 = ExtResource("2_0e8yg")
 tag_1 = "y = x²"

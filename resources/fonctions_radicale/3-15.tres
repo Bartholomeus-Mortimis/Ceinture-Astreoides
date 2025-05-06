@@ -20,7 +20,7 @@ point_arrondissement = 0.5
 astreoides = Array[Vector2]([Vector2(0.5, 1), Vector2(2, 2), Vector2(4.5, 3)])
 bombes = Array[Vector2]([])
 tutoriel_actif = true
-texte = "Si le deuxième coéfficient n'est pas 1, la fonction radicale va subir une agrandissment ou rétrécissement horizontale."
+texte = "Si le deuxième coefficient n'est pas 1, la fonction radicale va subir un agrandissement ou rétrécissement horizontale."
 image_1 = ExtResource("1_qik11")
 image_2 = ExtResource("2_bl124")
 tag_1 = "y = √(2x)"

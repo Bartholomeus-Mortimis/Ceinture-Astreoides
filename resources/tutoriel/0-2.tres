@@ -17,7 +17,7 @@ point_arrondissement = 1.0
 astreoides = Array[Vector2]([Vector2(1, 1)])
 bombes = Array[Vector2]([Vector2(2, 1)])
 tutoriel_actif = true
-texte = "Crée une fonction qui ne frappe pas le bombes. Frapper une bombe est une faillite immédiatement."
+texte = "Crée une fonction qui ne frappe pas le bombes. Frapper une bombe est une faillite immédiate."
 image_1 = ExtResource("1_6x7a3")
 tag_1 = "y = x"
 tag_2 = ""

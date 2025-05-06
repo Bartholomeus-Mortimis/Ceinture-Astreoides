@@ -19,7 +19,7 @@ point_arrondissement = 1.0
 astreoides = Array[Vector2]([Vector2(1, 1)])
 bombes = Array[Vector2]([])
 tutoriel_actif = true
-texte = "Crée une fonction qui atteint le centre de les astréoïdes. Détruit tout les astréoïdes pour réussir. Survoler votre souris par-dessus un astreoïd pour voir sa position."
+texte = "Crée une fonction qui atteint le centre des astéroïdes. Détruit tous les astéroïdes pour réussir. Survoler votre souris par-dessus un astéroïde pour voir sa position."
 image_1 = ExtResource("1_jxeo6")
 tag_1 = "y = x"
 tag_2 = ""

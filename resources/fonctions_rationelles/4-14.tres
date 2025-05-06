@@ -20,7 +20,7 @@ point_arrondissement = 0.5
 astreoides = Array[Vector2]([Vector2(1, 0.5), Vector2(-1, -0.5)])
 bombes = Array[Vector2]([Vector2(0, 0)])
 tutoriel_actif = true
-texte = "Si le nominateur de la fonction est inférieur que 1, la fonction subiras une rétrécissement."
+texte = "Si le nominateur de la fonction est inférieur que 1, la fonction subiras un rétrécissement."
 image_1 = ExtResource("1_wjymn")
 image_2 = ExtResource("2_wjymn")
 tag_1 = "y = 1/x"

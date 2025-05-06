@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Ceinture d'Astréoïdes"
+config/name="Ceinture d'Astéroïdes"
 run/main_scene="uid://312pl8bfq1yp"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 boot_splash/show_image=false

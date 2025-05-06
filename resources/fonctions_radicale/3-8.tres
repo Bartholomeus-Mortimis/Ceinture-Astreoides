@@ -20,7 +20,7 @@ point_arrondissement = 0.5
 astreoides = Array[Vector2]([Vector2(1, 0.5), Vector2(4, 1)])
 bombes = Array[Vector2]([])
 tutoriel_actif = true
-texte = "Si le premier coéfficient est moins que 1, le fonction radicale va subir une rétrécissement verticale."
+texte = "Si le premier coefficient est moins que 1, la fonction radicale va subir un rétrécissement vertical."
 image_1 = ExtResource("1_87kla")
 image_2 = ExtResource("2_7vabp")
 tag_1 = "y = √(x)"

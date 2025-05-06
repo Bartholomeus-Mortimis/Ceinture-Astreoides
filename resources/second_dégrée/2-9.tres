@@ -20,7 +20,7 @@ point_arrondissement = 0.1
 astreoides = Array[Vector2]([Vector2(1, 0.5), Vector2(3, 4.5)])
 bombes = Array[Vector2]([])
 tutoriel_actif = true
-texte = "Le coéfficient peut aussi être un nombre positif. Si le coéfficient est moins que 1, le parapole va agrandir."
+texte = "Le coefficient peut aussi être un nombre positif. Si le coefficient est moins que 1, le parabole va agrandir."
 image_1 = ExtResource("1_af1mq")
 image_2 = ExtResource("2_d7b28")
 tag_1 = "y = x²"

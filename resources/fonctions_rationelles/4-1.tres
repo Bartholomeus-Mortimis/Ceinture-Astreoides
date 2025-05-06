@@ -20,7 +20,7 @@ point_arrondissement = 1.0
 astreoides = Array[Vector2]([Vector2(1, 1), Vector2(-1, -1)])
 bombes = Array[Vector2]([Vector2(0, 0)])
 tutoriel_actif = true
-texte = "En divisant par x, une fonction deviens une fonction rationelle."
+texte = "En divisant par x, une fonction devient une fonction rationnelle."
 image_1 = ExtResource("1_7ih54")
 image_2 = ExtResource("2_6ge1j")
 tag_1 = "y = x"

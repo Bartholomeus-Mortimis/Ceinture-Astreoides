@@ -20,7 +20,7 @@ point_arrondissement = 0.5
 astreoides = Array[Vector2]([Vector2(-1, 1), Vector2(-3, -1)])
 bombes = Array[Vector2]([Vector2(-2, 0)])
 tutoriel_actif = true
-texte = "Une fonction rationelle a aussi un asymptote vertical. Cette asymptote peut être modifier avec une translation horizontale."
+texte = "Une fonction rationnelle a aussi une asymptote verticale. Cette asymptote peut être modifier avec une translation horizontale."
 image_1 = ExtResource("1_185p6")
 image_2 = ExtResource("2_8dfof")
 tag_1 = "y = 1/x"
