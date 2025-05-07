@@ -63,6 +63,9 @@ func équation_en_expression(nouveau_équation: String):
 	
 	print(nouveau_équation)
 	
+	if nouveau_équation.contains("²") and nouveau_équation.contains("√"):
+		return ""
+	
 	for i in nouveau_équation.length() + 1: 
 		if i > 0: 
 			
