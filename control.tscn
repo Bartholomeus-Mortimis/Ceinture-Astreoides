@@ -1,0 +1,162 @@
+[gd_scene load_steps=9 format=3 uid="uid://bjoj0iyq837wi"]
+
+[ext_resource type="Theme" uid="uid://xu1wqc4xh2mu" path="res://assets/ui/mono-theme.tres" id="1_iy58a"]
+[ext_resource type="Texture2D" uid="uid://cj5udm2hpdpp5" path="res://assets/sprites/astreoid1.png" id="2_6a6wx"]
+[ext_resource type="Texture2D" uid="uid://bgraig727rtfn" path="res://assets/sprites/bomb.png" id="3_sky72"]
+[ext_resource type="Texture2D" uid="uid://cj4yakpihqjoi" path="res://assets/sprites/astreoid3.png" id="4_0ytqx"]
+[ext_resource type="Texture2D" uid="uid://b00qkkbimjylc" path="res://assets/sprites/astreoid2.png" id="5_pxugv"]
+[ext_resource type="Texture2D" uid="uid://d2rtn17t0cw6n" path="res://assets/sprites/arriereplan.png" id="6_eh0v1"]
+[ext_resource type="Texture2D" uid="uid://dkm0fg64exi8g" path="res://assets/sprites/alien_icon.png" id="7_am1vj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_g31lc"]
+line_spacing = 275.0
+font_size = 65
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_iy58a")
+
+[node name="ArrièrePlan" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_iy58a")
+
+[node name="Astreoides" type="Control" parent="ArrièrePlan"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Astreoide" type="TextureRect" parent="ArrièrePlan/Astreoides"]
+layout_mode = 0
+offset_left = 678.0
+offset_top = 174.0
+offset_right = 758.0
+offset_bottom = 254.0
+texture = ExtResource("2_6a6wx")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Astreoide2" type="TextureRect" parent="ArrièrePlan/Astreoides"]
+layout_mode = 0
+offset_left = 605.0
+offset_top = 293.0
+offset_right = 685.0
+offset_bottom = 373.0
+texture = ExtResource("3_sky72")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Astreoide3" type="TextureRect" parent="ArrièrePlan/Astreoides"]
+layout_mode = 0
+offset_left = 513.0
+offset_top = 133.0
+offset_right = 593.0
+offset_bottom = 213.0
+texture = ExtResource("4_0ytqx")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Astreoide4" type="TextureRect" parent="ArrièrePlan/Astreoides"]
+layout_mode = 0
+offset_left = 464.0
+offset_top = 278.0
+offset_right = 544.0
+offset_bottom = 358.0
+texture = ExtResource("2_6a6wx")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Astreoide6" type="TextureRect" parent="ArrièrePlan/Astreoides"]
+layout_mode = 0
+offset_left = -7.0
+offset_top = 322.0
+offset_right = 73.0
+offset_bottom = 402.0
+texture = ExtResource("2_6a6wx")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Astreoide7" type="TextureRect" parent="ArrièrePlan/Astreoides"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 139.0
+offset_right = 108.0
+offset_bottom = 219.0
+texture = ExtResource("2_6a6wx")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Astreoide9" type="TextureRect" parent="ArrièrePlan/Astreoides"]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 250.0
+offset_right = 188.0
+offset_bottom = 330.0
+texture = ExtResource("4_0ytqx")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Astreoide10" type="TextureRect" parent="ArrièrePlan/Astreoides"]
+layout_mode = 0
+offset_left = -52.0
+offset_top = 213.0
+offset_right = 28.0
+offset_bottom = 293.0
+texture = ExtResource("5_pxugv")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="ArrièrePlan"]
+modulate = Color(0.568973, 0.568973, 0.568973, 1)
+z_index = -5
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("6_eh0v1")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -229.5
+offset_top = -159.0
+offset_right = 229.5
+offset_bottom = 159.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Ceinture 
+d'Astéroïdes"
+label_settings = SubResource("LabelSettings_g31lc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AlienIcon" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -101.0
+offset_top = -101.0
+offset_right = 101.0
+offset_bottom = 101.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_am1vj")
