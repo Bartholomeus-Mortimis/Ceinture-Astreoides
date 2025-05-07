@@ -88,6 +88,8 @@ func équation_en_expression(nouveau_équation: String):
 				if nouveau_équation.substr(i-1, 1) == ")":
 					# Isoler la partie en parathèses qui doit être mise au exponentielle.
 					clôt = trouveau_parathèse_correspondante(nouveau_équation, i)
+					if clôt == -1:
+						return false
 					
 				elif chiffres.has(nouveau_équation.substr(i-1, 1)) or nouveau_équation.substr(i-1, 1) == "x":
 					# Isoler le nombre (ou variable) qui doit être mise au exponentielle.
@@ -149,6 +151,9 @@ func trouveau_parathèse_correspondante(string: String, position_départ: int, d
 			paranthèse_voulu -= (1 * direction)
 		elif string.substr(position_départ-( (1+x) * direction), 1) == ")":
 			paranthèse_voulu += (1 * direction)
+		
+		if x > 100:
+			return -1
 		
 		x += 1
 	
